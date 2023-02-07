@@ -1,19 +1,12 @@
 def pedir_numero(texto):
-     while True:
+    while True:
         try:
             return int(input (texto ))
         except ValueError:
             print("te dije que me pongas un numero ")
-
-
-
-
-
-
 while True:
-
     print ("Elegi el tipo de operasion")
-    opsiones = ["", "+ _ a", "- _ b", "* _ c", "/ _ d " ]
+    opsiones = ["", "+", "-", "*", "/ " ]
     for tipo in opsiones:
         print(tipo)
 
@@ -22,22 +15,21 @@ while True:
     N1 = pedir_numero( "poneme el numero que quieras ")
     N2 = pedir_numero("pone el otro numero ")
 
-    if operasion == "a":
-        print (N1+N2)
+    if operasion == "+":
         print ("elegistes + ")
+        print (N1+N2)
         break
-    elif operasion == "b":
-        print (N1-N2)
+    elif operasion == "-":
         print("elegistes - ")
+        print (N1-N2)
         break
-    elif operasion == "c":
-        print (N1*N2)
+    elif operasion == "*":
         print ("elegistes * ")
+        print (N1*N2)
         break
-    elif operasion == "d":
-        print (N1/N2)
+    elif operasion == "/":
         print ("elegistes / ")
+        print (N1/N2)
         break
     else:
-        print("mira que solo podes elegir 1,2,3,4")
-     
+        print("mira que solo podes elegir +,-,*,/")
