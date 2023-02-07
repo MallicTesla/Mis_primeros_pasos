@@ -29,5 +29,5 @@ elif operasion == "d":
     print (N1/N2)
     print ("elegistes / ")
 else:
-    print("mira que solo podes elegir 1,2,3,4")
+    print("mira que solo podes elegir a,b,c,d")
     
