@@ -6,7 +6,7 @@ def pedir_numero(texto):
                 print("te dije que me pongas un numero ")
 def calculo ():    
     print ("Elegi el tipo de operasion" )
-    opsiones = ["", "+", "-", "*", "/ " ]
+    opsiones = ["", "+", "-", "*", "/", ]
     for tipo in opsiones:
         print(tipo)
 
@@ -28,12 +28,12 @@ def calculo ():
         print ("elegistes / ")
         print (N1/N2)
     else:
-        print("mira que solo podes elegir +,-,*,/")
-        calculo ()
+        print("mira que solo podes elegir +, -, *, / ")
+        return calculo ()
     
     p = input ("queres realisar otra operasion si / no ")
     if p == "si":
-        calculo ()
+        return calculo ()
     else:
         print("adios")
 calculo ()
