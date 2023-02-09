@@ -1,7 +1,7 @@
 def pedir_numero(texto):
         while True:
             try:
-                return int(input (texto ))
+                return float(input (texto ))
             except ValueError:
                 print("te dije que me pongas un numero ")
 def calculo ():    
@@ -61,7 +61,7 @@ def calculo ():
                 print("si" ,N5, "es el cien porciento entonses" ,N3,"es el",R1, "porciento")
             else:
                 print("mira que solo podes elegir entre 1-2-3")
-                porcentaje ()
+                return porcentaje ()
         porcentaje ()
     else:
         print("mira que solo podes elegir +, -, *, /,% ")
