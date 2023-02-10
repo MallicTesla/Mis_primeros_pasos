@@ -12,8 +12,8 @@ def calculo ():
 
     operasion = input ()
     
-#    N1 = pedir_numero( "poneme el numero que quieras ")
-#    N2 = pedir_numero("pone el otro numero ")
+    #   N1 = pedir_numero( "poneme el numero que quieras ")
+    #   N2 = pedir_numero("pone el otro numero ")
 
     if operasion == "+":
         N1 = pedir_numero( "poneme el numero que quieras ")
