@@ -5,7 +5,7 @@
 
 
 def pedir_numero(texto):
-     while True:
+    while True:
         try:
             return int(input (texto ))
         except ValueError:
