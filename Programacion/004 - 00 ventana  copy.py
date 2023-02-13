@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import *                       #   https://docs.python.org/es/3/library/tkinter.html
 from tkinter import ttk
 
 ventana = Tk ()
@@ -8,10 +8,14 @@ ventana.resizable(1,1)                      #   para modificar manual mente el t
 ventana.config(bg="#500090")                #   Cambiar color de fond el color en inglés o en formato hexadecima
 etiqueta = ttk.Frame(ventana, padding=10,)  #   crea una etiqueta para el widget que contiene una cadena de texto (tamaño del eidget).
 etiqueta.grid(padx= 350, pady=460)          #   grid especificar la posición de la etiqueta que está dentro del marco del widget
-ttk.Button(etiqueta, text="Quitar", command=ventana.destroy).grid(column=1, row=0) #   crra un boton (posision, texto del boton, funcion del boton,)
-ttk.Label(etiqueta, text="funcionara").grid(column=0, row=0)
+ttk.Label(etiqueta, text="funcionara").grid(column=0, row=0)    #   crea una etiqueta para el widget que contiene una cadena de texto estática (donde esta, texto).grid especificar la posición de
+ttk.Button(etiqueta, text="Quitar", command=ventana.destroy).grid(column=1, row=0) #   crra un boton (donde esta, texto del boton, funcion del boton,)
 
 
+etiqueta_01= ttk.Frame(ventana, padding=10,)
+etiqueta_01.grid(padx= 250, pady=260) 
+ttk.Button(etiqueta_01, text="Quita", command=ventana.destroy).grid(column=1, row=0) 
+ttk.Label(etiqueta_01, text="funcionar").grid(column=0, row=0)
 
 
 
