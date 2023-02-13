@@ -5,7 +5,7 @@ def pedir_numero():
             break
         except ValueError:
             print("te dije que me pongas un numero ")
- 
+
 
 # una funcion es un bloque de codigo que hace algo  
 # antes de poder usar una funcion ahi que definirla (def)
