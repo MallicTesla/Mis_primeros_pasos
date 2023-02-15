@@ -17,13 +17,13 @@ def reparando (n):
     print (n)
 
 lista=[1,2,3,4,5,]
-for numero in lista :
+numero = [(lambda j=lista2: j) for lista2 in lista]
 
-    tkinter.Button(ventana,         text=f"numero {numero}",
+tkinter.Button(ventana,         text=f"numero {numero}",
                                     bg="green",
                                     fg="black",
                                     command= lambda:reparando(numero),
-                                    ) .place(x=520, y=numero*30,)
+                                    ) .grid(padx= 10, pady=10)
 
 
 print(numero)
