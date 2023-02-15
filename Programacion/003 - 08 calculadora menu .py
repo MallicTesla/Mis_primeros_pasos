@@ -68,8 +68,8 @@ def porcentaje () :
         return porcentaje ()
 
 def fin () :
-    p = input ("queres realisar otra operasion si / no ")
-    if p == "si":
+    si_o_no = input ("queres realisar otra operasion si / no ")
+    if si_o_no == "si":
         return menu ()
     else:
         print("adios")
