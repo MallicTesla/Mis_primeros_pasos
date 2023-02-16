@@ -1,9 +1,9 @@
 def pedir_numero(texto):
-        while True:
-            try:
-                return float (input (texto ))
-            except ValueError:
-                print("te dije que me pongas un numero ")
+    while True:
+        try:
+            return float (input (texto ))
+        except ValueError:
+            print("te dije que me pongas un numero ")
 def menu ():    
     print ("Elegi el tipo de operasion" )
     opsiones = ["", "+", "-", "*", "/", "%"]
