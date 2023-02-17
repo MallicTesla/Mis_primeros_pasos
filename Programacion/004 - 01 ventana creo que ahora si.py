@@ -14,7 +14,9 @@ ventana.config(bg="#500090")        #   Cambiar color de fond el color en inglé
 cabezera = tkinter.Label(ventana,   text="    vamos a ver si funciona     ",
                                     bg="red" ,
                                     fg="yellow", 
-                                    height="0"
+                                    height="0",                             #   para ajustar el alto de la etiqueta
+                                    justify="center",                       #   Para posisionar el testo dentro de la etiqueta (justify = left , center , right)
+                                    font= "italic 20 bold",                 #   para cambiar el tipo de letra y el tamaño ,bold es para aserlas mas gruesas
                                     ).grid(padx= 10, pady=10)
 
 def saludo ():

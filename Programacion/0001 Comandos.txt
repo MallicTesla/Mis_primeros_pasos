@@ -7,3 +7,4 @@ while True:	    para repetir una secuencia de instrucciones o sentencias un núm
      		    una funcion es un bloque de codigo que hace algo antes de poder usar una funcion ahi que definirla (def) tienen un nombre y pueden ser usadas munchas veses una funcion tambien puede retornar un balor 
 sorted()		Para ordenar una lista y con reverse= la ordenas al reves 
 match --:		match seguida de la variavle para buscar el valor de la variavle en una lista se usa (case) como si fuese un if
+global 			(global variavle) cuando ahy 2 variables con el mismo numero pero distintos valores y uno esta dentro de una funcion (local) y una afuera (global) cuando usas global 
