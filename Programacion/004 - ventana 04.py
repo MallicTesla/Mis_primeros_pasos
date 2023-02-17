@@ -48,29 +48,30 @@ Mensaje05.config(                   width= 300,
                                     font= "roman 15 bold",)
 Mensaje05.place(x=10, y=220)
 
-class test ():
-    def __init__(self):
-        self.ventana = tk.Tk ()
-        # tenemos que crear una variavle de tipo StringVar para cambiar el texto de un widget
-        self.texto01 = tk.StringVar()
-        # le damos un valor inicial
-        self.texto01.set ("Es mi primera ves")
+# class test ():
+#     def __init__(self):
+#         self.ventana = tk.Tk ()
+#         # tenemos que crear una variavle de tipo StringVar para cambiar el texto de un widget
+#         self.texto01 = tk.StringVar()
+#         # le damos un valor inicial
+#         self.texto01.set ("Es mi primera ves")
 
-        # creamos la etiqueta
-        # con textcariavle indicamos cual es la variavle que tendra el texto 
-        self.Etiqueta01 = tk.Label(self.ventana,    textovariavle = self.texto01,
-                                                    font= "arial 20").pack()
+#         # creamos la etiqueta
+#         # con textcariavle indicamos cual es la variavle que tendra el texto 
+#         self.Etiqueta01 = tk.Label(self.ventana,    textovariavle = self.texto01,
+#                                                     font= "arial 20").pack()
         
-        # creamos el boton 
-        self.boton01 = tk.Button(self.ventana,  text="Vos tranqui",
-                                                font="arial 20 ",
-                                                command=self.changeText).pack()
+#         # creamos el boton 
+#         self.boton01 = tk.Button(self.ventana,  text="Vos tranqui",
+#                                                 font="arial 20 ",
+#                                                 command=self.changeText).pack()
         
-        self.ventana.mainloop()
+#         self.ventana.mainloop()
 
 
-    # este metodo es el handLer
-    def changeTexto(self):
+#     # este metodo es el handLer
+#     def changeTexto(self):
+#         pass
 
 
 
@@ -100,4 +101,4 @@ class test ():
 
 
 
-# ventana.mainloop()
+ventana.mainloop()
