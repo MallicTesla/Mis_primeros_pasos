@@ -47,17 +47,17 @@ boton_02 = tkinter.Button(ventana,  text="salir",
 
 
 
-#   tkinter.messagebox.showinfo("cuidado" , "no te asustes")            #   te salta un cartel cuando lo llamas
+tkinter.messagebox.showinfo("cuidado" , "no te asustes")            #   te salta un cartel cuando lo llamas
 
-#   respuesta = tkinter.messagebox.askquestion ("????????", "te gusto")     #   te salta un cartel cuando lo llamas con multiplea opsiones
-#   if respuesta == "yes":
-#       tkinter.messagebox.showinfo ("","a mas te vale")
-#   else:
-#       tkinter.messagebox.showinfo ("","como que no")
+respuesta = tkinter.messagebox.askquestion ("????????", "te gusto")     #   te salta un cartel cuando lo llamas con multiplea opsiones
+if respuesta == "yes":
+    tkinter.messagebox.showinfo ("","a mas te vale")
+else:
+    tkinter.messagebox.showinfo ("","como que no")
 
-#   img = tkinter.PhotoImage(file="imagen001.jpg" )
-#   lbl_img = tkinter.Label(ventana, image = img)
-#   lbl_img.pack()
+img = tkinter.PhotoImage(file="imagen001.jpg" )
+lbl_img = tkinter.Label(ventana, image = img)
+lbl_img.pack()
 
 
 

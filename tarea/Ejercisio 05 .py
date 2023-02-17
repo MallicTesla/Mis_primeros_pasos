@@ -4,18 +4,20 @@ resultado01 = año % 4
 resultado02 = año % 100
 resultado03 = año % 400
 
-if resultado01 == 0 :
-    print("paso 1 va al paso 2")
-    
-    if resultado02 == 0 :
-        print ("paso 2 va al paso 3")
-        
-        if resultado03 == 0 :
-            print ("paso 3 va al paso 4")
+def calculo () :
+    if resultado01 == 0 :
+        if resultado02 == 0 :
+            if resultado03 == 0 :
+                biciesto = True
+            else:
+                biciesto = False
         else:
-            print("paso 3 va al paso 5")
+            biciesto = True
     else:
-        print("paso 2 va al paso 4")
-else:
-    print ("paso1 va al paso 5")
+        biciesto = False
+    if biciesto == True :
+        print (año," si es un año bisiesto")
+    else:
+        print ( año," no es un año bisiesto")
 
+calculo ()
