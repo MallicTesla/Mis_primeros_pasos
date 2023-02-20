@@ -47,7 +47,7 @@ Mensaje05.config(                   width= 300,
                                     justify="left",
                                     font= "roman 15 bold",)
 Mensaje05.place(x=10, y=220)
-#---------------------------boton que remplasa un texto en el wifget------------------------------------------------
+#---------------------------boton que remplasa un texto en el wiget------------------------------------------------
 class test ():
     def __init__(self):
         # tenemos que crear una variavle de tipo StringVar para cambiar el texto de un widget
@@ -153,7 +153,7 @@ BoFCheck = tk.Button(ventana,   text=" elegi uno o mas",
 imgagen01 = tk.PhotoImage(file="C:\imagen002.gif" )
 
 Mensaje01 = tk.Label(ventana,   image=imgagen01) 
-Mensaje01.place(x=350, y=166)                #   side=   es para posisionar la imagen
+Mensaje01.place(x=10, y=440)                #   side=   es para posisionar la imagen
 
 # texto02 = """asi se coloca un texto 
 # alado de una imagen"""
