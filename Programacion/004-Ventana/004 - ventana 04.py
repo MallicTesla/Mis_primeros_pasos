@@ -4,7 +4,7 @@ ventana=tk.Tk()
 seleccion = tk.IntVar()
 
 ventana.title("Primera Ventana")    
-ventana.geometry("600x600")
+ventana.geometry("1000x1000")
 ventana.resizable(1,1)
 ventana.config(bg="#500090") 
 
@@ -150,9 +150,10 @@ BoFCheck = tk.Button(ventana,   text=" elegi uno o mas",
 
 
 
-# imgagen01 = tk.PhotoImage(file="imagen001.png" )
+imgagen01 = tk.PhotoImage(file="C:\imagen002.gif" )
 
-# Mensaje01 = tk.Label(ventana,   image=imgagen01) .pack(side="right")  #   side=   es para posisionar la imagen
+Mensaje01 = tk.Label(ventana,   image=imgagen01) 
+Mensaje01.place(x=350, y=166)                #   side=   es para posisionar la imagen
 
 # texto02 = """asi se coloca un texto 
 # alado de una imagen"""
