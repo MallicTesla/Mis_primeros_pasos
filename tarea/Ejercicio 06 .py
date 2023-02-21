@@ -1,2 +1,0 @@
-class dino:
-    enciende = True 
