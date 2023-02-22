@@ -146,37 +146,63 @@
 
 
 
-class jugete():
-    _encendido = True
+# class jugete():
+#     _encendido = True
 
-    def __init__(self,x):
-        print("estoy en la clase jugete en su cnstructor(", x, ")")
+#     def __init__(self,x):
+#         print("estoy en la clase jugete en su cnstructor(", x, ")")
 
-    def encendido(self):
-        print("encendiendo")
-        self._encendido = True
+#     def encendido(self):
+#         print("encendiendo")
+#         self._encendido = True
 
-    def apaga (self):
-        print ("apagando")
-        self._encendido = False
+#     def apaga (self):
+#         print ("apagando")
+#         self._encendido = False
 
-    def isEncendido (self) :
-        return self._encendido
+#     def isEncendido (self) :
+#         return self._encendido
 
-class dino (jugete) :
-    color= None
-    nombre = None
+# class dino (jugete) :
+#     color= None
+#     nombre = None
 
-    def __init__ (self, nombre) :
-        # jugete.__init__(self)                                   #   asi se puede llamar a otro __init__ que se encuentra en una clase padre
-        # jugete.__init__(self, nombre)                           #   asi se llama el constructor sy tuviera un parametro
+#     def __init__ (self, nombre) :
+#         # jugete.__init__(self)                                   #   asi se puede llamar a otro __init__ que se encuentra en una clase padre
+#         # jugete.__init__(self, nombre)                           #   asi se llama el constructor sy tuviera un parametro
 
-        # super().__init__()                                      #     esta forma es mas comun de hacer lo mismo super(). hace referensi a la clase padre
-        super().__init__(nombre)                                #     asi se llama el constructor sy tuviera un parametro
+#         # super().__init__()                                      #     esta forma es mas comun de hacer lo mismo super(). hace referensi a la clase padre
+#         super().__init__(nombre)                                #     asi se llama el constructor sy tuviera un parametro
 
-        print ("estoy en el constructor de la clase dino")
+#         print ("estoy en el constructor de la clase dino")
 
-P = dino("mi dinosaurio")
+# P = dino("mi dinosaurio")
+
+#-------------------------------otro ejemplo mas claro de Heredada y con constructor-----------------------------------------------------------
+
+# __str__ es un método para definir una representación en cadena de un objeto.
+
+class Veiculo () :
+    
+    def __init__ (self, color, ruedas, puertas) :
+        self.color = color
+        self.ruedas = ruedas
+        self.puertas = puertas
+
+class Coche (Veiculo) :
+    def __init__ (self, color, Velocidad, ruedas, puertas, cilindros) :
+        super().__init__(color, ruedas, puertas) 
+        self.Velocidad = Velocidad
+        self.cilindros = cilindros
+
+    def __str__(self):
+        return "color {}, km/h {}, ruedas {}, puertas {}, colindros {} ".format (self.color , self.Velocidad , self.ruedas ,self.puertas , self.cilindros)
+
+A = Coche ("rojo ", 100 , 4 , 5 , "v-8" )
+
+print (A)
+
+#   Por ejemplo, si definimos una clase (Coche) y queremos que se imprima una cadena de objetos al llamar a la función print, podemos definir el método __str__ para la clase
 
 # ----------------------------clases abstractas------------------------------------------------------------------------------------------------
 # ----------------------------clases abstractas------------------------------------------------------------------------------------------------
