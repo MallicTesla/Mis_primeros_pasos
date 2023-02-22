@@ -183,7 +183,7 @@
 # __str__ es un método para definir una representación en cadena de un objeto.
 
 class Veiculo () :
-    
+
     def __init__ (self, color, ruedas, puertas) :
         self.color = color
         self.ruedas = ruedas
