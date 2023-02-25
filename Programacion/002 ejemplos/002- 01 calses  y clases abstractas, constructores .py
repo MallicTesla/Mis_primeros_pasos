@@ -169,10 +169,10 @@
 
 #     def __init__ (self, nombre) :
 #         # jugete.__init__(self)                                   #   asi se puede llamar a otro __init__ que se encuentra en una clase padre
-#         # jugete.__init__(self, nombre)                           #   asi se llama el constructor sy tuviera un parametro
+#         # jugete.__init__(self, nombre)                           #   asi se llama el constructor si tuviera un parametro
 
 #         # super().__init__()                                      #     esta forma es mas comun de hacer lo mismo super(). hace referensi a la clase padre
-#         super().__init__(nombre)                                #     asi se llama el constructor sy tuviera un parametro
+#         super().__init__(nombre)                                #     asi se llama el constructor si tuviera un parametro
 
 #         print ("estoy en el constructor de la clase dino")
 
@@ -203,6 +203,8 @@ A = Coche ("rojo ", 100 , 4 , 5 , "v-8" )
 print (A)
 
 #   Por ejemplo, si definimos una clase (Coche) y queremos que se imprima una cadena de objetos al llamar a la función print, podemos definir el método __str__ para la clase
+#   para llamar un metodo __str__ se usa str()
+#   para retornar un __str__ de una clase ya instansiada dentro de otra clase instanciada se usa (return str()) y despues el print
 
 # ----------------------------clases abstractas------------------------------------------------------------------------------------------------
 # ----------------------------clases abstractas------------------------------------------------------------------------------------------------
@@ -218,24 +220,24 @@ print (A)
 #     @abstractclassmethod                    #   el metodo que tenga ensima @abstractclassmethod esta obligado a
 #     def sonido (self):                      #   defimirlo en todas las clases hijos
 #         print ("animal")
-    
+
 #     def Di_Hola(self) :
 #         print ("hola")
 
 # class Perro (Animal):
-    
+
 #     def sonido (self) :
 #         print ("GUAU,GUAU,GUAU,GUAU ")
 
 # class Gato (Animal):
-    
+
 #     def sonido (self) :
 #         print ("soy otro gato ")
 
 # class Caballo (Animal) :
 
 #     def sonido (self) :
-#         print ("travajo con jorge")
+#         print ("trabajo con jorge")
 
 # P = Perro ()
 # P.sonido ()
