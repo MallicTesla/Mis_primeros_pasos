@@ -39,7 +39,6 @@ class Alarma(Tiempo_restante):
         super().__init__()
         self.hora_deseada = datetime.now().replace(hour=hora, minute=minuto, second=segundo)
 
-
 class Salida(Alarma):
     def __init__(self, hora, minuto, segundo):
         super().__init__(hora, minuto, segundo)
