@@ -177,30 +177,57 @@
 #         print ("estoy en el constructor de la clase dino")
 
 # P = dino("mi dinosaurio")
+#------------------------------------------como imprimir con constructores---------------------------------------------------------------------
+#------------------------------------------como imprimir con constructores---------------------------------------------------------------------
+#------------------------------------------como imprimir con constructores---------------------------------------------------------------------
 
-#-------------------------------otro ejemplo mas claro de Heredada y con constructor-----------------------------------------------------------
+class Jugete:
+    nombre = ""
+    precio = 0.0
+
+    def __init__(self, nombre, precio):
+        self.nombre = nombre
+        self.precio = precio
+
+                        #   el metodo __str__ se usa para representar una salida informal para codigo de producsion
+    def __str__(self):  #   sin el metodo __str__ no imprime informacion legible legible
+        return f"el nmbre del jugete es {self.nombre} y el precio es {self.precio}" 
+
+    #   el metodo __repr__ se usa para una salida mas tecnica para codigo en desarollo o deporasion
+    def __repr__(self):
+        return f" __repr__ nombre {self.nombre} precio {self.precio}"
+
+j1 = Jugete ("autito", 10.5)
+#   por defecto el print llama el metodo str
+print (j1)
+#   si en la clase tiene el modulo str y no el repr y se imboca repr se imprime el comportamento por defecto que es como si no tubiera str
+print(repr(j1))
+
+#------------------------------------------como imprimir con constructores---------------------------------------------------------------------
+#------------------------------------------como imprimir con constructores---------------------------------------------------------------------
+#------------------------------------------como imprimir con constructores---------------------------------------------------------------------
 
 # __str__ es un método para definir una representación en cadena de un objeto.
 
-class Veiculo () :
+# class Veiculo () :
 
-    def __init__ (self, color, ruedas, puertas) :
-        self.color = color
-        self.ruedas = ruedas
-        self.puertas = puertas
+#     def __init__ (self, color, ruedas, puertas) :
+#         self.color = color
+#         self.ruedas = ruedas
+#         self.puertas = puertas
 
-class Coche (Veiculo) :
-    def __init__ (self, color, Velocidad, ruedas, puertas, cilindros) :
-        super().__init__(color, ruedas, puertas) 
-        self.Velocidad = Velocidad
-        self.cilindros = cilindros
+# class Coche (Veiculo) :
+#     def __init__ (self, color, Velocidad, ruedas, puertas, cilindros) :
+#         super().__init__(color, ruedas, puertas) 
+#         self.Velocidad = Velocidad
+#         self.cilindros = cilindros
 
-    def __str__(self):
-        return "color {}, km/h {}, ruedas {}, puertas {}, colindros {} ".format (self.color , self.Velocidad , self.ruedas ,self.puertas , self.cilindros)
+#     def __str__(self):
+#         return "color {}, km/h {}, ruedas {}, puertas {}, colindros {} ".format (self.color , self.Velocidad , self.ruedas ,self.puertas , self.cilindros)
 
-A = Coche ("rojo ", 100 , 4 , 5 , "v-8" )
+# A = Coche ("rojo ", 100 , 4 , 5 , "v-8" )
 
-print (A)
+# print (A)
 
 #   Por ejemplo, si definimos una clase (Coche) y queremos que se imprima una cadena de objetos al llamar a la función print, podemos definir el método __str__ para la clase
 #   para llamar un metodo __str__ se usa str()
