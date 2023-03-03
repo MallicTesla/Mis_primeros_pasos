@@ -35,12 +35,12 @@
 
 cadena = "en un lugar de la manchA"
 
-# pprint.pprint(dir(cadena)) #    dir mestra la propiedades de un objeto 
+# pprint.pprint(dir(cadena)) #    dir muestra la propiedades de un objeto 
 
 print (cadena)
 print (cadena.capitalize())         #   pone en mayuscula la primera letra del texto y las demas en minuscula
 print (cadena.title())              #   pone en mayuscula la primera letra de cada palabra y el resto en minuscula
-print (cadena.count("a"))           #   cuenta cuantas veses aparese una letra en el texto (diferensia entre minuscula y mayuscula)
+print (cadena.count("a"))           #   cuenta cuantas veses aparese una letra en el texto (diferencia entre minuscula y mayuscula)
 print (cadena.lower())              #   combierte todo a minuscula
 print (cadena.upper())              #   combierte todo a mayuscula
 
@@ -49,7 +49,13 @@ print (cadena.lower().count("a"))
 otra_cadena = cadena.lower()
 print (otra_cadena.count("a"))
 
-print (cadena.split())              #   combierte una cadena en una lista, cambia lo que esta dentro de los parentesis por un espacio en blanco con una coma (", ")
+print (cadena.split("un"))              #   combierte una cadena en una lista separada por los espasios, si se coloca una palabra entre los parantesis se bora esa palabra y se
+#   separa en 2 la lista 
+
+print (cadena.startswith("en"))             #   te indica si la primera palabra es ("en")
+print (cadena.endswith("manchA"))           #   te indica si la ultima palabra es ("manchA")
+print (cadena.lower().endswith("mancha"))   #   lo mismo pero forsando todo a minuscula
+
 
 cadena1 = "     con espasios el prinsipio y finaL       "
 
@@ -59,6 +65,7 @@ print (cadena1.lstrip())            #   elimina los espasios al principio
 print (cadena1.rstrip())            #   elimina los espasios al final
 
 
+#   como saber que es lo que me entrega un strin
 
 # numero = "55"
 # alfa = "Hola"
