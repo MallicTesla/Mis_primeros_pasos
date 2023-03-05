@@ -1,52 +1,52 @@
 # # ------------------------------------------------filter--------------------------------------
 
-# numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-# def mifuncion (x) :
-#     if x % 2 == 0 :
-#         return True
-
-# #   filter revisa la funcion pasando el parametro (mifuncion, numero) y ve si devuelve True o False y elimina el elemento que da false
-# #   devuelve una lista
-# resultado1 = filter(mifuncion, numero) 
-# #   tambien se puede hacer con una lambda
-# resultado2 = filter(lambda x : x % 2 == 0, numero) 
-
-# print (list (resultado1))
-# print (list (resultado2))
-
-# # -------------------------------------------map----------------------------------------------------
-
-def cuadrado (x):
-    return x * x
-
 numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-#   map aplica la funcion en cada elemento de la lista
-resultado1 = map (cuadrado,numero )
+def mifuncion (x) :
+    if x % 2 == 0 :
+        return True
+
+#   filter revisa la funcion pasando el parametro (mifuncion, numero) y ve si devuelve True o False y elimina el elemento que da false
+#   devuelve una lista
+resultado1 = filter(mifuncion, numero) 
 #   tambien se puede hacer con una lambda
-resultado2 = map (lambda x : x * x , numero)
+resultado2 = filter(lambda x : x % 2 == 0, numero) 
 
 print (list (resultado1))
 print (list (resultado2))
 
-# # -------------------------------------reduce-------------------------------------------------------
-# from functools import reduce
+# # -------------------------------------------map----------------------------------------------------
 
-# def suma (a, b) :
-#     print (f"a={a} b={b}")
-#     return a + b
+# def cuadrado (x):
+#     return x * x
 
 # numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-# #   reduce aplica la funcion a una lista hasta que queda un solo elemento
-# #   la funcion nesesita 2 parametros que puede ser el mismo parametro
-# resultado1 = reduce(suma,numero)
+# #   map aplica la funcion en cada elemento de la lista
+# resultado1 = map (cuadrado,numero )
 # #   tambien se puede hacer con una lambda
-# resultado2 = reduce (lambda a , b : a + b , numero)
+# resultado2 = map (lambda x : x * x , numero)
 
-# print (resultado1)
-# print (resultado2)
+# print (list (resultado1))
+# print (list (resultado2))
+
+# # -------------------------------------reduce-------------------------------------------------------
+from functools import reduce
+
+def suma (a, b) :
+    print (f"a={a} b={b}")
+    return a + b
+
+numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+#   reduce aplica la funcion a una lista hasta que queda un solo elemento
+#   la funcion nesesita 2 parametros que puede ser el mismo parametro
+resultado1 = reduce(suma,numero)
+#   tambien se puede hacer con una lambda
+resultado2 = reduce (lambda a , b : a + b , numero)
+
+print (resultado1)
+print (resultado2)
 
 # # ----------------------------------------zip-------------------------------------------------------
 
