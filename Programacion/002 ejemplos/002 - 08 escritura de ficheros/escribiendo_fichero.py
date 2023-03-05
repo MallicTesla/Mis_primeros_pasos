@@ -55,7 +55,7 @@ class jugete :
 # pickle.dump (j1, f)                             #   con la funcion .dump(que quiero guardar, donde lo quiero guardar) guardo el fichero
 # f.close
 
-#----------------------asi de lee---------------------------------------------------
+#----------------------asi se lee---------------------------------------------------
 
 f = open ("C:\Pruevas\clase.txt", "rb")         #   lee un archibo en binario
 auto = pickle.load(f)                           #   con la funcion .load(direcsion del fichero) se lee un fichero
