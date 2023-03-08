@@ -80,7 +80,7 @@ ventana.config(bg="#500090")
 #     cartel.place(x = random.randint (0,350), y = random.randint (0,450))
 
 #---------------------------------------------------------------wigets-------------------------------------------------------------------------
-# ---------------------------------------------reim-------------------------------------------------------------------------
+# ---------------------------------------------freim-------------------------------------------------------------------------
 #   se pueden colocar cosas adentro
 
 # ventana.columnconfigure (0, weight = 1)
@@ -258,9 +258,9 @@ ventana.config(bg="#500090")
 
 #------------------------------------------------------paleta de colores---------------------------------------------------------------
 
-from tkinter import colorchooser
+# from tkinter import colorchooser
 
-colorchooser.askcolor(initialcolor = "#ffffff")
+# colorchooser.askcolor(initialcolor = "#ffffff")
 
 
 
