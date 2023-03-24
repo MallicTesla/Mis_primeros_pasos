@@ -1,5 +1,5 @@
 # import pandas as pd
-# import talib
+# # import talib
 # import matplotlib.pyplot as plt
 # import numpy as np
 
@@ -15,11 +15,35 @@
 # df['timestamp'] = pd.to_datetime(df['timestamp'], unit='s')
 # df.set_index('timestamp', inplace=True)
 
+# # # Calcular las líneas de EMA de 20, 50, 100 y 200
+# # df['ema20'] = talib.EMA(df['close'], timeperiod=20)
+# # df['ema50'] = talib.EMA(df['close'], timeperiod=50)
+# # df['ema100'] = talib.EMA(df['close'], timeperiod=100)
+# # df['ema200'] = talib.EMA(df['close'], timeperiod=200)
+
+# # como no funciona la libreria talib se hace asi
+
+# def calculate_ema(prices, window_size):
+#     ema = []
+#     j = 1
+#     sma = sum(prices[:window_size]) / window_size
+#     multiplier = 2 / (window_size + 1)
+#     ema.append(sma)
+
+#     for i in prices[window_size:]:
+#         tmp = (i - sma) * multiplier + sma
+#         ema.append(tmp)
+#         sma = tmp
+#         j += 1
+
+#     return ema
+
+
 # # Calcular las líneas de EMA de 20, 50, 100 y 200
-# df['ema20'] = talib.EMA(df['close'], timeperiod=20)
-# df['ema50'] = talib.EMA(df['close'], timeperiod=50)
-# df['ema100'] = talib.EMA(df['close'], timeperiod=100)
-# df['ema200'] = talib.EMA(df['close'], timeperiod=200)
+# df['ema20'] = calculate_ema(df['close'], 20)
+# df['ema50'] = calculate_ema(df['close'], 50)
+# df['ema100'] = calculate_ema(df['close'], 100)
+# df['ema200'] = calculate_ema(df['close'], 200)
 
 # # Calcular las resistencias de las últimas 2 horas
 # last_2_hours = df.iloc[-24 * 60 / 5:]
@@ -33,7 +57,7 @@
 # price_direction = None
 # price_prob = None
 
-# # Utilizar un modelo de aprendizaje automático para predecir la dirección del precio en los siguientes 40 segundos
+# # Utilizar un modelo de aprendizaje automático para predecir la dirección del reciop en los siguientes 40 segundos
 # # Este es solo un ejemplo y deberá personalizar esta parte según su modelo específico
 # # También es posible que desee incluir otros indicadores técnicos y fundamentales en su modelo
 # # También puede considerar el uso de redes neuronales o otros modelos avanzados de aprendizaje automático

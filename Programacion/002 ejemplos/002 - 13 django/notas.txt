@@ -1,0 +1,56 @@
+(direcsion) dir                                 se ve lo que ahi dentro de la carpeta
+(direcsion) python manage.py runserver          enpiesa a corer el servidor 
+(direcsion) python manage.py makemigrations     es para ver si uvo modificaciones
+(direcsion) python manage.py migrate            se ejecutan los cambios echos
+
+(direcsion) python manage.py createsuperuser    para crear un usuario admin
+
+
+
+
+
+
+1)  en la consola con (django-admin startproject PrimerDjango .) se crea el prollecto con el nombre (PrimerDjango) al final. tambien al prinsipio 
+    va la direcsion en la que queres que se cree
+
+se ejecuta python manage.py runserver y funsiona
+
+
+2)  se creo la app catalog con ((direcsion/ PrimerDjango) python manage.py atartapp catalog)  al final va el nombre
+
+
+3)  en (direcsion) /PrimerDjango/settings
+    en la funcion INSTALLED_APPS al final se coloca la linea "catalog.apps.CatalogConfig" para conectar la app catalog
+
+
+4)  (direcsion) /PrimerDjango/
+    se importa (from django.urls import path, include) y en la funcion urlpatterns se agrega path("catalog/", include("catalog.urls"))
+
+
+5)  en (direcsion) se va a la app catalog
+    y se crea un nuevo fichero llamado (urls.py) y se agrega 
+    from django.conf.urls import url
+    # con (from .) se llama a todos los archivos de la carpeta en la que se encuentra esta
+    from . import views
+    urlpatterns = []
+
+se ejecuta python manage.py runserver y funsiona
+
+
+6)  (direcsion) python manage.py makemigrationes    es para ver si uvo modificaciones
+    (direcsion) python manage.py migrate            se ejecutan los cambios echos
+
+
+7)  (direcsion) python manage.py createsuperuser si vas a la pagina u pones /admin te lleva al panel de administracion de django y entras con el usuario creado
+
+
+8)  ahora se crean los "modelos que serian clases" dentro de la app en el archivo (models) 
+
+
+
+
+
+
+
+
+
