@@ -1,8 +1,8 @@
 import sqlite3
-import os
+import Agenda.Base_de_datos as BD
 
 def crear_tabla_contactos () :
-    cursor = abrir_base ()
+    cursor = BD.abrir_base ()
 
     cursor.execute("""CREATE TABLE IF NOT EXISTS Contactos (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -14,9 +14,8 @@ def crear_tabla_contactos () :
 
     cursor.close ()
 
-
 def agregar (nuevo_contenido) :
-    ruta_db = crear_ruta ()
+    ruta_db = BD.crear_ruta ()
     conn = sqlite3.connect(ruta_db)
 
     nuevo_contenido = nuevo_contenido.split (",")
@@ -28,7 +27,7 @@ def agregar (nuevo_contenido) :
     cursor.close()
 
 def ver_contenido_Contactos () :
-    ruta_db = crear_ruta ()
+    ruta_db = BD.crear_ruta ()
     conn = sqlite3.connect(ruta_db)
 
     cursor = conn.cursor()
@@ -45,7 +44,7 @@ def ver_contenido_Contactos () :
     return lista_contenido
 
 def contacto_espesifico_id (por_ID) :
-    ruta_db = crear_ruta ()
+    ruta_db = BD.crear_ruta ()
     conn = sqlite3.connect(ruta_db)
 
     cursor = conn.cursor()
@@ -59,7 +58,7 @@ def contacto_espesifico_id (por_ID) :
     return contacto
 
 def borrar (borrar_ID) :
-    ruta_db = crear_ruta ()
+    ruta_db = BD.crear_ruta ()
     conn = sqlite3.connect(ruta_db)
 
     cursor = conn.cursor()
@@ -72,7 +71,7 @@ def actualisar_fila (contenido_editado, por_ID) :
     contenido_editado = contenido_editado.split (",")
     contenido_editado = tuple (contenido_editado)
 
-    ruta_db = crear_ruta ()
+    ruta_db = BD.crear_ruta ()
     conn = sqlite3.connect(ruta_db)
 
     cursor = conn.cursor()

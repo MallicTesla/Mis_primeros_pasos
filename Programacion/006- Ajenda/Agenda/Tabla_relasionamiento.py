@@ -1,7 +1,8 @@
 import sqlite3
+import Agenda.Base_de_datos as BD
 
 def crear_tabla_relasionamiento () :
-    ruta_db = crear_ruta ()
+    ruta_db = BD.crear_ruta ()
     conn = sqlite3.connect(ruta_db)
     cursor = conn.cursor()
 
@@ -16,7 +17,7 @@ def crear_tabla_relasionamiento () :
     cursor.close()
 
 def relacionamiento_nuevo (Contacto_id, Grupo_id) :
-    ruta_db = crear_ruta ()
+    ruta_db = BD.crear_ruta ()
     conn = sqlite3.connect(ruta_db)
 
     cursor = conn.cursor()
@@ -27,7 +28,7 @@ def relacionamiento_nuevo (Contacto_id, Grupo_id) :
     cursor.close()
 
 def contactos_en_grupos (contactos_grupo) :
-    ruta_db = crear_ruta ()
+    ruta_db = BD.crear_ruta ()
     conn = sqlite3.connect(ruta_db)
     cursor = conn.cursor()
 
@@ -47,7 +48,7 @@ def contactos_en_grupos (contactos_grupo) :
     return lista
 
 def grupos_en_contactos (grupos_contactos) :
-    ruta_db = crear_ruta ()
+    ruta_db = BD.crear_ruta ()
     conn = sqlite3.connect(ruta_db)
     cursor = conn.cursor()
 
@@ -66,3 +67,16 @@ def grupos_en_contactos (grupos_contactos) :
         lista += str (resultado) + "\n"
 
     return lista
+
+import sqlite3
+
+def desrelacionar_contacto_grupo(contacto_id, grupo_id):
+    ruta_db = BD.crear_ruta()
+    conn = sqlite3.connect(ruta_db)
+    cursor = conn.cursor()
+
+    cursor.execute('DELETE FROM Relacionamiento WHERE id_Contactos = ? AND id_Grupos = ?', (contacto_id, grupo_id))
+    conn.commit()
+
+    cursor.close()
+    conn.close()

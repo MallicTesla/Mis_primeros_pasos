@@ -1,7 +1,8 @@
 import sqlite3
+import Agenda.Base_de_datos as BD
 
 def crear_tabla_grupos () :
-    ruta_db = crear_ruta ()
+    ruta_db = BD.crear_ruta ()
     conn = sqlite3.connect(ruta_db)
     cursor = conn.cursor()
 
@@ -13,7 +14,7 @@ def crear_tabla_grupos () :
     conn.close ()
 
 def ver_contenido_Grupos () :
-    ruta_db = crear_ruta ()
+    ruta_db = BD.crear_ruta ()
     conn = sqlite3.connect(ruta_db)
 
     cursor = conn.cursor()
@@ -30,7 +31,7 @@ def ver_contenido_Grupos () :
     return lista_contenido
 
 def grupo_nuevo (nuevo_contenido) :
-    ruta_db = crear_ruta ()
+    ruta_db = BD.crear_ruta ()
     conn = sqlite3.connect(ruta_db)
 
     cursor = conn.cursor()
@@ -40,7 +41,7 @@ def grupo_nuevo (nuevo_contenido) :
     cursor.close()
 
 def actualisar_fila_grupos (contenido_editado, por_ID) :
-    ruta_db = crear_ruta ()
+    ruta_db = BD.crear_ruta ()
     conn = sqlite3.connect(ruta_db)
 
     cursor = conn.cursor()
@@ -50,7 +51,7 @@ def actualisar_fila_grupos (contenido_editado, por_ID) :
     cursor.close ()
 
 def nombre_grupo_id (por_ID) :
-    ruta_db = crear_ruta ()
+    ruta_db = BD.crear_ruta ()
     conn = sqlite3.connect(ruta_db)
 
     cursor = conn.cursor()
@@ -62,3 +63,13 @@ def nombre_grupo_id (por_ID) :
     cursor.close ()
 
     return contacto
+
+def borrar_grupo (borrar_ID) :
+    ruta_db = BD.crear_ruta ()
+    conn = sqlite3.connect(ruta_db)
+
+    cursor = conn.cursor()
+    cursor.execute(f"DELETE FROM Grupos WHERE id =?", (borrar_ID,))
+
+    conn.commit ()
+    cursor.close ()
