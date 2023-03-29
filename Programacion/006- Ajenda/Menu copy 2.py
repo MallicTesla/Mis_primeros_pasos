@@ -2,6 +2,7 @@ import Agenda.Base_de_datos as BD
 import Agenda.Tabla_contactos as TC
 import Agenda.Tabla_grupos as TG
 import Agenda.Tabla_relasionamiento as TR
+import os
 
 def menu () :
     while True :
@@ -29,7 +30,7 @@ def menu () :
                                 else :
                                     if TC.agregar(nuevo_contenido) :
                                         print (f"\n{nuevo_contenido} no cumple con las condisiones espesificadas")
-                                        print ("""Hubo un error al rellenar las columnas asegurate de que esten todas las columnas con contenido y separadas por una , 
+                                        print ("""Hubo un erro al rellenar las columnas asegurate de que esten todas las columnas con contenido y separadas por una , 
 y si una columna va vacia se agrega un espasio y , menos si es la ultima recuerda que tenes que tener 3 , en total \n """)
 
                                 de_donde = "agregar otro contacto"
@@ -42,8 +43,7 @@ y si una columna va vacia se agrega un espasio y , menos si es la ultima recuerd
                         case "3" :
                             while True :
                                 print(f"Contactos \nID,Nomvre, Apellido, Telefono, Emeil\n{TC.ver_contenido_Contactos ()}")
-                                mensaje = "Escrive el ID del contacto a borrar\n"
-                                borrar_ID = si_nummeros (mensaje)
+                                borrar_ID = int (input ("Escrive el ID del contacto a borrar\n"))
 
                                 if TC.contacto_espesifico_id(borrar_ID) is True :
                                     print (f"El ID seleccionar ({borrar_ID}) no existe verifique el ID")
@@ -52,7 +52,8 @@ y si una columna va vacia se agrega un espasio y , menos si es la ultima recuerd
                                     print (f"Seguro que quieres borar a : \n{TC.contacto_espesifico_id(borrar_ID)}\n1) Si \n2) No")
                                     seguro = input ()
 
-                                    if seguro == "1" and TC.borrar (borrar_ID) :
+                                    if seguro == "1" :
+                                        if TC.borrar (borrar_ID) :
                                             print (f"El ID seleccionar ({borrar_ID}) no existe verifique el ID")
 
                                 de_donde = "borrar otro contacto"
@@ -62,8 +63,7 @@ y si una columna va vacia se agrega un espasio y , menos si es la ultima recuerd
                         case "4" :
                             while True :
                                 print(f"Contactos \nID,Nomvre, Apellido, Telefono, Emeil\n{TC.ver_contenido_Contactos ()}")
-                                mensaje = "Escrive el ID del contacto a borrar\n"
-                                por_ID = si_nummeros (mensaje)
+                                por_ID =  int (input ("Escrive el ID del contacto a editar\n"))
                                 contenido_editado = input ("Escriva el nuevo contacto separado por , y si una columna va vacia se agrega un espasio y , menos si es la ultima\nNomvre, Apellido, Telefono, Emeil\n")
 
                                 if TC.contacto_espesifico_id(por_ID) is True :
@@ -88,7 +88,7 @@ y si una columna va vacia se agrega un espasio y , menos si es la ultima recuerd
             case "2" :
                 while True :
                     opsion = input ("""1) Crear grupo\n2) Ver los nombres de los grupos existentes \n3) Editar el nombre de un grupo \n4) Borar un grupo
-6) Ver que contactos estan en un grupo y agregar o sacar a otro \n7) Ver a que grupos pertenese un contacto y agregar o sacar a otro\nPrecione cualquier tecla para regresar\n""")
+6) Ver que contactos estan en un grupo y agregar o sacar a otro \n7) Ver a que grupos pertenese un contacto y agregar o sacar a otro\n8) Eliminar a un contacto de un grupo \nPrecione cualquier tecla para regresar\n""")
 
                     match opsion :
                         case "1" :
@@ -112,8 +112,7 @@ y si una columna va vacia se agrega un espasio y , menos si es la ultima recuerd
                         case "3" :
                             while True :
                                 print (f"Grupos :\nID  Nombre de los grupos\n{TG.ver_contenido_Grupos()}")
-                                mensaje = "Elegir el ID del nombre del grupo a editar ID : "
-                                por_ID = si_nummeros (mensaje)
+                                por_ID = int (input("Elegir el ID del nombre del grupo a editar ID : "))
 
                                 if TG.nombre_grupo_id (por_ID) is True:
                                     print (f"No existe ningun grupo con el ID {por_ID}\n")
@@ -140,8 +139,7 @@ y si una columna va vacia se agrega un espasio y , menos si es la ultima recuerd
                         case "4" :
                             while True :
                                 print(f"ID  Nombre de los grupos\n{TG.ver_contenido_Grupos ()}")
-                                mensaje = "Escrive el ID del grupo a borrar\n"
-                                borrar_ID = si_nummeros (mensaje)
+                                borrar_ID = int (input ("Escrive el ID del grupo a borrar\n"))
 
                                 if TG.nombre_grupo_id (borrar_ID) is True:
                                     print (f"No existe ningun grupo con el ID {borrar_ID}\n")
@@ -157,11 +155,37 @@ y si una columna va vacia se agrega un espasio y , menos si es la ultima recuerd
                                 if regresar (de_donde) :
                                     break
 
+                        case "5" :
+                            while True :
+                                print(f"Contactos \nID,Nomvre, Apellido, Telefono, Emeil\n{TC.ver_contenido_Contactos ()}")
+                                Contacto_id = int (input ("Selecsionar el ID del contacto para agregarlo a un grupo : "))
+
+                                if TC.contacto_espesifico_id(Contacto_id) is True :
+                                    print (f"El ID seleccionar ({Contacto_id}) no existe verifique el ID")
+
+                                else :
+                                    print (f"Grupos :\nID  Nombre de los grupos\n{TG.ver_contenido_Grupos()}")
+                                    Grupo_id = int (input("Selecsionar un ID de un grupo para agregarselo al contacto : "))
+
+                                    if TG.nombre_grupo_id (Grupo_id) is True:
+                                        print (f"No existe ningun grupo con el ID {Grupo_id}\n")
+
+                                    else :
+                                        print (f"Seguro que quiere agregar a {TC.contacto_espesifico_id(Contacto_id)}\nal grupo {TG.nombre_grupo_id (Grupo_id)}\n1) Si \n2) No")
+                                        seguro = input ()
+
+                                        if seguro == "1" :
+                                            if TR.relacionamiento_nuevo (Contacto_id, Grupo_id) is True:
+                                                print ("El contacto ya esta en ese grupo")
+
+                                de_donde = "agregar a otro contacto a otro grupo"
+                                if regresar (de_donde) :
+                                    break
+
                         case "6" :
                             while True :
                                 print (f"\nID  Nombre de los grupos\n{TG.ver_contenido_Grupos()}")
-                                mensaje = "Elegir el id del grupo a ver : "
-                                grupo_id = si_nummeros (mensaje)
+                                grupo_id = int (input ("Elegir el id del grupo a ver : "))
 
                                 if TG.nombre_grupo_id (grupo_id) is True:
                                     print (f"No existe ningun grupo con el ID {grupo_id}\n")
@@ -175,8 +199,7 @@ y si una columna va vacia se agrega un espasio y , menos si es la ultima recuerd
 
                                     if quiero == "1" :
                                         print(f"Contactos \nID,Nomvre, Apellido, Telefono, Emeil\n{TC.ver_contenido_Contactos ()}")
-                                        mensaje = "Escrive el ID del contacto a agregar \n"
-                                        contacto_id = si_nummeros (mensaje)
+                                        contacto_id = int (input ("Escrive el ID del contacto a agregar \n"))
 
                                         if TC.contacto_espesifico_id(contacto_id) is True :
                                             print (f"El ID seleccionar ({contacto_id}) no existe verifique el ID")
@@ -185,12 +208,12 @@ y si una columna va vacia se agrega un espasio y , menos si es la ultima recuerd
                                             print (f"Seguro que quiere agregar a {TC.contacto_espesifico_id(contacto_id)}\nal grupo {TG.nombre_grupo_id (grupo_id)[1]}\n1) Si \n2) No")
                                             seguro = input ()
 
-                                            if seguro == "1" and TR.relacionamiento_nuevo (contacto_id, grupo_id) is True:
+                                            if seguro == "1" :
+                                                if TR.relacionamiento_nuevo (contacto_id, grupo_id) is True:
                                                     print ("El contacto ya esta en ese grupo")
 
                                     elif quiero == "2" :
-                                        mensaje = "Selecsione el ide del contacto a sacar :"
-                                        contacto_id = si_nummeros (mensaje)
+                                        contacto_id = int (input("Selecsione el ide del contacto a sacar :"))
 
                                         if TR.desrelacionar_contacto_grupo(contacto_id, grupo_id) is True:
                                             print (f"No existe ningun contacto con el ID {contacto_id}\n")
@@ -202,8 +225,7 @@ y si una columna va vacia se agrega un espasio y , menos si es la ultima recuerd
                         case "7" :
                             while True :
                                 print(f"Contactos \nID,Nomvre, Apellido, Telefono, Emeil\n{TC.ver_contenido_Contactos ()}")
-                                mensaje = "Elegir el id del contacto a ver : "
-                                contacto_id = si_nummeros (mensaje)
+                                contacto_id = int (input ("Elegir el id del contacto a ver : "))
 
                                 if TC.contacto_espesifico_id(contacto_id) is True :
                                     print (f"El ID seleccionar ({contacto_id}) no existe verifique el ID")
@@ -216,9 +238,7 @@ y si una columna va vacia se agrega un espasio y , menos si es la ultima recuerd
 
                                 if quiero == "1" :
                                     print (f"\nID  Nombre de los grupos\n{TG.ver_contenido_Grupos()}")
-
-                                    mensaje = "Elegir el id del grupo a agregar : "
-                                    grupo_id = si_nummeros (mensaje)
+                                    grupo_id = int (input ("Elegir el id del grupo a agregar : "))
 
                                     if TG.nombre_grupo_id (grupo_id) is True:
                                         print (f"No existe ningun grupo con el ID {grupo_id}\n")
@@ -227,17 +247,33 @@ y si una columna va vacia se agrega un espasio y , menos si es la ultima recuerd
                                         print (f"Seguro que quiere agregar a {TC.contacto_espesifico_id(contacto_id)}\nal grupo {TG.nombre_grupo_id (grupo_id)[1]}\n1) Si \n2) No")
                                         seguro = input ()
 
-                                        if seguro == "1" and TR.relacionamiento_nuevo (contacto_id, grupo_id) is True:
+                                        if seguro == "1" :
+                                            if TR.relacionamiento_nuevo (contacto_id, grupo_id) is True:
                                                 print ("El contacto ya esta en ese grupo")
 
                                 elif quiero == "2" :
-                                    mensaje = "Selecsione el ide del grupo a sacar :"
-                                    grupo_id = si_nummeros (mensaje)
+                                    grupo_id = int (input("Selecsione el ide del grupo a sacar :"))
 
                                     if TR.desrelacionar_contacto_grupo(contacto_id, grupo_id) is True:
                                         print (f"No existe ningun grupo con el ID {grupo_id}\n")
 
                                 de_donde = "ver otro contacto"
+                                if regresar (de_donde) :
+                                    break
+
+                        case "8" :
+                            while True :
+                                print (f"Eliga el ID del contacto y despues el ID del grupo\n")
+
+                                print(f"Contactos : \nID,Nomvre, Apellido, Telefono, Emeil\n{TC.ver_contenido_Contactos ()}")
+                                contacto_id = int (input("elegir el ID del contacto : "))
+
+                                print(f"ID  Nombre de los grupos\n{TG.ver_contenido_Grupos ()}")
+                                grupo_id = int (input("Elegir el ID del grupo : "))
+
+                                TR.desrelacionar_contacto_grupo(contacto_id, grupo_id)
+
+                                de_donde = "eliminar a otro contacto de otro grupo"
                                 if regresar (de_donde) :
                                     break
 
@@ -254,14 +290,5 @@ def regresar (de_donde) :
         return False
     else :
         return True
-
-def si_nummeros (mensaje) :
-    while True :
-        try :
-            numero = int (input (mensaje))
-            return numero
-
-        except ValueError :
-            print ("Ingresastes caracteres no válidos")
 
 menu ()

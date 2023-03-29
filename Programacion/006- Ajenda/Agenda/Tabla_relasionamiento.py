@@ -14,18 +14,28 @@ def crear_tabla_relasionamiento () :
     FOREIGN KEY (id_Grupos) REFERENCES Grupos (id),
     UNIQUE (id_Contactos, id_Grupos))''')
 
+    conn.close()
     cursor.close()
 
 def relacionamiento_nuevo (Contacto_id, Grupo_id) :
     ruta_db = BD.crear_ruta ()
     conn = sqlite3.connect(ruta_db)
-
     cursor = conn.cursor()
-    cursor.execute("INSERT INTO Relacionamiento (id_Contactos, id_Grupos) VALUES (?, ?)", (Contacto_id, Grupo_id))
-    
 
-    conn.commit()
-    cursor.close()
+    try :
+        cursor.execute("INSERT INTO Relacionamiento (id_Contactos, id_Grupos) VALUES (?, ?)", (Contacto_id, Grupo_id))
+        conn.commit()
+
+        cursor.close()
+        conn.close()
+        return False
+
+    except sqlite3.IntegrityError:
+        cursor.close()
+        conn.close()
+        return True
+
+
 
 def contactos_en_grupos (contactos_grupo) :
     ruta_db = BD.crear_ruta ()
@@ -53,7 +63,7 @@ def grupos_en_contactos (grupos_contactos) :
     cursor = conn.cursor()
 
     cursor.execute('''
-    SELECT DISTINCT g.Nombre_grupos
+    SELECT DISTINCT g.id, g.Nombre_grupos
     FROM Grupos g
     JOIN Relacionamiento re ON re.id_Grupos = g.id
     JOIN Contactos c ON c.id = re.id_Contactos
@@ -68,15 +78,22 @@ def grupos_en_contactos (grupos_contactos) :
 
     return lista
 
-import sqlite3
-
 def desrelacionar_contacto_grupo(contacto_id, grupo_id):
     ruta_db = BD.crear_ruta()
     conn = sqlite3.connect(ruta_db)
     cursor = conn.cursor()
 
-    cursor.execute('DELETE FROM Relacionamiento WHERE id_Contactos = ? AND id_Grupos = ?', (contacto_id, grupo_id))
-    conn.commit()
+    cursor.execute('SELECT * FROM Relacionamiento WHERE id_Contactos = ? AND id_Grupos = ?', (contacto_id, grupo_id))
 
-    cursor.close()
-    conn.close()
+    if cursor.fetchone() is None:
+        cursor.close ()
+        conn.close
+        return True
+
+    else :
+        cursor.execute('DELETE FROM Relacionamiento WHERE id_Contactos = ? AND id_Grupos = ?', (contacto_id, grupo_id))
+        conn.commit()
+
+        cursor.close()
+        conn.close()
+        return False

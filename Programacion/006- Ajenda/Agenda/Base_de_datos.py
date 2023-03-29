@@ -1,3 +1,6 @@
+import Agenda.Tabla_contactos as TC
+import Agenda.Tabla_grupos as TG
+import Agenda.Tabla_relasionamiento as TR
 import sqlite3
 import os
 
@@ -20,3 +23,12 @@ def abrir_base () :
     conn = sqlite3.connect(ruta_db)
     cursor = conn.cursor()
     return cursor
+
+def primera_vez () :
+    ruta_db = crear_ruta ()
+    if not os.path.exists(ruta_db):
+        TC.crear_tabla_contactos ()
+        TG.crear_tabla_grupos ()
+        TR.crear_tabla_relasionamiento ()
+
+    return False

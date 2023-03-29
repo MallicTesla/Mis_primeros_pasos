@@ -52,7 +52,8 @@ y si una columna va vacia se agrega un espasio y , menos si es la ultima recuerd
                                     print (f"Seguro que quieres borar a : \n{TC.contacto_espesifico_id(borrar_ID)}\n1) Si \n2) No")
                                     seguro = input ()
 
-                                    if seguro == "1" and TC.borrar (borrar_ID) :
+                                    if seguro == "1" :
+                                        if TC.borrar (borrar_ID) :
                                             print (f"El ID seleccionar ({borrar_ID}) no existe verifique el ID")
 
                                 de_donde = "borrar otro contacto"
@@ -185,7 +186,8 @@ y si una columna va vacia se agrega un espasio y , menos si es la ultima recuerd
                                             print (f"Seguro que quiere agregar a {TC.contacto_espesifico_id(contacto_id)}\nal grupo {TG.nombre_grupo_id (grupo_id)[1]}\n1) Si \n2) No")
                                             seguro = input ()
 
-                                            if seguro == "1" and TR.relacionamiento_nuevo (contacto_id, grupo_id) is True:
+                                            if seguro == "1" :
+                                                if TR.relacionamiento_nuevo (contacto_id, grupo_id) is True:
                                                     print ("El contacto ya esta en ese grupo")
 
                                     elif quiero == "2" :
@@ -227,7 +229,8 @@ y si una columna va vacia se agrega un espasio y , menos si es la ultima recuerd
                                         print (f"Seguro que quiere agregar a {TC.contacto_espesifico_id(contacto_id)}\nal grupo {TG.nombre_grupo_id (grupo_id)[1]}\n1) Si \n2) No")
                                         seguro = input ()
 
-                                        if seguro == "1" and TR.relacionamiento_nuevo (contacto_id, grupo_id) is True:
+                                        if seguro == "1" :
+                                            if TR.relacionamiento_nuevo (contacto_id, grupo_id) is True:
                                                 print ("El contacto ya esta en ese grupo")
 
                                 elif quiero == "2" :
@@ -262,6 +265,6 @@ def si_nummeros (mensaje) :
             return numero
 
         except ValueError :
-            print ("Ingresastes caracteres no válidos")
+            print (f"Estos caracteres {numero} no es válido")
 
 menu ()

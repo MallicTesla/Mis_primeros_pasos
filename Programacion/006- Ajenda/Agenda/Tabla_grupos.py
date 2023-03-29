@@ -14,21 +14,26 @@ def crear_tabla_grupos () :
     conn.close ()
 
 def ver_contenido_Grupos () :
-    ruta_db = BD.crear_ruta ()
-    conn = sqlite3.connect(ruta_db)
+    try :
+        ruta_db = BD.crear_ruta ()
+        conn = sqlite3.connect(ruta_db)
 
-    cursor = conn.cursor()
-    cursor.execute(f"SELECT * FROM Grupos")
-    dicsionario = cursor.fetchall()
+        cursor = conn.cursor()
+        cursor.execute(f"SELECT * FROM Grupos")
+        dicsionario = cursor.fetchall()
 
-    lista_contenido = ""
-    for lista in dicsionario :
-        lista_contenido  += str (lista) + "\n"
+        lista_contenido = ""
+        for lista in dicsionario :
+            lista_contenido  += str (lista) + "\n"
 
-    conn.commit ()
-    cursor.close ()
+        conn.commit ()
+        cursor.close ()
 
-    return lista_contenido
+        return lista_contenido
+
+    except sqlite3.ProgrammingError :
+        conn.rollback()
+        return True
 
 def grupo_nuevo (nuevo_contenido) :
     ruta_db = BD.crear_ruta ()
@@ -50,6 +55,20 @@ def actualisar_fila_grupos (contenido_editado, por_ID) :
     conn.commit ()
     cursor.close ()
 
+def grupo_espesifico_linia (nuevo_contenido) :
+    ruta_db = BD.crear_ruta ()
+    conn = sqlite3.connect(ruta_db)
+
+    cursor = conn.cursor()
+    cursor.execute(f"SELECT * FROM Grupos WHERE Nombre_grupos =?", (nuevo_contenido,))
+
+    if cursor.fetchone():
+        return True
+
+    conn.commit ()
+    cursor.close ()
+
+
 def nombre_grupo_id (por_ID) :
     ruta_db = BD.crear_ruta ()
     conn = sqlite3.connect(ruta_db)
@@ -57,12 +76,17 @@ def nombre_grupo_id (por_ID) :
     cursor = conn.cursor()
     cursor.execute(f"SELECT * FROM Grupos WHERE id =?", (por_ID,))
 
-    contacto = cursor.fetchone()
+    grupo = cursor.fetchone()
 
-    conn.commit ()
+    if grupo is None :
+        cursor.close ()
+        conn.close
+        return True
+
     cursor.close ()
+    conn.close
 
-    return contacto
+    return grupo
 
 def borrar_grupo (borrar_ID) :
     ruta_db = BD.crear_ruta ()
