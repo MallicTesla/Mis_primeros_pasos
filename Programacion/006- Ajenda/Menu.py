@@ -88,7 +88,7 @@ y si una columna va vacia se agrega un espasio y , menos si es la ultima recuerd
             case "2" :
                 while True :
                     opsion = input ("""1) Crear grupo\n2) Ver los nombres de los grupos existentes \n3) Editar el nombre de un grupo \n4) Borar un grupo
-6) Ver que contactos estan en un grupo y agregar o sacar a otro \n7) Ver a que grupos pertenese un contacto y agregar o sacar a otro\nPrecione cualquier tecla para regresar\n""")
+5) Ver que contactos estan en un grupo y agregar o sacar a otro \n6) Ver a que grupos pertenese un contacto y agregar o sacar a otro\nPrecione cualquier tecla para regresar\n""")
 
                     match opsion :
                         case "1" :
