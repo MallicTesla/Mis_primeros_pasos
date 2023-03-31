@@ -73,11 +73,11 @@ listaBola.add (bola)
 mapa = [
 "xxxxxxxxxxxxxxxx",
 "x              x",
-"x xxx xxxxxxxx x",
-"x x   x        x",
-"x xx xxxxx xxx x",
+"xxxxx xxxxxxxxxx",
+"x x            x",
+"x xx xxxxx xxxxx",
 "x              x",
-"xxxxxxx xxxx  xx",
+"xxxxxxxxxxxx  xx",
 "x              x",
 "xxxxxxxxxxxxxxxx"
 ]
