@@ -1,11 +1,15 @@
 import pygame
+import os
+
+ruta_carpeta = os.path.dirname(os.path.abspath(__file__))
+
 pygame.init ()
 
 # con esta clase se crean las paredes
 class Pared (pygame.sprite.Sprite) :
     def __init__(self) :
         super().__init__()
-        self.image = pygame.image.load ("C:\\Pruebas\\Imagenes\\pared01.jpg").convert ()
+        self.image = pygame.image.load (f"{ruta_carpeta}\\pared01.jpg").convert ()
         # combierte la imajeb rectangulo
         self.rect = self.image.get_rect ()
 
@@ -13,7 +17,7 @@ class Pared (pygame.sprite.Sprite) :
 class Bola (pygame.sprite.Sprite) :
     def __init__(self) :
         super().__init__()
-        self.image = pygame.image.load ("C:\\Pruebas\\Imagenes\\Raton01.png").convert_alpha () # el convert_alpha es para que el png aparesca con si transparencia
+        self.image = pygame.image.load (f"{ruta_carpeta}\\Raton01.png").convert_alpha () # el convert_alpha es para que el png aparesca con si transparencia
         # combierte la imagen en un rectangulo
         self.rect = self.image.get_rect ()
 
