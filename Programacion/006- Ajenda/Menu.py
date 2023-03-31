@@ -157,7 +157,7 @@ y si una columna va vacia se agrega un espasio y , menos si es la ultima recuerd
                                 if regresar (de_donde) :
                                     break
 
-                        case "6" :
+                        case "5" :
                             while True :
                                 print (f"\nID  Nombre de los grupos\n{TG.ver_contenido_Grupos()}")
                                 mensaje = "Elegir el id del grupo a ver : "
@@ -199,7 +199,7 @@ y si una columna va vacia se agrega un espasio y , menos si es la ultima recuerd
                                 if regresar (de_donde) :
                                     break
 
-                        case "7" :
+                        case "6" :
                             while True :
                                 print(f"Contactos \nID,Nomvre, Apellido, Telefono, Emeil\n{TC.ver_contenido_Contactos ()}")
                                 mensaje = "Elegir el id del contacto a ver : "
