@@ -1,3 +1,5 @@
+http://127.0.0.1:8000/                          url 
+
 (direcsion) dir                                 se ve lo que ahi dentro de la carpeta
 (direcsion) python manage.py runserver          enpiesa a corer el servidor 
 (direcsion) python manage.py makemigrations     es para ver si uvo modificaciones
@@ -16,37 +18,59 @@
 se ejecuta python manage.py runserver y funsiona
 
 
-2)  se creo la app catalog con ((direcsion/ PrimerDjango) python manage.py atartapp catalog)  al final va el nombre
+2)  se crea la app catalog con ((direcsion/ miproyecto) python manage.py startapp catalog)  al final va el nombre
 
 
-3)  en (direcsion) /PrimerDjango/settings
+3)  en (direcsion) /miproyecto/settings
     en la funcion INSTALLED_APPS al final se coloca la linea "catalog.apps.CatalogConfig" para conectar la app catalog
 
 
-4)  (direcsion) /PrimerDjango/
+4)  (direcsion) /miproyecto/
     se importa (from django.urls import path, include) y en la funcion urlpatterns se agrega path("catalog/", include("catalog.urls"))
 
 
 5)  en (direcsion) se va a la app catalog
     y se crea un nuevo fichero llamado (urls.py) y se agrega 
+    urlpatterns = []
+
+    mas adelante se usa esto otro 
+
     from django.conf.urls import url
     # con (from .) se llama a todos los archivos de la carpeta en la que se encuentra esta
     from . import views
-    urlpatterns = []
 
-se ejecuta python manage.py runserver y funsiona
+se ejecuta python manage.py runserver y funsiona 
 
 
-6)  (direcsion) python manage.py makemigrationes    es para ver si uvo modificaciones
+6)  (direcsion) dir                                 se ve lo que ahi dentro de la carpeta
+    (direcsion) python manage.py makemigrations     es para ver si uvo modificaciones
     (direcsion) python manage.py migrate            se ejecutan los cambios echos
 
 
-7)  (direcsion) python manage.py createsuperuser si vas a la pagina u pones /admin te lleva al panel de administracion de django y entras con el usuario creado
+7)  (direcsion) python manage.py createsuperuser
+    crea un usuario supr admin 
+
+    si vas a la pagina y pones /admin te lleva al panel de administracion de django y entras con el usuario creado
 
 
 8)  ahora se crean los "modelos que serian clases" dentro de la app en el archivo (models) 
 
+9)  despues de crear el modelo se hacer el python manage.py makemigrations para preparar el fichero de imigracion
+    y despues se ejecuta python manage.py migrate para aplicar todos los cambios echos 
 
+10) se va dentro de la app (catalog) a el archivo admin.py para registrar los modelos 
+    se importan todos los modelos (clases) que se crearon dentro del archibo models
+    despues se registran todos los modelos en el panel de administrasion
+    y despues se ejecuta el servidor python manage.py runserver para asegurarnos que todo quedo y entras a la direcsion http://127.0.0.1:8000/admin
+
+11) para agregarle una interfas grafica se va a la app (catalog) al archibo urls.py y se crea una url 
+
+12) se va dentro de la app (catalog) a el archivo views.py y se crrea la funcion index 
+    luego se ejecuta python manage.py runserver y deveria de funcionar aunque da un error que falta el archivo html
+
+13) se crea una carpeta llamada templates dentro de la app (catalog) y dentro van los archivos html (base_generic) (index)
+    y al archivo urls de myproyecto al final de la lista se agrega + static (settings.STATIC_URL, document_root = settings.STATIC_URL) mas sus import
+    
 
 
 
