@@ -70,11 +70,3 @@ se ejecuta python manage.py runserver y funsiona
 
 13) se crea una carpeta llamada templates dentro de la app (catalog) y dentro van los archivos html (base_generic) (index)
     y al archivo urls de myproyecto al final de la lista se agrega + static (settings.STATIC_URL, document_root = settings.STATIC_URL) mas sus import
-    
-
-
-
-
-
-
-

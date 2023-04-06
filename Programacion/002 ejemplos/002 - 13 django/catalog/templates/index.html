@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+<!-- todo lo que esta entre % block content % y % endblock % lo envia a otro archivo html  -->
+{% block content %}
+<h1>Mi primera libreria con Django</h1>
+
+    <p>Bienvenido a mi prier <em>Libreria con Django</em>, sepame disculpar por todos los posibles errores pero estate atento para la vercion 2</p>
+
+<h2>Lo que tenemos</h2>
+
+    <p>La biblioteca tiene los siguientes recuentos de registros:</p>
+    <ul>
+        <!-- de esta forma un html acsede a una informasion determinada de un fichero en este caso acsede al fichero views   -->
+        <li><strong>Libros:</strong>{{ num_books }}</li>
+        <li><strong>Copias:</strong>{{ num_inctances }}</li>
+        <li><strong>Copias disponivles:</strong>{{ disponivles }}</li>
+        <li><strong>Diferentes autores:</strong>{{ num_authors }}</li>
+    </ul>
+
+{% endblock %}
