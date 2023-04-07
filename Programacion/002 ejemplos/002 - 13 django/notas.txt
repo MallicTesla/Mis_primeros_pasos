@@ -60,7 +60,7 @@ se ejecuta python manage.py runserver y funsiona
     despues se registran todos los modelos en el panel de administrasion
     y despues se ejecuta el servidor python manage.py runserver para asegurarnos que todo quedo y entras a la direcsion http://127.0.0.1:8000/admin
 
-11) para agregarle una interfas grafica se va a la app (catalog) al archibo urls.py y se crea una url 
+11) para agregarle una interfas grafica se va a la app (catalog) al archibo urls.py y se crea una urls 
 
 12) se va dentro de la app (catalog) a el archivo views.py y se crrea la funcion index 
     luego se ejecuta python manage.py runserver y deveria de funcionar aunque da un error que falta el archivo html
