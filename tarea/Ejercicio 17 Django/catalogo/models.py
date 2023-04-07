@@ -36,7 +36,7 @@ class Instancia_pelicula (models.Model) :
 
     status = models.CharField (max_length = 1, choices = ESTADOS, blank = True, default = "M", help_text = "Disponibilidad del pelicula")
 
-    class Mate : 
+    class Mete : 
         ordering = ["estado_de_la_pelicula"]
 
     def __str__(self) :

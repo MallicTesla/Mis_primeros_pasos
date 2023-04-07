@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Mi primera catalogo de peliculas con Django</h1>
+
+    <p>Bienvenido a mi prier <em>Catalogo de peliculas con Django</em>, sepame disculpar por todos los posibles errores pero estate atento para la vercion 2</p>
+
+<h2>Lo que tenemos</h2>
+
+    <p>Esta variedades :</p>
+    <ul>
+        <li><strong>Peliculas:</strong>{{ Cantidad_de_peliculas }}</li>
+        <li><strong>Copias:</strong>{{ Instancias_de_peliculas }}</li>
+        <li><strong>Copias disponivles:</strong>{{ Peliculas_disponivles }}</li>
+        <li><strong>Diferentes directores:</strong>{{ Cantidad_de_directores }}</li>
+    </ul>
+
+{% endblock %}
