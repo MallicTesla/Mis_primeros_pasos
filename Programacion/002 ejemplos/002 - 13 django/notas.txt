@@ -12,13 +12,13 @@ http://127.0.0.1:8000/                          url
 
 
 
-1)  en la consola con (django-admin startproject PrimerDjango .) se crea el prollecto con el nombre (PrimerDjango) al final. tambien al prinsipio 
+1)  en la consola con (django-admin startproject PrimerDjango .) se crea el prollecto con el nombre (PrimerDjango) al final va un (.) tambien al prinsipio 
     va la direcsion en la que queres que se cree
 
 se ejecuta python manage.py runserver y funsiona
 
 
-2)  se crea la app catalog con ((direcsion/ miproyecto) python manage.py startapp catalog)  al final va el nombre
+2)  se crea la app catalog con ((direcsion/ miproyecto) python manage.py startapp catalog) catalog es el nombre que se puede cambiar al final va el nombre
 
 
 3)  en (direcsion) /miproyecto/settings
@@ -37,21 +37,18 @@ se ejecuta python manage.py runserver y funsiona
 
     from django.conf.urls import url
     # con (from .) se llama a todos los archivos de la carpeta en la que se encuentra esta
-    from . import views
+    from . import views 
 
-se ejecuta python manage.py runserver y funsiona 
-
-
-6)  (direcsion) dir                                 se ve lo que ahi dentro de la carpeta
-    (direcsion) python manage.py makemigrations     es para ver si uvo modificaciones
-    (direcsion) python manage.py migrate            se ejecutan los cambios echos
-
-
-7)  (direcsion) python manage.py createsuperuser
+6)  (direcsion) python manage.py createsuperuser
     crea un usuario supr admin 
+
+    se ejecuta python manage.py runserver y funsiona
 
     si vas a la pagina y pones /admin te lleva al panel de administracion de django y entras con el usuario creado
 
+7)  (direcsion) dir                                 se ve lo que ahi dentro de la carpeta
+    (direcsion) python manage.py makemigrations     es para ver si uvo modificaciones
+    (direcsion) python manage.py migrate            se ejecutan los cambios echos
 
 8)  ahora se crean los "modelos que serian clases" dentro de la app en el archivo (models) 
 
@@ -70,3 +67,32 @@ se ejecuta python manage.py runserver y funsiona
 
 13) se crea una carpeta llamada templates dentro de la app (catalog) y dentro van los archivos html (base_generic) (index)
     y al archivo urls de myproyecto al final de la lista se agrega + static (settings.STATIC_URL, document_root = settings.STATIC_URL) mas sus import
+
+    author          Director
+    name            nombre
+    summary         resumen
+    genre           genero
+    Genre           Genero
+    book-detail     Detales-de-pelicula
+    BookInstance    Instancia_pelicula
+    book            pelicula
+    Book            Pelicula
+    due_back        estado_de_la_pelicula
+    LOAN_STATUS     ESTADOS
+
+    ("m", "Maintenence"),
+    ("o", "On loan"),
+    ("a", "Available"),
+    ("r", "Reserced"),
+
+    ("M", "Mantenimiento"),
+    ("P", "Prestado"),
+    ("D", "Disponible"),
+    ("R", "Reservado"),
+
+    Author          Director
+    author-detail   Detalles del director
+    first_name      primer_nombre
+    last_name       apellido
+    date_of_birth   fecha_nacimiento
+    date_of_death   fecha_defuncion
