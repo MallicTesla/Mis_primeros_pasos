@@ -12,5 +12,4 @@ except ValueError:
     globals
     print("te dije que me pongas un numero ")
 
-
 print (N1+N2)

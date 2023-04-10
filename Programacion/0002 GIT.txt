@@ -1,0 +1,46 @@
+estos comandos son para git y se escriben en la terminal de GIT BASH
+
+git config --global -h                  muestra todos los comandos de git
+git config --global user.name           cambiar el nombre se usuario si el nombre lleva separasion va adentro de ""
+git config --global user.email          combia el email
+git config --global core.editor         estavlese a visual studio como el editor pre determinado y si al finals se agrega "code --wait" la terminal se queda esperando asta que se siere el editor pre determinado
+git config --global -e                  muesta la configuracion de git
+git config --global core.autocrlf true  cambia de forma automatica el salto de linia para que lo vean mac y linux
+
+algunos comandos de BASH
+ls                                      muestra todo lo que contiene el archico en el que me encuentro
+ls -adentro                             muestra todo lo que esta oculto 
+pwd                                     muestra el archico en el que estoy
+cd                                      estableses una ruta para tarabajar 
+cd ..                                   regresa a una carpeta anterior
+mkdir nombre                            crrea una carpeta si el nombre tiene espasio crea otra carpeta
+mv (origen destino)                     combia el nombre de un archivo
+cat (nombre del archivo)                muestra lo que tiene el archivo
+
+comandos de GIT
+
+git init                                se inisia un repositorio en git vacio en la ruta que te encontras
+code .                                  el code abre visual estudios y el . lo abre en la carpeta en la que se encuentra
+git status                              muestra el estado actual del repositorio si esta en rojo esta modificado y no esta selecsionado y en verde si
+git status -s                           muestra solo el nombre de los archivos y la inisial del tipo de cambio a sufrido 
+git add (nombre del archivo o .)        con el nombre selecsionas los archivos de forma individual y con . agregas todos los archivos
+git commit -m "mensage"                 para hacer un commit de los ficheros selecsionados y dentro de las comillas "" es el mensaje del commit
+git commit                              te abre una pestaña en visual y tenes que poner el mensaje ehi
+git rm nombre del archivo               remueve el archivo
+git restore --staget nombre del archivo desmarca un archivo
+git restore nombre del archivo          desase los cambios echos
+git mv origen destino                   combia el nombre de un archivo y lo marca
+git diff                                muestra de forma visual los cambios echos en el los archivos antes de selecsionarlos
+git diff --staget                       muestra de forma visual los cambios echos en el los archivos despues de selecsionarlos
+git log                                 muestra muy detallado el historial del repositorio
+git log --oneline                       muestra el historial de los commit con un id para localisar ese registro dentro de git
+git branch                              muestra en que rama estas trabajando
+git checkout -b (nombre de la rama)     crea una rama nueva y entras
+git checkout (nombre de la rama)        vas a la rama que mencionas
+git merge (nombre de la rama)           estando en la rama principal junta una ram con la rama prinsipal
+
+
+para que git ignore un archivo tenes que crrea un archico con el nombre de .gitignore y dentro colocas los nombre de los archivos a ignorar el archico gitignore tiene que estar al mismo nivel del archico a ignorar
+tambien se pueden ignorar rutas que al final ahi que ponerle una diagonal \
+
+para agregar un nuevo repositorio se crea uno en github y con el link que te dan se coloca en la consola de BASH
