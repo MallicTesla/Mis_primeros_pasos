@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+# se importa la funcion
+from . import views
 
+#   se crea una nueva ruta con la funcion creada en views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # primero se crea el nombre de la ruta y despues va la funcion u despues se puede colocar un nombre a esta ruta para usarla mas adelante para no andar escriviendo toda la ruta
+    path ("saludo/", views.saludo, name = "saludo"),
+    path ("despedida/", views.despedida, name = "despedida")
 ]

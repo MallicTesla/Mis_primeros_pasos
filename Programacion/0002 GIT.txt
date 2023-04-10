@@ -40,7 +40,7 @@ git checkout (nombre de la rama)        vas a la rama que mencionas
 git merge (nombre de la rama)           estando en la rama principal junta una ram con la rama prinsipal
 
 
-para que git ignore un archivo tenes que crrea un archico con el nombre de .gitignore y dentro colocas los nombre de los archivos a ignorar el archico gitignore tiene que estar al mismo nivel del archico a ignorar
+para que git ignore un archivo tenes que crrea un archico con el nombre de .gitignore y dentro colocas los nombre de los archivos y carpetas a ignorar el archico gitignore tiene que estar al mismo nivel del archico a ignorar
 tambien se pueden ignorar rutas que al final ahi que ponerle una diagonal \
 
 para agregar un nuevo repositorio se crea uno en github y con el link que te dan se coloca en la consola de BASH
