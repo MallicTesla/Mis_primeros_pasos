@@ -1,0 +1,4 @@
+1)  en el archivo settings en Plantillas en la parte de TEMPLATES donde dise "DIRS": ["templates"] se colocoa el nombre de la carpeta donde estan las plantillas a usar
+
+2)  Plantilas/views
+    se importa el modulo from django.shortcuts import render se usa para renderisar el archibo html
