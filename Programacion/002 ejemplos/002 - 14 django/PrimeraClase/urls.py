@@ -21,7 +21,11 @@ from . import views
 #   se crea una nueva ruta con la funcion creada en views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # primero se crea el nombre de la ruta y despues va la funcion u despues se puede colocar un nombre a esta ruta para usarla mas adelante para no andar escriviendo toda la ruta
+    #   primero se crea el nombre de la ruta "que va dentro de las comillas" y despues va la funcion y despues se puede colocar un nombre a esta ruta para usarla mas adelante para no andar escriviendo toda la ruta
+    #   "saludo/" esto seria rutas estaticas
     path ("saludo/", views.saludo, name = "saludo"),
-    path ("despedida/", views.despedida, name = "despedida")
+    path ("despedida/", views.despedida, name = "despedida"),
+    #   para ponerle variavles a un link se utilisa (<int:variavle>) de esta forma si cambias la edad en el nabegador le pasas el parametro a la fincion
+    #   y luego la funcion te redirige a lo que aga dicha funcion
+    path ("adulto/<int:edad>/", views.adulto, name = "adulto")
 ]

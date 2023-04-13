@@ -8,3 +8,10 @@ def saludo (request) :
 
 def despedida (request) :
     return HttpResponse ("Menos mal que funciono")
+
+#   en caso que se le tenga que pasar un parametro se coloca primero el request
+def adulto (request, edad) :
+    if edad >= 18 :
+        return HttpResponse ("eres mallor de edad")
+    else :
+        return HttpResponse ("sos menor de edad")
