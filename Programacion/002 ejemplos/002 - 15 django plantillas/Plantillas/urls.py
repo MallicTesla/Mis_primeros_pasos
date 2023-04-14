@@ -19,5 +19,8 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path ("simple/", views.simple, name = "simple")
+    path ("simple/", views.simple, name = "simple"),
+    #   asi toma informacion de la url que le pasamos
+    path ("dinamico/<str:nombre>/", views.dinamico, name = "dinamico"),
+
 ]

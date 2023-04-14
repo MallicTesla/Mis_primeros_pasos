@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang = "es">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv = "X-UA-Compatible" content = "IE = edge">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <title>Dinamico</title>
+</head>
+<body>
+<!-- asi se le pasa una variavle la variavle puede tener informacion mas compleja como objetos -->
+    <h1>Hola {{nombre}}</h1>
+    <h3>Categorias</h3>
+    <!-- asi se creea una lista -->
+    <ul>
+        <!-- para usar funciones de python se colocan entre signos de porsentaje y entre llaves -->
+        {% for categoria in categorias %}
+            {% if categoria == "code" %}
+                <li><b>{{ categoria }}</b></li>
+
+            {% else %}
+                <li>{{ categoria }}</li>
+
+            {% endif %}
+        {% endfor %}
+    </ul>
+</body>
+</html>
