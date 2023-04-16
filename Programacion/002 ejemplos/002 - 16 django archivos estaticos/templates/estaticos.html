@@ -1,0 +1,18 @@
+{# asi se le dise al html que utilise un archivo de la carpeta static #}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {# en django para cargar un archivo estatico se hace asi  static (indica la carpeta ) 'style.css (el nombre del archivo)' #}
+    {# ademas ahi que hacer un par de cosas en settings #}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Estaticos</h1>
+</body>
+</html>

@@ -54,7 +54,7 @@ ROOT_URLCONF = 'estaticos.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -116,6 +116,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+#   ay que espesificar los directorios estaticos que se van a usar y ahi que pasarselos como una arai
+STATICFILES_DIRS = [
+    #   BASE_DIR / "se espesifican el directorio donde se encuentran los archivos estaticos"    
+    BASE_DIR / "static", 
+    # "/var/www/static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
