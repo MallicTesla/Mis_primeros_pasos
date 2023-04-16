@@ -10,6 +10,15 @@
 <!-- asi se le pasa una variavle la variavle puede tener informacion mas compleja como objetos -->
     <h1>Hola {{nombre}}</h1>
     <h3>Categorias</h3>
+    <!-- avajo ahi un comentario -->
+    {# este comentario no se ve {{}} #}
+    
+    {% comment %}
+    este comentario{{}}
+<!-- esto se ve -->
+    no se ve {{}}
+    y es multilinias {{}}
+    {% endcomment %}
     <!-- asi se creea una lista -->
     <ul>
         <!-- para usar funciones de python se colocan entre signos de porsentaje y entre llaves -->
@@ -22,6 +31,8 @@
 
             {% endif %}
         {% endfor %}
+        {# asi se coloca un filtro | (se escrive con ALT 124) y cuenta cuantas categorias ahi con un length #}
+        <h5>Total de categorias : {{ categorias|length }}</h5>
     </ul>
 </body>
 </html>

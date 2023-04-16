@@ -7,7 +7,7 @@ def simple (request) :
     return render (request,"simple.html", {} )
 
 def dinamico (request, nombre) :
-    categorias = ["code", "desing", "marketing"]
+    categorias = ["code", "desing", "code", "marketing"]
     contexto = {"nombre" : nombre, "categorias" : categorias}
     return render (request, "dinamico.html", contexto)
 
