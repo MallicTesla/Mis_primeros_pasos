@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    {# al block se le puede asignar un nombre para tener barios block #}
+    {% block estilos %}{% endblock  %}
+    <title>{% block titulo %}{% endblock  %}</title>
+</head>
+<body>
+    <nav>
+        {# lista de links #}
+        <ul>
+            <li><a href="#">Herenciua</a></li>
+            <li><a href="#">Ejemplo</a></li>
+            <li><a href="#">Otro</a></li>
+        </ul>
+    </nav>
+
+    {# extructura prinsipal del contenido #}
+    <main>
+        {% block contenido %}{% endblock  %}
+    </main>
+
+    <footer>
+        <p>Todos los derechos reservados por MalicTesla Corp</p>
+    </footer>
+    {# por si ay que meterle algun java script #}
+    {% block scrips %}{% endblock  %}
+</body>
+</html>

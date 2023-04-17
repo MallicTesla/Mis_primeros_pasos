@@ -1,0 +1,56 @@
+/* para darle varios estilos a cada parte del html se coloca al principio las rutas */
+
+/* selecsiona todo */
+* {
+    padding: 0;
+    /* elimina el margen del background */
+    margin: 0;
+    box-sizing: border-box;
+
+}
+nav {
+    background-color: rgb(255, 187, 0);
+}
+
+ul {
+    /* asi se eliminan los puntos de la listas de html */
+    list-style-type: none ;
+    /* asi se coloca la lista en un renglon */
+    display: flex ;
+    /* para centrar la lista */
+    justify-content: center;
+    align-items: center;
+}
+
+ul li {
+    /* para separar las palabras de la lista */
+    padding: 20px;
+
+}
+
+ul li a {
+    /* le saca el suvrallado */
+    text-decoration: none;
+    font-size: 20pt;
+    color: rgb(251, 8, 0);
+
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    min-height: 80vh;
+}
+
+footer {
+    background-color: rgb(255, 187, 0);
+    color: rgb(255, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 50px;
+    font-size: 20px;
+}
