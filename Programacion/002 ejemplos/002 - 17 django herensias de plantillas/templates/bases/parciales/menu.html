@@ -1,0 +1,11 @@
+{# este archivo se llama con un include #}
+<nav>
+    {# lista de links #}
+    <ul>
+        {# asi se establesen las url a usar se usa el nombre dado a la url en el archivo urls #}
+        <li><a href="{% url 'index' %}">Inicio</a></li>
+        <li><a href="{% url 'herencia' %}">Herencia</a></li>
+        <li><a href="{% url 'ejemplo' %}">Ejemplo</a></li>
+        <li><a href="{% url 'otro' %}">Otro</a></li>
+    </ul>
+</nav>

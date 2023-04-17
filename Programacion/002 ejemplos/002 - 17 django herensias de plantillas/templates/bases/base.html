@@ -12,15 +12,9 @@
     <title>{% block titulo %}{% endblock  %}</title>
 </head>
 <body>
-    <nav>
-        {# lista de links #}
-        <ul>
-            {# asi se establesen las url a usar se usa el nombre dado a la url en el archivo urls #}
-            <li><a href="{% url 'herencia' %}">Herencia</a></li>
-            <li><a href="{% url 'ejemplo' %}">Ejemplo</a></li>
-            <li><a href="{% url 'otro' %}">Otro</a></li>
-        </ul>
-    </nav>
+    {# esto es para modular los archivos y que sean mas fasiles de mantener #}
+    {# la ruta de los include van desde este archivo al archivo a incluir #}
+    {% include 'bases/parciales/menu.html' %}
 
     {# extructura prinsipal del contenido #}
     <main>
