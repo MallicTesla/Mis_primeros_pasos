@@ -1,0 +1,12 @@
+{% extends 'bases/menu_base.html' %}
+
+{% load static %}
+
+{% block titulo %}Perfil{% endblock  %}
+
+{% block contenido %}
+    <div class="contenedor">
+        <h1>Aca es donde vivo</h1>
+            <img src="{% static 'fotos/1.jpg' %}" alt="Via lactea">
+    </div>
+{% endblock  %}

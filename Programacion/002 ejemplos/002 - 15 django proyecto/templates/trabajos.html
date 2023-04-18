@@ -1,0 +1,21 @@
+{% extends 'bases/menu_base.html' %}
+
+{% load static %}
+
+{% block titulo %}Perfil{% endblock  %}
+
+{% block contenido %}
+    <div class="contenedor">
+        <h1>El plan es irma paca</h1>
+            <img src="{% static 'fotos/5.jpg' %}" alt="Italia">
+
+        <h1>Que mi casa este por aca</h1>
+            <img src="{% static 'fotos/3.jpg' %}" alt="Costa">
+
+        <h1>O si tetengo un cable de fibra optica bien gordo para aca</h1>
+            <img src="{% static 'fotos/4.jpg' %}" alt="Montaña">
+
+        <h1>E irme de vacaciones a un lugar asi</h1>
+            <img src="{% static 'fotos/2.jpg' %}" alt="Nieve">
+    </div>
+{% endblock  %}
