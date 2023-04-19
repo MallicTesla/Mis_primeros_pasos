@@ -2,6 +2,7 @@ http://127.0.0.1:8000/                          url
 
 (direcsion) django-admin startproject (nombre) .crea un prollecto jango nuevo
 (direcsion) python manage.py migrate            se ejecutan los cambios echos
+(direcsion) python manage.py startapp (nombre)  crea una app nueva 
 
 (direcsion) dir                                 se ve lo que ahi dentro de la carpeta
 (direcsion) python manage.py runserver          enpiesa a corer el servidor 
