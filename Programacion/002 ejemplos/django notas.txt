@@ -2,13 +2,24 @@ http://127.0.0.1:8000/                          url
 
 (direcsion) django-admin startproject (nombre) .crea un prollecto jango nuevo
 (direcsion) python manage.py migrate            se ejecutan los cambios echos
+
 (direcsion) python manage.py startapp (nombre)  crea una app nueva 
+(direcsion) python manage.py check nombre       revisa si la app esta vien instalada despues de agregarla en settings
 
 (direcsion) dir                                 se ve lo que ahi dentro de la carpeta
 (direcsion) python manage.py runserver          enpiesa a corer el servidor 
-(direcsion) python manage.py makemigrations     es para ver si uvo modificaciones
+(direcsion) python manage.py makemigrations     es para ver si uvo modificaciones en los modelos de las apps
 
 (direcsion) python manage.py createsuperuser    para crear un usuario admin
+
+despues de crear una app ahi que agregarla al a lista de apps en settings.py en el archivo principal se agrega en INSTALLED_APPS 
+
+despues de crear o modificar cada modelo (clases) se ejecuta el comando python manage.py makemigrations para ver los cambios u despues se migran para guardarlos
+si se agrega un campo (columna) nuevo a un codigo existente ay que espesficar si es null o agregarle un valor por defecto
+
+en la nueva app se tiene que crear un archivo llamado urls.py para guardar todas las rutas de esa app y que sea mas modular todo 
+en el proyecto general en urls.py para incluir urls de las apps se llama al modulo include 
+primero se coloca el nombre de la ruta y despues se coloca el nombre de la app punto el archivo donde estan las rutas (urls) y en el navegador se coloca primero la ruta establesida y despues la ruta del modulo
 
 1)  en la consola con (django-admin startproject PrimerDjango .) se crea el prollecto con el nombre (PrimerDjango) al final va un (.) tambien al prinsipio 
     va la direcsion en la que queres que se cree
@@ -65,3 +76,9 @@ se ejecuta python manage.py runserver y funsiona
 
 13) se crea una carpeta llamada templates dentro de la app (catalog) y dentro van los archivos html (base_generic) (index)
     y al archivo urls de myproyecto al final de la lista se agrega + static (settings.STATIC_URL, document_root = settings.STATIC_URL) mas sus import
+
+
+
+--------------------------------import y usos en views.py-------------------------
+from django.http import HttpResponse        es para mostrar un simple texto en el navegador
+from django.shortcuts import render         es para mostrar un html
