@@ -82,3 +82,7 @@ se ejecuta python manage.py runserver y funsiona
 --------------------------------import y usos en views.py-------------------------
 from django.http import HttpResponse        es para mostrar un simple texto en el navegador
 from django.shortcuts import render         es para mostrar un html
+
+--------------------------------en models dentro de la app---------------------------------
+para creear un modelo con clave foranea se usa variavle = models.ForeignKey (clase prinsipal, on_delete = models.CASCADE)
+con on_delete = models.CASCADE se boran todas las entradas relasionadas con la clase prinsipal para que no se rompa todo cuando se borra
