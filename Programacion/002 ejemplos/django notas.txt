@@ -86,3 +86,11 @@ from django.shortcuts import render         es para mostrar un html
 --------------------------------en models dentro de la app---------------------------------
 para creear un modelo con clave foranea se usa variavle = models.ForeignKey (clase prinsipal, on_delete = models.CASCADE)
 con on_delete = models.CASCADE se boran todas las entradas relasionadas con la clase prinsipal para que no se rompa todo cuando se borra
+
+------------------------------------para hacer pruevas con vases de datos ya echas-------------------------------------------
+aca esta la documentacion de seed https://github.com/Brobin/django-seed
+para hacer pruevas con vases de datos ya echas se instala django-seed (python -m pip install django-seed) 
+se tiene que instalar esta libreria como si fuese una app en settings del proyecto en INSTALLED_APPS asi "django_seed" despues se corre un check para ver si quedo
+si da error en el modulo psycopg2 ahi que instalarlo python -m pip install psycopg2-binary 
+para utilisar la seed se utilisa el comando ruta del prollecto python manage.py seed post --number=50 y crea 50 entradas
+
