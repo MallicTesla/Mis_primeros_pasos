@@ -15,3 +15,12 @@ def crear (request) :
     comentario = Comment.objects.create (name = "Mallic", score = 4, comment = "Este es otro comentario")
 
     return HttpResponse ("Ruta para probar la creacion de modelos y guardar datos en la base de datos")
+
+def borrar (request) :
+    #   para borrar contenido de la base de datos se crea un objeto que busque un contenido en la base de datos con .get
+    # comentraio = Comment.objects.get (id = 1)
+    # comentraio.delete ()
+
+    #   tambien se puede hacer asi utilisando filter (espesificando el parametro)
+    Comment.objects.filter (id = 4).delete ()
+    return HttpResponse ("Borrando datos de la base de datos")
