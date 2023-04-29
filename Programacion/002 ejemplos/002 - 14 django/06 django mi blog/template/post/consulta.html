@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta</title>
+</head>
+<body>
+    <h3>Todos los nombres que tienen la palabra food</h3>
+    <ul>
+        {% for nombre in filtro_nombre %}
+        <li> {{nombre.id}}) {{ nombre.nombre }} ( {{nombre.email}} )</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Elementos con un ID igual o menor a 15</h3>
+    <ul>
+        {% for rango in rango_id %}
+        <li> {{rango.id}}) {{ rango.nombre }} ( {{rango.email}} )</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Todos ordenados por alfaveticamente email</h3>
+    <ul>
+        {% for ordenado in ordenados %}
+        <li> {{ordenado.id}}) {{ ordenado.nombre }} ( {{ordenado.email}} )</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Se salta 5 renglones y luego devuelve los valores asta el renglon 10</h3>
+    <ul>
+        {% for salteado in salteados %}
+        <li> {{salteado.id}}) {{ salteado.nombre }} ( {{salteado.email}} )</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Los 10 primeros</h3>
+    <ul>
+        {% for lista in limitado %}
+        <li>{{lista.id}}) {{ lista.nombre }} ( {{lista.email}} )</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Opteniendo un unico elemento (Filtrado por id)</h3>
+    {# si no se espesifica que valor queres ver te devuelve el valor del __str__ de la clase #}
+    <p> {{autor.id}}) {{ autor }} </p>
+    <p> {{autor.id}}) {{ autor.email }} </p>
+
+    <H3> Buscando un email espesifico (acostalarry@example.net)</H3>
+    <ul>
+        {# para utilisar las variavles que se le pasan en views se usa {{}} #}
+        {% for elemento in filtro %}
+            <li> {{elemento.id}}) {{ elemento.nombre }} | {{ elemento.email }} </li>
+        {% endfor %}
+    </ul>
+
+    <h3>Todo los autores y mails</h3>
+    <ul>
+        {% for autor in autores %}
+        <li>{{autor.id}}) {{ autor.nombre }} ( {{autor.email}} )</li>
+        {% endfor %}
+    </ul>
+    <h3> Total de autores : {{ autores|length }} </h3>
+</body>
+</html>

@@ -77,7 +77,8 @@ se ejecuta python manage.py runserver y funsiona
 13) se crea una carpeta llamada templates dentro de la app (catalog) y dentro van los archivos html (base_generic) (index)
     y al archivo urls de myproyecto al final de la lista se agrega + static (settings.STATIC_URL, document_root = settings.STATIC_URL) mas sus import
 
-
+--------------------------HTML---------------------------------
+para realisar un comentario en un HTML y que no se ve en el nabegador se usa {# texto #} 
 
 --------------------------------import y usos en views.py-------------------------
 from django.http import HttpResponse        es para mostrar un simple texto en el navegador
