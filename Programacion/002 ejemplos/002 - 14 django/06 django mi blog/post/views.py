@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from .models import Autor,Entrada
+from django.http import HttpResponse
 
-def consulta (riquest) :
+def consulta (request) :
     #   para optener todos los elementos de Autor
     autores = Autor.objects.all ()
 
@@ -37,7 +38,7 @@ def consulta (riquest) :
 
 
     #   la variavle con el objeto va dentro de {"nombre a darle que se va a usar en el HTML": variavle} y asi le pasas esa informasion al html
-    return render (riquest, "post/consulta.html", { "autores": autores, 
+    return render (request, "post/consulta.html", { "autores": autores, 
                                                     "filtro": filtro, 
                                                     "autor": autor, 
                                                     "limitado": limitado, 
@@ -45,3 +46,12 @@ def consulta (riquest) :
                                                     "ordenados": ordenados,
                                                     "rango_id": rango_id,
                                                     "filtro_nombre": filtro_nombre, })
+
+
+def actualizacion (request) :
+    autor = Autor.objects.get (id = 1)
+    autor.nombre = "mallic"
+    autor.email = "el_mallic@hotmail.com"
+    autor.save ()
+
+    return HttpResponse ("Modificado el id 1")
