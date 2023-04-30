@@ -8,7 +8,7 @@ class Lugar (models.Model) :
         return self.nombre
 
 class Restaurante (models.Model) :
-    #   cuando se crea una relasion normalmente se creea ek mismo nombre de la clase 
+    #   cuando se crea una relasion normalmente se creea con el mismo nombre de la clase 
     #   cuando se usa el modulo de relasionamiento OneToOneField (se le tiene que pasar primero el nombre de la clase con la que se le quiere relasionar
     #   , que es lo que ocure cuando se borra un dato, y como se va a realisar la relasion)
     lugar = models.OneToOneField (Lugar, on_delete = models.CASCADE, primary_key = True)
