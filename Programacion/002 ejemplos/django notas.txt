@@ -95,3 +95,6 @@ se tiene que instalar esta libreria como si fuese una app en settings del proyec
 si da error en el modulo psycopg2 ahi que instalarlo python -m pip install psycopg2-binary 
 para utilisar la seed se utilisa el comando ruta del prollecto python manage.py seed post --number=50 y crea 50 entradas
 
+---------------------------------------------------documentasion--------------------------------
+relasionamientos https://docs.djangoproject.com/en/4.0/topics/db/examples/
+
