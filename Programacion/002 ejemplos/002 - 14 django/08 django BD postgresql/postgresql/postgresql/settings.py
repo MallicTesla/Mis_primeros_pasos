@@ -72,11 +72,21 @@ WSGI_APPLICATION = 'postgresql.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+#   copas y pegas de la documentasion y rellenas lo nesesario
+#   para trabajar con postgres primero tenes que crear la base en el programa (pgAdmin)
+#   par ver la base y las tablas creeadas vas al programa desplegas la base despues desplegas Schemas/public/tablas
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        #   colocas el mombre de la base que creeastes
+        'NAME': 'django pruevas 01',
+        #   colocas el usuario de la base
+        'USER': 'postgres',
+        #   la contraseña del usuario
+        'PASSWORD': 'base123',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 

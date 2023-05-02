@@ -98,3 +98,8 @@ para utilisar la seed se utilisa el comando ruta del prollecto python manage.py 
 ---------------------------------------------------documentasion--------------------------------
 relasionamientos https://docs.djangoproject.com/en/4.0/topics/db/examples/
 
+-------------------------------------------BASES de datos-----------------------------------------------------
+para trabajar con postgres primero tenes que crear la base en el programa (pgAdmin) 
+1)  la base de datos se crea dentro de Databases
+2)  la nombras - elegis el usuari y guardas 
+
