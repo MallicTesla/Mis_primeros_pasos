@@ -32,5 +32,8 @@ class Empleado (models.Model) :
     direccion = models.CharField (max_length = 30)
     email = models.EmailField(max_length = 50)
 
-    trabajo = models.ForeignKey (Trabajo, on_delete = models.CASCADE)
-    local = models.ForeignKey (Local, on_delete = models.CASCADE)
+    # trabajo = models.ForeignKey (Trabajo, on_delete = models.CASCADE)
+    # local = models.ForeignKey (Local, on_delete = models.CASCADE)
+
+    trabajo = models.ManyToManyField (Trabajo)
+    local = models.ManyToManyField (Local)
