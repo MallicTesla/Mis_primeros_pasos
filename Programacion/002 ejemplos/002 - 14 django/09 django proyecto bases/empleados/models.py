@@ -14,7 +14,7 @@ class Local (models.Model) :
 
     departamento = models.ManyToManyField (Departamento)
 
-class Salario (models.Model) :
+class Salario (models.Model) :  
     monto_anual = models.IntegerField (max_length = 10, default = 10000)
     extra_junio = models.BooleanField (default = True)
     extra_nobiembre = models.BooleanField (default = True)
@@ -31,9 +31,6 @@ class Empleado (models.Model) :
     ci = models.CharField (max_length = 30)
     direccion = models.CharField (max_length = 30)
     email = models.EmailField(max_length = 50)
-
-    # trabajo = models.ForeignKey (Trabajo, on_delete = models.CASCADE)
-    # local = models.ForeignKey (Local, on_delete = models.CASCADE)
 
     trabajo = models.ManyToManyField (Trabajo)
     local = models.ManyToManyField (Local)
