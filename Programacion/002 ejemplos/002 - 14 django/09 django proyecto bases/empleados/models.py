@@ -15,7 +15,7 @@ class Local (models.Model) :
     departamento = models.ManyToManyField (Departamento)
 
 class Salario (models.Model) :  
-    monto_anual = models.IntegerField (max_length = 10, default = 10000)
+    monto_anual = models.IntegerField (default = 10000)
     extra_junio = models.BooleanField (default = True)
     extra_nobiembre = models.BooleanField (default = True)
 
