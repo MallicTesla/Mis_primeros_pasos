@@ -149,5 +149,46 @@ def contenido (request) :
             "\npais : ", pais.nombre,
             )
 
-
     return HttpResponse (info, content_type='text/plain')
+
+def mostrar (request) :
+    empleado = Empleado.objects.get (nombre = "German")
+    trabajo = empleado.trabajo.first ()
+    salario = trabajo.salario.first ()
+    local = empleado.local.first ()
+    departamento = local.departamento.first ()
+    pais = departamento.ciudad.first ()
+
+    return render (request, "menu.html", { 
+    "empleado" : empleado,
+
+    "trabajo" : trabajo,
+
+    "salario" : salario,
+
+    "nombre del local" : local,
+
+    "departamento" : departamento,
+
+    "pais" :  pais,})
+
+    # return render (request, "inicio.html", { 
+    # "nombre" : empleado.nombre, 
+    # "apellido" : empleado.apellido,
+    # "ci" : empleado.ci, 
+    # "diresion" : empleado.direccion, 
+    # "email" : empleado.email,
+
+    # "trabajo" : trabajo.titulo, 
+    # "descripsion" : trabajo.descripsion,
+
+    # "salario" : salario.monto_anual, 
+    # "extra junio" : salario.extra_junio, 
+    # "nextra nobiembre" : salario.extra_nobiembre,
+
+    # "nombre del local" : local.local_nombre,
+    # "direccion" : local.direccion,
+
+    # "departamento" : departamento.departamento,
+
+    # "pais" :  pais.nombre,})
