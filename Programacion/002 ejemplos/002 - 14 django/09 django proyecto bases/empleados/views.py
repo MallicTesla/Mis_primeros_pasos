@@ -89,7 +89,7 @@ def crear (request) :
     # local2.departamento.add (departamento1)
     # departamento1.ciudad.add (pais1)
 
-    return HttpResponse ("se crearon los registros")
+    return render (request, "crear.html", {})
 
 def contenido (request) :
 
