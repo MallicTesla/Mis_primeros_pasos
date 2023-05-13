@@ -10,11 +10,15 @@
     <title>{% block titulo %}{% endblock  %}</title>
 </head>
 <body>
-    <h1>Que deseas hacer</h1>
-    <ul>
-    <li><a href= {% url "menu" %} > Menu </a></li>
-    <li><a href= {% url "crear" %} >Crear</a></li>
-    <li><a href="#">Link 3</a></li>
-    </ul>
+    <nav class = "prinsipal">
+            <ul>
+                <li><a href= {% url "inicio" %} > Inicio </a></li>
+                <li><a href= {% url "crear" %} >Crear</a></li>
+                <li><a href= {% url "mostrar" %} >Mostrar</a></li>
+            </ul>
+    </nav>
+    <main>
+        {% block contenido %}{% endblock %}
+    </main>
 </body>
 </html>
