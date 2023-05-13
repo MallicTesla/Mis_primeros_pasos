@@ -3,59 +3,37 @@ from django.http import HttpResponse
 from .models import Pais,Departamento,Local,Salario,Trabajo,Empleado
 
 def crear (request) :
-    pais1 = Pais (nombre = "Uruguay")#D1
-    pais1.save ()
-    pais2 = Pais (nombre = "Italia")#D2
-    pais2.save ()
-    pais3 = Pais (nombre = "donde vivo")#D3
-    pais3.save ()
+    #   asi no se duplica el contenido si ya fue creeado 
+    pais1, created = Pais.objects.get_or_create (nombre = "Uruguay")#D1
+    pais2, created = Pais.objects.get_or_create(nombre = "Italia")#D2
+    pais3, created = Pais.objects.get_or_create (nombre = "donde vivo")#D3
 
-    departamento1 = Departamento (departamento = "Montevideo")#L2 D1
-    departamento1.save ()
-    departamento2 = Departamento (departamento = "Milan")#L3 L4 D2
-    departamento2.save ()
-    departamento3 = Departamento (departamento = "donde vivo")#L1 D3
-    departamento3.save ()
+    departamento1, created = Departamento.objects.get_or_create (departamento = "Montevideo")#L2 D1
+    departamento2, created = Departamento.objects.get_or_create (departamento = "Milan")#L3 L4 D2
+    departamento3, created = Departamento.objects.get_or_create (departamento = "donde vivo")#L1 D3
 
-    local1 = Local (local_nombre = "En casa", direccion = "en la calle de enfrente")#L1 E1 E2
-    local1.save ()
-    local2 = Local (local_nombre = "Bella italia", direccion = "31 de febrero esquina lola")#L2 E3 E7
-    local2.save ()
-    local3 = Local (local_nombre = "vaprio da adda", direccion = "puevlo de miera alado del rio")#L3 E4
-    local3.save ()
-    local4 = Local (local_nombre = "Pero", direccion = "donde vive el marce serca del shoping")#L4 E5 E6
-    local4.save ()
+    local1, created = Local.objects.get_or_create (local_nombre = "En casa", direccion = "en la calle de enfrente")#L1 E1 E2
+    local2, created = Local.objects.get_or_create (local_nombre = "Bella italia", direccion = "31 de febrero esquina lola")#L2 E3 E7
+    local3, created = Local.objects.get_or_create (local_nombre = "vaprio da adda", direccion = "puevlo de miera alado del rio")#L3 E4
+    local4, created = Local.objects.get_or_create (local_nombre = "Pero", direccion = "donde vive el marce serca del shoping")#L4 E5 E6
 
-    salario1 = Salario ()#T1 T4
-    salario1.save ()
-    salario2 = Salario (monto_anual = 20000)#T2
-    salario2.save ()
-    salario3 = Salario (monto_anual = 25000, extra_junio = False, extra_nobiembre = False)#T3
-    salario3.save ()
+    #   cuando creeas un registro con los balores por defecto para evitar que se duplique se le pasa el id
+    salario1, created = Salario.objects.get_or_create (id = 1)#T1 T4
+    salario2, created = Salario.objects.get_or_create (monto_anual = 20000)#T2
+    salario3, created = Salario.objects.get_or_create (monto_anual = 25000, extra_junio = False, extra_nobiembre = False)#T3
 
-    trabajo1 = Trabajo (titulo = "Peon", descripsion = "trabajar como negro")# T1 / E3 E7
-    trabajo1.save ()
-    trabajo2 = Trabajo (titulo = "Programaddor", descripsion = "trabajar como negro")#T2 / E2 E4
-    trabajo2.save ()
-    trabajo3 = Trabajo (titulo = "Traider", descripsion = "estresarse mientras operas y el reto del tiempo disfrutando") #T3 / E1
-    trabajo3.save ()
-    trabajo4 = Trabajo (titulo = "Vivir del estado", descripsion = "tomar vino en la esquina y no hacer nada")#T4 / E5 E6
-    trabajo4.save ()
+    trabajo1, created = Trabajo.objects.get_or_create (titulo = "Peon", descripsion = "trabajar como negro")# T1 / E3 E7
+    trabajo2, created = Trabajo.objects.get_or_create (titulo = "Programaddor", descripsion = "trabajar como negro")#T2 / E2 E4
+    trabajo3, created = Trabajo.objects.get_or_create (titulo = "Traider", descripsion = "estresarse mientras operas y el reto del tiempo disfrutando") #T3 / E1
+    trabajo4, created = Trabajo.objects.get_or_create (titulo = "Vivir del estado", descripsion = "tomar vino en la esquina y no hacer nada")#T4 / E5 E6
 
-    empleado1 = Empleado (nombre = "Pablo", apellido = "Mallic", ci = "666666/6", direccion = "calle falsa 1234", email = "el_mallic@hotmail.com")#E1
-    empleado1.save ()
-    empleado2 = Empleado (nombre = "Franco", apellido = "Franquito", ci = "568723/1", direccion = "calle esonia 3214", email = "el_franco@hotmail.com")#E2
-    empleado2.save ()
-    empleado3 = Empleado (nombre = "German", apellido = "Zakrue", ci = "666665/6", direccion = "donde esta la zapateria 1234", email = "Hombre_aleman@hotmail.com")#E3
-    empleado3.save ()
-    empleado4 = Empleado (nombre = "Marcelo", apellido = "Mike", ci = "6543125/6", direccion = "en su casa 1234", email = "el_mike@hotmail.com")#E4
-    empleado4.save ()
-    empleado5 = Empleado (nombre = "Jorge", apellido = "El Omat", ci = "658514565/6", direccion = "en su casa 1234", email = "el_yoomat@hotmail.com")#E5
-    empleado5.save ()
-    empleado6 = Empleado (nombre = "ale", apellido = "toledo", ci = "666666/6", direccion = "en su casa 1234", email = "el_mallic@hotmail.com")#E6
-    empleado6.save ()
-    empleado7 = Empleado (nombre = "Matias", apellido = "Duke", ci = "666666/6", direccion = "alado de la plaza", email = "el_mon@hotmail.com")# E7
-    empleado7.save ()
+    empleado1, created = Empleado.objects.get_or_create (nombre = "Pablo", apellido = "Mallic", ci = "666666/6", direccion = "calle falsa 1234", email = "el_mallic@hotmail.com")#E1
+    empleado2, created = Empleado.objects.get_or_create (nombre = "Franco", apellido = "Franquito", ci = "568723/1", direccion = "calle esonia 3214", email = "el_franco@hotmail.com")#E2
+    empleado3, created = Empleado.objects.get_or_create (nombre = "German", apellido = "Zakrue", ci = "666665/6", direccion = "donde esta la zapateria 1234", email = "Hombre_aleman@hotmail.com")#E3
+    empleado4, created = Empleado.objects.get_or_create (nombre = "Marcelo", apellido = "Mike", ci = "6543125/6", direccion = "en su casa 1234", email = "el_mike@hotmail.com")#E4
+    empleado5, created = Empleado.objects.get_or_create (nombre = "Jorge", apellido = "El Omat", ci = "658514565/6", direccion = "en su casa 1234", email = "el_yoomat@hotmail.com")#E5
+    empleado6, created = Empleado.objects.get_or_create (nombre = "ale", apellido = "toledo", ci = "666666/6", direccion = "en su casa 1234", email = "el_mallic@hotmail.com")#E6
+    empleado7, created = Empleado.objects.get_or_create (nombre = "Matias", apellido = "Duke", ci = "666666/6", direccion = "alado de la plaza", email = "el_mon@hotmail.com")# E7
 
     local1.departamento.add (departamento3)
     local2.departamento.add (departamento1)
@@ -151,22 +129,23 @@ def contenido (request) :
 
     return HttpResponse (info, content_type='text/plain')
 
-def mostrar (request) :
-    empleado = Empleado.objects.get (nombre = "German")
+
+def mostrar (request, elegido) :
+    empleado = Empleado.objects.get (nombre = elegido)
     trabajo = empleado.trabajo.first ()
     salario = trabajo.salario.first ()
     local = empleado.local.first ()
     departamento = local.departamento.first ()
     pais = departamento.ciudad.first ()
 
-    return render (request, "menu.html", { 
+    return render (request, "mostrar.html", { 
     "empleado" : empleado,
 
     "trabajo" : trabajo,
 
     "salario" : salario,
 
-    "nombre del local" : local,
+    "local" : local,
 
     "departamento" : departamento,
 
