@@ -1,0 +1,16 @@
+{% extends 'menu.html' %}
+
+{% block contenido_1 %}
+    <nav class = "prinsipal">
+        <ul>
+            <li><a href= {% url "pablo" %} > Pablo </a></li>
+            <li><a href= {% url "franco" %} >Franco</a></li>
+            <li><a href= {% url "german" %} >German</a></li>
+            <li><a href= {% url "marcelo" %} >Marcelo</a></li>
+            <li><a href= {% url "jorge" %} >Jorge</a></li>
+            <li><a href= {% url "ale" %} >Ale</a></li>
+            <li><a href= {% url "matias" %} >Matias</a></li>
+        </ul>
+    </nav>
+    {% block contenido_2 %}{% endblock  %}
+{% endblock  %}

@@ -19,6 +19,7 @@ color: #333;
     font-size: 30px;
 }
 
+/* :hover se usa para que ocura un evento cuando pasas el raton por encima */
 .prinsipal:hover{
     background-color: rgb(171, 223, 0);
 }
@@ -36,9 +37,11 @@ text-align: left;
     background-color: lightblue;
     padding: 10px;
 }
+
 .color_1:hover {
     background-color: rgb(64, 190, 232);
 }
+
 .color_2{
     background-color: rgb(205, 227, 131);
     padding: 10px;
