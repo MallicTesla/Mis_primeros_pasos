@@ -129,6 +129,36 @@ def contenido (request) :
 
     return HttpResponse (info, content_type='text/plain')
 
+def inicio (request) :
+    return render (request, "inicio.html")
+
+def pablo (request) :
+    elegido = ("Pablo")
+    return mostrar (request, elegido)
+
+def granco (request) :
+    elegido = ("Franco")
+    return mostrar (request, elegido)
+
+def german (request) :
+    elegido = ("German")
+    return mostrar (request, elegido)
+
+def marcelo (request) :
+    elegido = ("Marcelo")
+    return mostrar (request, elegido)
+
+def jorge (request) :
+    elegido = ("Jorge")
+    return mostrar (request, elegido)
+
+def ale (request) :
+    elegido = ("ale")
+    return mostrar (request, elegido)
+
+def matias (request) :
+    elegido = ("Matias")
+    return mostrar (request, elegido)
 
 def mostrar (request, elegido) :
     empleado = Empleado.objects.get (nombre = elegido)
