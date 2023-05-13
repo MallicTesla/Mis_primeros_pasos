@@ -132,11 +132,14 @@ def contenido (request) :
 def inicio (request) :
     return render (request, "inicio.html")
 
+def menu (request) :
+    return render (request, "personas.html", {} )
+
 def pablo (request) :
     elegido = ("Pablo")
     return mostrar (request, elegido)
 
-def granco (request) :
+def franco (request) :
     elegido = ("Franco")
     return mostrar (request, elegido)
 
