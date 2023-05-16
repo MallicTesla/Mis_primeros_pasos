@@ -1,0 +1,6 @@
+{# POST se usa para mandar datos mas seguros ay que usar un toquen para enviarlos {% csrf_token %} #}
+<form action="{% url 'postdestino' %}" method="POST">
+    {% csrf_token %}
+
+    <input type = "text" name = "nombre" placeholder ="Escribi tu nombre ">
+    <input type = "submit" value="Enviar">
