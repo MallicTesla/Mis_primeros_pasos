@@ -1,0 +1,12 @@
+{# action = la ruta a la cual se manda la info  #}
+{# method = palabra clave de html para enbiar informacion "GET(se usa para mandar info no sensible) POST (es para enviar informacion segura)" #}
+<form action="{% url 'destino' %}" method="GET">
+    <h3>Formulario de contactos</h3>
+    <label>Nombre : </label>
+    {# type = el tipo de dato que se ingresa    name = el nombre con el que se recuperan los datos   placeholder = pone un texto fantasma #}
+    <input type = "text" name = "nombre" placeholder ="Escribi tu nombre ">
+    <label>Comentario : </label>
+    <input type = "text" name = "comentario" placeholder ="Escribi tu comentario ">
+    {# asi se crea un boton type = "submit (lo transforma en un boton y envia todo el formulario)" value="el texto del boton" #}
+    <input type = "submit" value="Enviar">
+</form>
