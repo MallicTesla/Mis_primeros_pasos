@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <h1>Formulario Django</h1>
+    <hr>
+    <table>
+        <form action = "{% url 'contenido' %}" method = "POST">
+            {% csrf_token %}
+            {# .as_p le da forma al formulario coloca cada campo en un renglon si estas en la etiqueta table tambien se puede usar .as_table #}
+            {{ comentario_formulario.as_table }}
+            <input type = "submit" value = "Enviar">
+        </form>
+    </table>
+</body>
+</html>
