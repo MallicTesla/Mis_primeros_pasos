@@ -6,4 +6,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path ("form/", views.form, name = "form"),
     path ("contenido/", views.contenido, name = "contenido"),
+    path ("widget/", views.widget, name = "widget"),
 ]

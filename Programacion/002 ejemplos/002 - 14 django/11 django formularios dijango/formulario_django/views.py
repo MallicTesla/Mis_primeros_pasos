@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 #   se importa el archivo forms
-from .forms import Comentario
+from .forms import Comentario,ContactoForm
 def form (request) :
     #   ais se aparese la caja de texto rellena por defecto. si aui un initial lo anula 
     comentario_formulario = Comentario ({"nambre":"Pablo", "url":"www.mallic.com", "comentario":"esto va a funcionar"})
@@ -14,3 +14,7 @@ def contenido (request) :
         return HttpResponse ("metodo no permitido")
 
     return HttpResponse (request.POST["nambre"])
+
+def widget (request) :
+    contacto = ContactoForm
+    return render (request, "widget.html", {"contacto":contacto})
