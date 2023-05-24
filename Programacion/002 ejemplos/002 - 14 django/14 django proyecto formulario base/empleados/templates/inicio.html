@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'inicio.css' %}">
+    <title>{% block titulo_1 %}{% endblock  %}</title>
+</head>
+<body>
+    <nav class = "prinsipal">
+        <ul>
+            <li><a href= {% url "inicio" %} > Inicio </a></li>
+            <li><a href= {% url "menu" %} >Crear</a></li>
+            <li><a href=  >Relacionar</a></li>
+            <li><a href=  >Ver</a></li>
+        </ul>
+    </nav>
+    {% block titulo_2 %}{% endblock  %}
+    <main>
+        {% block contenido_1 %}{% endblock %}
+    </main>
+</body>
+</html>

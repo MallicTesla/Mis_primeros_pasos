@@ -1,0 +1,39 @@
+.prinsipal {
+    background-color: rgb(205, 227, 131);
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+/* :hover se usa para que ocura un evento cuando pasas el raton por encima */
+.prinsipal:hover{
+    background-color: rgb(171, 223, 0);
+}
+
+.prinsipal ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.prinsipal ul li {
+    display: inline;
+}
+.prinsipal ul li a {
+    text-decoration: none;        /* Eliminar subrayado */
+    color: #000000;             /* Color de texto normal */
+}
+
+.prinsipal ul li a:hover {
+    color: #FF0000;             /* Color de texto al pasar el cursor */
+}
+
+.centrado_1 {
+    text-align: center;
+}
+
+.centrado_1 h1,
+.centrado_1 h3 {
+    display: block;
+    margin: 0 auto;
+}
