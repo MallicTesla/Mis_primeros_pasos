@@ -13,17 +13,19 @@
 {% comment  %}
 para mostrar barios block juntos de barios html tenes que colocar block.super (va en la parte superior del block para que se muestre el siguiente contenido en la parte de abajo de este block)
 y todos los bloke tienen que tener el mismo nombre
-{% endcomment %}
 
+resource=lo que se pasa por aca sustitulle str:resource que se encuentra en el archivo urls 
+{% endcomment %}
 {{ block.super }}
+
     <nav class="prinsipal">
         <ul>
-            <li><a href= {% url "empleado" %} >Empleado </a></li>
-            <li><a href= {% url "local" %} >Local </a></li>
-            <li><a href= {% url "departamento" %} >Departamento </a></li>
-            <li><a href= {% url "pais" %} >Pais </a></li>
-            <li><a href= {% url "trabajo" %} >Trabajo </a></li>
-            <li><a href= {% url "salario" %} >Salario </a></li>
+            <li><a href="{% url 'empleado' resource=ruta %}">Empleado </a></li>
+            <li><a href="{% url 'local' resource=ruta %}" >Local </a></li>
+            <li><a href="{% url 'departamento' resource=ruta %}" >Departamento </a></li>
+            <li><a href="{% url 'pais' resource=ruta %}" >Pais </a></li>
+            <li><a href="{% url 'trabajo' resource=ruta %}" >Trabajo </a></li>
+            <li><a href="{% url 'salario' resource=ruta %}" >Salario </a></li>
         </ul>
     </nav>
 {% endblock  %}

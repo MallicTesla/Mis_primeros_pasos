@@ -1,49 +1,64 @@
 from django.shortcuts import render
 from .forms import EmpleadoForm, LocalForm, DepartamentoForm, PaisForm, TrabajoForm, SalarioForm
+from .models import Pais,Departamento,Local,Salario,Trabajo,Empleado
 
 def inicio (request) :
     return render (request, "inicio.html", {})
 
-def menu (request) :
-    return render (request, "menu_crear.html", {})
+def menu_crear(request):
+    #   request.path.split("/")[1] toma la ruta con la que llamas a la funcion la corta por / y toma el elemento 1 y lo envia por el parametro al html
+    ruta = request.path.split("/")[1]
+    return render(request, "menu_crear.html", {"ruta":ruta})
 
-def menu_crear (request) :
-    return render (request, "crear.html", {})
+def menu_ver (request) :
+    ruta = request.path.split("/")[1]
+    return render(request, "menu_ver.html", {"ruta":ruta})
 
-def super_creasion (request, objeto_1, objeto_2) :
+def super_creasion (request, resource, objeto_1, objeto_2, ruta) :
     if request.method == "POST":
         if objeto_1.is_valid():
             objeto_1.save()
-            # return render(request, "crear.html", {"ver": objeto_1, "request": request})
 
-    return render(request, "crear.html", {"ver": objeto_2, "request": request})
+    elif request.method == "PUT":
+        return render(request, "crear.html", {"ver": objeto_2, "request": request, "resource": resource, "ruta":ruta})
 
-def salario (request) :
+    return render(request, "crear.html", {"ver": objeto_2, "request": request, "resource": resource, "ruta":ruta})
+
+def salario (request, resource) :
+    """
+    cuando se llama a este mentodo crea 2 objetos diferentes y lo debuelve 
+    """
     objeto_1 = SalarioForm(request.POST)
     objeto_2 = SalarioForm ()
-    return super_creasion (request, objeto_1, objeto_2)
+    ruta = request.path.split("/")[1]
+    return super_creasion (request, resource, objeto_1, objeto_2, ruta)
 
-def trabajo (request) :
+def trabajo (request, resource) :
     objeto_1 = TrabajoForm (request.POST)
     objeto_2 = TrabajoForm ()
-    return super_creasion (request, objeto_1, objeto_2)
+    ruta = request.path.split("/")[1]
+    return super_creasion (request, resource, objeto_1, objeto_2, ruta)
     
-def pais (request) :
+def pais (request, resource) :
     objeto_1 = PaisForm (request.POST)
     objeto_2 = PaisForm ()
-    return super_creasion (request, objeto_1, objeto_2)
+    ruta = request.path.split("/")[1]
+    return super_creasion (request, resource, objeto_1, objeto_2, ruta)
 
-def departamento (request) :
+def departamento (request, resource) :
     objeto_1 = DepartamentoForm (request.POST)
     objeto_2 = DepartamentoForm ()
-    return super_creasion (request, objeto_1, objeto_2)
+    ruta = request.path.split("/")[1]
+    return super_creasion (request, resource, objeto_1, objeto_2, ruta)
 
-def local (request) :
+def local (request, resource) :
     objeto_1 = LocalForm (request.POST)
     objeto_2 = LocalForm ()
-    return super_creasion (request, objeto_1, objeto_2)
+    ruta = request.path.split("/")[1]
+    return super_creasion (request, resource, objeto_1, objeto_2, ruta)
 
-def empleado (request) :
+def empleado (request, resource) :
     objeto_1 = EmpleadoForm (request.POST)
     objeto_2 = EmpleadoForm ()
-    return super_creasion (request, objeto_1, objeto_2)
+    ruta = request.path.split("/")[1]
+    return super_creasion (request, resource, objeto_1, objeto_2, ruta)

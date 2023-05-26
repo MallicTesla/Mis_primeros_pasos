@@ -3,9 +3,9 @@
 
 {% block contenido_1 %}
 {{ block.super }}
-    <h3>Añadir nuevo {{ request.path|slice:"12:"|slice:": -1" }}</h3>
+    <h3>Añadir nuevo {{ request.path|slice:"1:"|slice:": -1" }}</h3>
     <hr>
-    <form action= "{{ request.path }}" method = "POST">
+    <form action= "{{ request.path }}" method = "PUT">
         {% csrf_token %}
         {{ ver }}
         <input type="submit" value="Añadir empleado">
