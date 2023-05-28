@@ -15,4 +15,3 @@ urlpatterns = [
     path("<str:resource>/salario/", views.salario, name="salario"),
 ]
 
-#   <str:resource> aca se coloca la url que le pasas en el link del html

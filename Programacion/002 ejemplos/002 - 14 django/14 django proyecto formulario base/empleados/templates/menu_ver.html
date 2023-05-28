@@ -4,8 +4,7 @@
 {% block titulo_1 %}Ver{% endblock  %}
 {% block titulo_2 %}
 <nav class="centrado_1"> 
-    <h1>Ver</h1>
-    <h3></h3>
+    <h1>Ver y editar</h1>
 </nav> 
 {% endblock  %}
 
@@ -13,6 +12,8 @@
 {% comment  %}
 para mostrar barios block juntos de barios html tenes que colocar block.super (va en la parte superior del block para que se muestre el siguiente contenido en la parte de abajo de este block)
 y todos los bloke tienen que tener el mismo nombre
+
+resource=lo que se pasa por aca sustitulle str:resource que se encuentra en el archivo urls 
 {% endcomment %}
 
 {{ block.super }}

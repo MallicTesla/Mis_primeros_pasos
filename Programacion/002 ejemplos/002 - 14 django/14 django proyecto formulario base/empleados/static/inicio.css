@@ -1,8 +1,22 @@
+ul {
+list-style-type: none;
+display: flex;
+justify-content: center;
+}
+
+li {
+margin-right: 20px;
+list-style-type: none;
+}
+
+a {
+text-decoration: none;
+color: #333;
+}
+
 .prinsipal {
     background-color: rgb(205, 227, 131);
     font-size: 30px;
-    display: flex;
-    justify-content: center;
 }
 
 /* :hover se usa para que ocura un evento cuando pasas el raton por encima */
@@ -10,30 +24,34 @@
     background-color: rgb(171, 223, 0);
 }
 
-.prinsipal ul {
-    list-style-type: none;
-    padding: 0;
+p {
+display: inline-block;
+text-align: left;
+}
+
+.centrado {
+    text-align: left;
+}
+
+.color_1{
+    background-color: lightblue;
+    padding: 10px;
+}
+
+.color_1:hover {
+    background-color: rgb(64, 190, 232);
+}
+
+.color_2{
+    background-color: rgb(205, 227, 131);
+    padding: 10px;
+}
+
+.color_2:hover {
+    background-color: rgb(171, 223, 0);
+}
+
+h3, h4 {
+    display: inline-block;
     margin: 0;
-}
-
-.prinsipal ul li {
-    display: inline;
-}
-.prinsipal ul li a {
-    text-decoration: none;        /* Eliminar subrayado */
-    color: #000000;             /* Color de texto normal */
-}
-
-.prinsipal ul li a:hover {
-    color: #FF0000;             /* Color de texto al pasar el cursor */
-}
-
-.centrado_1 {
-    text-align: center;
-}
-
-.centrado_1 h1,
-.centrado_1 h3 {
-    display: block;
-    margin: 0 auto;
 }
