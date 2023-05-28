@@ -3,16 +3,16 @@ from .forms import EmpleadoForm, LocalForm, DepartamentoForm, PaisForm, TrabajoF
 from .models import Pais,Departamento,Local,Salario,Trabajo,Empleado
 
 def inicio (request) :
-    return render (request, "inicio.html", {})
+    return render (request, "menus/inicio/inicio.html", {})
 
 def menu_crear(request):
     #   request.path.split("/")[1] toma la ruta con la que llamas a la funcion la corta por / y toma el elemento 1 y lo envia por el parametro al html
     ruta = request.path.split("/")[1]
-    return render(request, "menu_crear.html", {"ruta":ruta})
+    return render(request, "menus/menu_crear.html", {"ruta":ruta})
 
 def menu_ver (request) :
     ruta = request.path.split("/")[1]
-    return render(request, "menu_ver.html", {"ruta":ruta})
+    return render(request, "menus/menu_ver.html", {"ruta":ruta})
 
 def salario (request, resource) :
     """
@@ -72,25 +72,25 @@ def super_creasion (request, resource, objeto_1, objeto_2, objeto_3, ruta) :
         objeto_1.save()
 
     elif request.method == "POST":
-        return render(request, "crear.html", {"ver": objeto_2, "request": request, "ruta":ruta})
+        return render(request, "acciones/crear.html", {"ver": objeto_2, "request": request, "ruta":ruta})
 
-    return render(request, "crear.html", {"ver": objeto_2, "request": request, "ruta":ruta})
+    return render(request, "acciones/crear.html", {"ver": objeto_2, "request": request, "ruta":ruta})
 
 def super_ver (request, resource, objeto_1, objeto_2, objeto_3, rutas) :
     ruta = rutas[1]
     match rutas[2] :
         case "empleado" :
-            return render(request, "ver_form/ver_empleado.html", {"request": request, "ruta":ruta, 'objeto_3': objeto_3})
+            return render(request, "acciones/ver_form/ver_empleado.html", {"request": request, "ruta":ruta, 'objeto_3': objeto_3})
         case "local" :
-            return render(request, "ver_form/ver_local.html", {"request": request, "ruta":ruta, 'objeto_3': objeto_3})
+            return render(request, "acciones/ver_form/ver_local.html", {"request": request, "ruta":ruta, 'objeto_3': objeto_3})
         case "departamento" :
-            return render(request, "ver_form/ver_departamento.html", {"request": request, "ruta":ruta, 'objeto_3': objeto_3})
+            return render(request, "acciones/ver_form/ver_departamento.html", {"request": request, "ruta":ruta, 'objeto_3': objeto_3})
         case "pais" :
-            return render(request, "ver_form/ver_pais.html", {"request": request, "ruta":ruta, 'objeto_3': objeto_3})
+            return render(request, "acciones/ver_form/ver_pais.html", {"request": request, "ruta":ruta, 'objeto_3': objeto_3})
         case "trabajo" :
-            return render(request, "ver_form/ver_trabajo.html", {"request": request, "ruta":ruta, 'objeto_3': objeto_3})
+            return render(request, "acciones/ver_form/ver_trabajo.html", {"request": request, "ruta":ruta, 'objeto_3': objeto_3})
         case "salario" :
-            return render(request, "ver_form/ver_salario.html", {"request": request, "ruta":ruta, 'objeto_3': objeto_3})
+            return render(request, "acciones/ver_form/ver_salario.html", {"request": request, "ruta":ruta, 'objeto_3': objeto_3})
 
 
 
