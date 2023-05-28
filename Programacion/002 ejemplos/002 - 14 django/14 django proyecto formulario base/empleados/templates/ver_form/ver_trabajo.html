@@ -1,0 +1,16 @@
+{% extends 'menu_ver.html' %}
+{% load static %}
+
+{% block contenido_1 %}
+{{ block.super }}
+    <h3>Ver y editar {{ request.path|slice:"10:"|slice:": -1" }}</h3>
+    {% for objeto in objeto_3 %}
+    <hr>
+        <div class="color_1" >
+            <li> <h3>Titulo : </h3> <h4>{{ objeto.titulo }}</h4> </li>
+            <li> <h3>Descripsion : </h3> <h4> {{ objeto.descripsion }}</h4> </li>
+            <li> <h3>Empleados : </h3> <h4>{{ objeto.empleado }}</h4> </li>
+            <input type="submit" value="Editar {{ request.path|slice:"10:"|slice:": -1" }}">
+        </div>
+    {% endfor %}
+{% endblock  %}
