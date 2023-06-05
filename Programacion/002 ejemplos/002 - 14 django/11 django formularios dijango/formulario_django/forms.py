@@ -14,7 +14,7 @@ class Comentario (forms.Form) :
 
 class ContactoForm (forms.Form) :
     nombre = forms.CharField (  label = "Nombre",
-                                #   no deja escrivir mas de 10 caracteres
+                                #   no deja escrivir mas de 50 caracteres
                                 max_length = 50,
                                 #   widget = espesifica el tipo de imput y que atrivutos deve de tener con attrs = {se le pasa una clase de css}
                                 #   widget = forms.TextInput (attrs = {"class" : "imput"})

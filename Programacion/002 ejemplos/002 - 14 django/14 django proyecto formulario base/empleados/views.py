@@ -71,27 +71,32 @@ def super_creasion (request, resource, objeto_1, objeto_2, objeto_3, ruta) :
     if request.method == "POST" or objeto_1.is_valid():
         objeto_1.save()
 
-    elif request.method == "POST":
-        return render(request, "acciones/crear.html", {"ver": objeto_2, "request": request, "ruta":ruta})
-
-    return render(request, "acciones/crear.html", {"ver": objeto_2, "request": request, "ruta":ruta})
+    return render(request, "acciones/crear.html", {"ver": objeto_2, "ruta":ruta})
 
 def super_ver (request, resource, objeto_1, objeto_2, objeto_3, rutas) :
     ruta = rutas[1]
     match rutas[2] :
         case "empleado" :
-            return render(request, "acciones/ver_form/ver_empleado.html", {"request": request, "ruta":ruta, 'objeto_3': objeto_3})
+            if request.method == "POST" :
+                    rutas =  'menu_ver''/''empleado'
+                    return render(request, "acciones/editar.html", {"ruta":ruta, "rutas":rutas, 'objeto_3': objeto_3, "mostrar": "funcion super ver"})
+
+            rutas =  'menu_ver''/''empleado'
+            return render(request, "acciones/ver_form/ver_empleado.html", {"ruta":ruta, "rutas":rutas, 'objeto_3': objeto_3})
+
         case "local" :
-            return render(request, "acciones/ver_form/ver_local.html", {"request": request, "ruta":ruta, 'objeto_3': objeto_3})
+            return render(request, "acciones/ver_form/ver_local.html", {"ruta":ruta, 'objeto_3': objeto_3})
         case "departamento" :
-            return render(request, "acciones/ver_form/ver_departamento.html", {"request": request, "ruta":ruta, 'objeto_3': objeto_3})
+            return render(request, "acciones/ver_form/ver_departamento.html", {"ruta":ruta, 'objeto_3': objeto_3})
         case "pais" :
-            return render(request, "acciones/ver_form/ver_pais.html", {"request": request, "ruta":ruta, 'objeto_3': objeto_3})
+            return render(request, "acciones/ver_form/ver_pais.html", {"ruta":ruta, 'objeto_3': objeto_3})
         case "trabajo" :
-            return render(request, "acciones/ver_form/ver_trabajo.html", {"request": request, "ruta":ruta, 'objeto_3': objeto_3})
+            return render(request, "acciones/ver_form/ver_trabajo.html", {"ruta":ruta, 'objeto_3': objeto_3})
         case "salario" :
-            return render(request, "acciones/ver_form/ver_salario.html", {"request": request, "ruta":ruta, 'objeto_3': objeto_3})
+            return render(request, "acciones/ver_form/ver_salario.html", {"ruta":ruta, 'objeto_3': objeto_3})
 
-
+def editar (request, resource, id) :
+    
+    return render(request, "acciones/editar.html", {"mostrar": "funcion editar"})
 
 

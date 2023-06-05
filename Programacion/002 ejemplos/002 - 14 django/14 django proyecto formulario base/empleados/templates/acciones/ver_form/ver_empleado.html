@@ -3,16 +3,20 @@
 
 {% block contenido_1 %}
 {{ block.super }}
-    <h3>Ver y editar {{ request.path|slice:"10:"|slice:": -1" }}</h3>
+    <h3>Ver y editar empleado</h3>
     {% for objeto in objeto_3 %}
     <hr>
+    <form action="{% url 'editar' resource=request.path|slice:'1:'|slice:': -1' id=objeto.id%}" method="GET">
+        {% csrf_token %}
         <div class="color_1" >
             <li> <h3>Nombre : </h3> <h4>{{ objeto.nombre }}</h4> </li>
             <li> <h3>Apellido : </h3> <h4> {{ objeto.apellido }}</h4> </li>
             <li> <h3>CI : </h3> <h4>{{ objeto.ci }}</h4> </li>
             <li> <h3>Direccion : </h3> {{ objeto.direccion }}</h4> </li>
             <li> <h3>Email : </h3> <h4>{{ objeto.email }}</h4> </li>
-            <input type="submit" value="Editar {{ request.path|slice:"10:"|slice:": -1" }}">
+            <li> <h3>ID : </h3> <h4>{{ objeto.id }}</h4> </li>
+            <input type="submit" value="Editar empleado">
         </div>
+    </form>
     {% endfor %}
 {% endblock  %}
