@@ -77,13 +77,7 @@ def super_ver (request, resource, objeto_1, objeto_2, objeto_3, rutas) :
     ruta = rutas[1]
     match rutas[2] :
         case "empleado" :
-            if request.method == "POST" :
-                    rutas =  'menu_ver''/''empleado'
-                    return render(request, "acciones/editar.html", {"ruta":ruta, "rutas":rutas, 'objeto_3': objeto_3, "mostrar": "funcion super ver"})
-
-            rutas =  'menu_ver''/''empleado'
-            return render(request, "acciones/ver_form/ver_empleado.html", {"ruta":ruta, "rutas":rutas, 'objeto_3': objeto_3})
-
+            return render(request, "acciones/ver_form/ver_empleado.html", {"ruta":ruta, 'objeto_3': objeto_3})
         case "local" :
             return render(request, "acciones/ver_form/ver_local.html", {"ruta":ruta, 'objeto_3': objeto_3})
         case "departamento" :
@@ -96,7 +90,39 @@ def super_ver (request, resource, objeto_1, objeto_2, objeto_3, rutas) :
             return render(request, "acciones/ver_form/ver_salario.html", {"ruta":ruta, 'objeto_3': objeto_3})
 
 def editar (request, resource, id) :
-    
-    return render(request, "acciones/editar.html", {"mostrar": "funcion editar"})
+    rutas = request.path.split("/")
+    match rutas[2] :
+        case "empleado":
+            return render(request, "acciones/editar.html", {"mostrar": "funcion editar empleado"})
+        case "local":
+            return render(request, "acciones/editar.html", {"mostrar": "funcion editar local"})
+        case "departamento":
+            return render(request, "acciones/editar.html", {"mostrar": "funcion editar departamento"})
+        case "pais":
+            return render(request, "acciones/editar.html", {"mostrar": "funcion editar pais"})
+        case "trabajo":
+            return render(request, "acciones/editar.html", {"mostrar": "funcion editar trabajo"})
+        case "salario":
+            return render(request, "acciones/editar.html", {"mostrar": "funcion editar salario"})
+
+
+def borrar (request, resource, id) :
+    rutas = request.path.split("/")
+    match rutas[2] :
+        case "empleado":
+            return render(request, "acciones/borar.html", {"mostrar": "funcion borar empleado"})
+        case "local":
+            return render(request, "acciones/borar.html", {"mostrar": "funcion borar local"})
+        case "departamento":
+            return render(request, "acciones/borar.html", {"mostrar": "funcion borar departamento"})
+        case "pais":
+            return render(request, "acciones/borar.html", {"mostrar": "funcion borar pais"})
+        case "trabajo":
+            return render(request, "acciones/borar.html", {"mostrar": "funcion borar trabajo"})
+        case "salario":
+            return render(request, "acciones/borar.html", {"mostrar": "funcion borar salario"})
+
+
+
 
 
