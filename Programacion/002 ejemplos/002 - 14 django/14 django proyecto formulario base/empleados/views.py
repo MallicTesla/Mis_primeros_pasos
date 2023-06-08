@@ -68,7 +68,7 @@ def separar_rutas (request, resource, objeto_1, objeto_2, objeto_3, rutas):
         return super_ver (request, resource, objeto_1, objeto_2, objeto_3, rutas)
 
 def super_creasion (request, resource, objeto_1, objeto_2, objeto_3, ruta) :
-    if request.method == "POST" or objeto_1.is_valid():
+    if request.method == "POST" and objeto_1.is_valid():
         objeto_1.save()
 
     return render(request, "acciones/crear.html", {"ver": objeto_2, "ruta":ruta})
@@ -91,43 +91,95 @@ def super_ver (request, resource, objeto_1, objeto_2, objeto_3, rutas) :
 
 def editar (request, resource, id) :
     rutas = request.path.split("/")
-    id = int (id)
+    suma = 0
+
     match rutas[2] :
         case "empleado":
             relleno = Empleado.objects.get(id=id)
-            objeto_1 = EmpleadoForm(instance=relleno)
 
-            return render(request, "acciones/editar.html", {"ver": objeto_1})
+            if request.method == "POST":
+                objeto_1 = EmpleadoForm(request.POST, instance=relleno)
+
+                if objeto_1.is_valid():
+                    objeto_1.save()
+
+                    return empleado(request, resource)
+
+            else:
+                objeto_1 = EmpleadoForm(instance=relleno)
 
         case "local":
             relleno = Local.objects.get(id=id)
-            objeto_1 = LocalForm(instance=relleno)
 
-            return render(request, "acciones/editar.html", {"ver": objeto_1})
+            if request.method == "POST":
+                objeto_1 = LocalForm(request.POST, instance=relleno)
+
+                if objeto_1.is_valid():
+                    objeto_1.save()
+
+                    return local(request, resource)
+
+            else:
+                objeto_1 = LocalForm(instance=relleno)
 
         case "departamento":
             relleno = Departamento.objects.get(id=id)
-            objeto_1 = DepartamentoForm(instance=relleno)
 
-            return render(request, "acciones/editar.html", {"ver": objeto_1})
+            if request.method == "POST":
+                objeto_1 = DepartamentoForm(request.POST, instance=relleno)
+
+                if objeto_1.is_valid():
+                    objeto_1.save()
+
+                    return departamento(request, resource)
+
+            else:
+                objeto_1 = DepartamentoForm(instance=relleno)
 
         case "pais":
             relleno = Pais.objects.get(id=id)
-            objeto_1 = PaisForm(instance=relleno)
 
-            return render(request, "acciones/editar.html", {"ver": objeto_1})
+            if request.method == "POST":
+                objeto_1 = PaisForm(request.POST, instance=relleno)
+
+                if objeto_1.is_valid():
+                    objeto_1.save()
+
+                    return pais(request, resource)
+
+            else:
+                objeto_1 = PaisForm(instance=relleno)
 
         case "trabajo":
             relleno = Trabajo.objects.get(id=id)
-            objeto_1 = TrabajoForm(instance=relleno)
 
-            return render(request, "acciones/editar.html", {"ver": objeto_1})
+            if request.method == "POST":
+                objeto_1 = TrabajoForm(request.POST, instance=relleno)
+
+                if objeto_1.is_valid():
+                    objeto_1.save()
+
+                    return trabajo(request, resource)
+
+            else:
+                objeto_1 = TrabajoForm(instance=relleno)
 
         case "salario":
             relleno = Salario.objects.get(id=id)
-            objeto_1 = SalarioForm(instance=relleno)
 
-            return render(request, "acciones/editar.html", {"ver": objeto_1})
+            if request.method == "POST":
+                objeto_1 = SalarioForm(request.POST, instance=relleno)
+
+                if objeto_1.is_valid():
+                    objeto_1.save()
+
+                    return salario(request, resource)
+
+            else:
+                objeto_1 = SalarioForm(instance=relleno)
+
+    print (f"return {suma}")
+    return render(request, "acciones/editar.html", {"ver": objeto_1})
 
 def borrar (request, resource, id) :
     rutas = request.path.split("/")
