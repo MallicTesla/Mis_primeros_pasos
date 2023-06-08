@@ -11,7 +11,8 @@
             <li> <h3>Extra junio : </h3> <h4> {{ objeto.extra_junio }}</h4> </li>
             <li> <h3>Extra nobiembre : </h3> <h4>{{ objeto.extra_nobiembre }}</h4> </li>
             <li> <h3>Trabajo : </h3> <h4>{{ objeto.trabajo }}</h4> </li>
-            <input type="submit" value="Editar {{ request.path|slice:"10:"|slice:": -1" }}">
+            <li><a href="{% url 'editar' resource=request.path|slice:'1:'|slice:': -1' id=objeto.id %}" class="button-link">Editar salario</a></li>
+            <li><a href="{% url 'borrar' resource=request.path|slice:'1:'|slice:': -1' id=objeto.id %}" class="button-link">Borrar salario</a></li>
         </div>
     {% endfor %}
 {% endblock  %}

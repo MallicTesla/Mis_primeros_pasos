@@ -10,7 +10,8 @@
             <li> <h3>Titulo : </h3> <h4>{{ objeto.titulo }}</h4> </li>
             <li> <h3>Descripsion : </h3> <h4> {{ objeto.descripsion }}</h4> </li>
             <li> <h3>Empleados : </h3> <h4>{{ objeto.empleado }}</h4> </li>
-            <input type="submit" value="Editar {{ request.path|slice:"10:"|slice:": -1" }}">
+            <li><a href="{% url 'editar' resource=request.path|slice:'1:'|slice:': -1' id=objeto.id %}" class="button-link">Editar trabajo</a></li>
+            <li><a href="{% url 'borrar' resource=request.path|slice:'1:'|slice:': -1' id=objeto.id %}" class="button-link">Borrar trabajo</a></li>
         </div>
     {% endfor %}
 {% endblock  %}
