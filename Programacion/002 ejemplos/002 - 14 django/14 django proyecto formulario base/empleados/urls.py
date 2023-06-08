@@ -15,5 +15,6 @@ urlpatterns = [
     path ("<resource>/salario/", views.salario, name="salario"),
 
     re_path (r'^(?P<resource>.+)/editar/(?P<id>\d+)/$', views.editar, name = "editar"),
+    re_path (r'^(?P<resource>.+)/borrar/(?P<id>\d+)/$', views.borrar, name = "borrar"),
 ]
 

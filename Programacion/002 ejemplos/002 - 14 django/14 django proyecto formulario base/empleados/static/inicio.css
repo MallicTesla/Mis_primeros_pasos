@@ -33,13 +33,27 @@ text-align: left;
     text-align: center;
 }
 
-.color_1{
+.color_1 {
     background-color: lightblue;
     padding: 10px;
 }
 
 .color_1:hover {
     background-color: rgb(64, 190, 232);
+}
+
+.color_1 .button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.color_1 .button-link:hover {
+    background-color: #0056b3;
 }
 
 .color_2{
