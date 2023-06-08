@@ -91,36 +91,59 @@ def super_ver (request, resource, objeto_1, objeto_2, objeto_3, rutas) :
 
 def editar (request, resource, id) :
     rutas = request.path.split("/")
+    id = int (id)
     match rutas[2] :
         case "empleado":
-            return render(request, "acciones/editar.html", {"mostrar": "funcion editar empleado"})
-        case "local":
-            return render(request, "acciones/editar.html", {"mostrar": "funcion editar local"})
-        case "departamento":
-            return render(request, "acciones/editar.html", {"mostrar": "funcion editar departamento"})
-        case "pais":
-            return render(request, "acciones/editar.html", {"mostrar": "funcion editar pais"})
-        case "trabajo":
-            return render(request, "acciones/editar.html", {"mostrar": "funcion editar trabajo"})
-        case "salario":
-            return render(request, "acciones/editar.html", {"mostrar": "funcion editar salario"})
+            relleno = Empleado.objects.get(id=id)
+            objeto_1 = EmpleadoForm(instance=relleno)
 
+            return render(request, "acciones/editar.html", {"ver": objeto_1})
+
+        case "local":
+            relleno = Local.objects.get(id=id)
+            objeto_1 = LocalForm(instance=relleno)
+
+            return render(request, "acciones/editar.html", {"ver": objeto_1})
+
+        case "departamento":
+            relleno = Departamento.objects.get(id=id)
+            objeto_1 = DepartamentoForm(instance=relleno)
+
+            return render(request, "acciones/editar.html", {"ver": objeto_1})
+
+        case "pais":
+            relleno = Pais.objects.get(id=id)
+            objeto_1 = PaisForm(instance=relleno)
+
+            return render(request, "acciones/editar.html", {"ver": objeto_1})
+
+        case "trabajo":
+            relleno = Trabajo.objects.get(id=id)
+            objeto_1 = TrabajoForm(instance=relleno)
+
+            return render(request, "acciones/editar.html", {"ver": objeto_1})
+
+        case "salario":
+            relleno = Salario.objects.get(id=id)
+            objeto_1 = SalarioForm(instance=relleno)
+
+            return render(request, "acciones/editar.html", {"ver": objeto_1})
 
 def borrar (request, resource, id) :
     rutas = request.path.split("/")
     match rutas[2] :
         case "empleado":
-            return render(request, "acciones/borar.html", {"mostrar": "funcion borar empleado"})
+            return render(request, "acciones/borrar.html", {"mostrar": "funcion borrar empleado"})
         case "local":
-            return render(request, "acciones/borar.html", {"mostrar": "funcion borar local"})
+            return render(request, "acciones/borrar.html", {"mostrar": "funcion borrar local"})
         case "departamento":
-            return render(request, "acciones/borar.html", {"mostrar": "funcion borar departamento"})
+            return render(request, "acciones/borrar.html", {"mostrar": "funcion borrar departamento"})
         case "pais":
-            return render(request, "acciones/borar.html", {"mostrar": "funcion borar pais"})
+            return render(request, "acciones/borrar.html", {"mostrar": "funcion borrar pais"})
         case "trabajo":
-            return render(request, "acciones/borar.html", {"mostrar": "funcion borar trabajo"})
+            return render(request, "acciones/borrar.html", {"mostrar": "funcion borrar trabajo"})
         case "salario":
-            return render(request, "acciones/borar.html", {"mostrar": "funcion borar salario"})
+            return render(request, "acciones/borrar.html", {"mostrar": "funcion borrar salario"})
 
 
 

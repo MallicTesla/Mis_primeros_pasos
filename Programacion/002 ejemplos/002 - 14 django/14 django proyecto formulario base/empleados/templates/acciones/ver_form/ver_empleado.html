@@ -12,7 +12,6 @@
         <li><h3>CI : </h3><h4>{{ objeto.ci }}</h4></li>
         <li><h3>Direccion : </h3>{{ objeto.direccion }}</li>
         <li><h3>Email : </h3><h4>{{ objeto.email }}</h4></li>
-        <li><h3>ID : </h3><h4>{{ objeto.id }}</h4></li>
         <li><a href="{% url 'editar' resource=request.path|slice:'1:'|slice:': -1' id=objeto.id %}" class="button-link">Editar empleado</a></li>
         <li><a href="{% url 'borrar' resource=request.path|slice:'1:'|slice:': -1' id=objeto.id %}" class="button-link">Borrar empleado</a></li>
     </div>
