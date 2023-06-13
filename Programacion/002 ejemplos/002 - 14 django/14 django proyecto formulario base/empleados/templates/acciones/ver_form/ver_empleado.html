@@ -7,13 +7,15 @@
     {% for objeto in objeto_3 %}
     <hr>
     <div class="color_1">
+
         <li><h3>Nombre : </h3><h4>{{ objeto.nombre }}</h4></li>
         <li><h3>Apellido : </h3><h4>{{ objeto.apellido }}</h4></li>
         <li><h3>CI : </h3><h4>{{ objeto.ci }}</h4></li>
         <li><h3>Direccion : </h3>{{ objeto.direccion }}</li>
         <li><h3>Email : </h3><h4>{{ objeto.email }}</h4></li>
-        <li><a href="{% url 'editar' resource=request.path|slice:'1:'|slice:': -1' id=objeto.id %}" class="button-link">Editar empleado</a></li>
-        <li><a href="{% url 'borrar' resource=request.path|slice:'1:'|slice:': -1' id=objeto.id %}" class="button-link">Borrar empleado</a></li>
+
+        <li><a href="{% url 'editar' resource=ruta id=objeto.id %}" class="button-link">Editar empleado</a></li>
+        <li><a href="{% url 'borrar' resource=ruta id=objeto.id %}" class="button-link">Borrar empleado</a></li>
     </div>
     {% endfor %}
 {% endblock  %}

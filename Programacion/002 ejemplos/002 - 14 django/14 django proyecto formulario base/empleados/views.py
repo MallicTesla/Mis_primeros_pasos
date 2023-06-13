@@ -74,128 +74,173 @@ def super_creasion (request, resource, objeto_1, objeto_2, objeto_3, ruta) :
     return render(request, "acciones/crear.html", {"ver": objeto_2, "ruta":ruta})
 
 def super_ver (request, resource, objeto_1, objeto_2, objeto_3, rutas) :
-    ruta = rutas[1]
+    rutas = request.path.split("/")
+    ruta = rutas[1]+"/"+rutas[2]
+
     match rutas[2] :
         case "empleado" :
-            return render(request, "acciones/ver_form/ver_empleado.html", {"ruta":ruta, 'objeto_3': objeto_3})
+            return render (request, "acciones/ver_form/ver_empleado.html", {"ruta":ruta, 'objeto_3': objeto_3})
         case "local" :
-            return render(request, "acciones/ver_form/ver_local.html", {"ruta":ruta, 'objeto_3': objeto_3})
+            return render (request, "acciones/ver_form/ver_local.html", {"ruta":ruta, 'objeto_3': objeto_3})
         case "departamento" :
-            return render(request, "acciones/ver_form/ver_departamento.html", {"ruta":ruta, 'objeto_3': objeto_3})
+            return render (request, "acciones/ver_form/ver_departamento.html", {"ruta":ruta, 'objeto_3': objeto_3})
         case "pais" :
-            return render(request, "acciones/ver_form/ver_pais.html", {"ruta":ruta, 'objeto_3': objeto_3})
+            return render (request, "acciones/ver_form/ver_pais.html", {"ruta":ruta, 'objeto_3': objeto_3})
         case "trabajo" :
-            return render(request, "acciones/ver_form/ver_trabajo.html", {"ruta":ruta, 'objeto_3': objeto_3})
+            return render (request, "acciones/ver_form/ver_trabajo.html", {"ruta":ruta, 'objeto_3': objeto_3})
         case "salario" :
-            return render(request, "acciones/ver_form/ver_salario.html", {"ruta":ruta, 'objeto_3': objeto_3})
+            return render (request, "acciones/ver_form/ver_salario.html", {"ruta":ruta, 'objeto_3': objeto_3})
 
 def editar (request, resource, id) :
     rutas = request.path.split("/")
-    suma = 0
 
     match rutas[2] :
         case "empleado":
-            relleno = Empleado.objects.get(id=id)
+            relleno = Empleado.objects.get (id=id)
 
             if request.method == "POST":
-                objeto_1 = EmpleadoForm(request.POST, instance=relleno)
+                objeto_1 = EmpleadoForm (request.POST, instance=relleno)
 
                 if objeto_1.is_valid():
                     objeto_1.save()
 
-                    return empleado(request, resource)
+                    return empleado (request, resource)
 
             else:
-                objeto_1 = EmpleadoForm(instance=relleno)
+                objeto_1 = EmpleadoForm (instance=relleno)
 
         case "local":
-            relleno = Local.objects.get(id=id)
+            relleno = Local.objects.get (id=id)
 
             if request.method == "POST":
-                objeto_1 = LocalForm(request.POST, instance=relleno)
+                objeto_1 = LocalForm (request.POST, instance=relleno)
 
                 if objeto_1.is_valid():
                     objeto_1.save()
 
-                    return local(request, resource)
+                    return local (request, resource)
 
             else:
-                objeto_1 = LocalForm(instance=relleno)
+                objeto_1 = LocalForm (instance=relleno)
 
         case "departamento":
-            relleno = Departamento.objects.get(id=id)
+            relleno = Departamento.objects.get (id=id)
 
             if request.method == "POST":
-                objeto_1 = DepartamentoForm(request.POST, instance=relleno)
+                objeto_1 = DepartamentoForm (request.POST, instance=relleno)
 
                 if objeto_1.is_valid():
                     objeto_1.save()
 
-                    return departamento(request, resource)
+                    return departamento (request, resource)
 
             else:
-                objeto_1 = DepartamentoForm(instance=relleno)
+                objeto_1 = DepartamentoForm (instance=relleno)
 
         case "pais":
             relleno = Pais.objects.get(id=id)
 
             if request.method == "POST":
-                objeto_1 = PaisForm(request.POST, instance=relleno)
+                objeto_1 = PaisForm (request.POST, instance=relleno)
 
                 if objeto_1.is_valid():
                     objeto_1.save()
 
-                    return pais(request, resource)
+                    return pais (request, resource)
 
             else:
-                objeto_1 = PaisForm(instance=relleno)
+                objeto_1 = PaisForm (instance=relleno)
 
         case "trabajo":
             relleno = Trabajo.objects.get(id=id)
 
             if request.method == "POST":
-                objeto_1 = TrabajoForm(request.POST, instance=relleno)
+                objeto_1 = TrabajoForm (request.POST, instance=relleno)
 
                 if objeto_1.is_valid():
                     objeto_1.save()
 
-                    return trabajo(request, resource)
+                    return trabajo (request, resource)
 
             else:
-                objeto_1 = TrabajoForm(instance=relleno)
+                objeto_1 = TrabajoForm (instance=relleno)
 
         case "salario":
             relleno = Salario.objects.get(id=id)
 
             if request.method == "POST":
-                objeto_1 = SalarioForm(request.POST, instance=relleno)
+                objeto_1 = SalarioForm (request.POST, instance=relleno)
 
                 if objeto_1.is_valid():
                     objeto_1.save()
 
-                    return salario(request, resource)
+                    return salario (request, resource)
 
             else:
-                objeto_1 = SalarioForm(instance=relleno)
+                objeto_1 = SalarioForm (instance=relleno)
 
-    print (f"return {suma}")
-    return render(request, "acciones/editar.html", {"ver": objeto_1})
+    return render (request, "acciones/editar.html", {"ver": objeto_1})
 
 def borrar (request, resource, id) :
     rutas = request.path.split("/")
+    ruta = rutas[1]+"/"+rutas[2]
+
     match rutas[2] :
         case "empleado":
-            return render(request, "acciones/borrar.html", {"mostrar": "funcion borrar empleado"})
+            relleno = Empleado.objects.get (id=id)
+            objeto_1 = EmpleadoForm (instance=relleno)
+
+            if request.method == "POST":
+                relleno.delete()
+
+                return empleado (request, resource)
+
         case "local":
-            return render(request, "acciones/borrar.html", {"mostrar": "funcion borrar local"})
+            relleno = Local.objects.get (id=id)
+            objeto_1 = LocalForm (instance=relleno)
+
+            if request.method == "POST":
+                relleno.delete()
+
+                return local (request, resource)
+
         case "departamento":
-            return render(request, "acciones/borrar.html", {"mostrar": "funcion borrar departamento"})
+            relleno = Departamento.objects.get (id=id)
+            objeto_1 = DepartamentoForm (instance=relleno)
+
+            if request.method == "POST":
+                relleno.delete()
+
+                return departamento (request, resource)
+
         case "pais":
-            return render(request, "acciones/borrar.html", {"mostrar": "funcion borrar pais"})
+            relleno = Pais.objects.get (id=id)
+            objeto_1 = PaisForm (instance=relleno)
+
+            if request.method == "POST":
+                relleno.delete()
+
+                return pais (request, resource)
+
         case "trabajo":
-            return render(request, "acciones/borrar.html", {"mostrar": "funcion borrar trabajo"})
+            relleno = Trabajo.objects.get (id=id)
+            objeto_1 = TrabajoForm (instance=relleno)
+
+            if request.method == "POST":
+                relleno.delete()
+
+                return trabajo (request, resource)
+
         case "salario":
-            return render(request, "acciones/borrar.html", {"mostrar": "funcion borrar salario"})
+            relleno = Salario.objects.get (id=id)
+            objeto_1 = SalarioForm (instance=relleno)
+
+            if request.method == "POST":
+                relleno.delete()
+
+                return salario (request, resource)
+
+    return render (request, "acciones/borrar.html", {"ver":objeto_1, "ruta":ruta})
 
 
 

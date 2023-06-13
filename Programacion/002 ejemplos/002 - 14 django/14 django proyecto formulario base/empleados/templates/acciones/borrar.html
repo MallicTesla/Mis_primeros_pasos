@@ -4,8 +4,14 @@
 
 {% block contenido_1 %}
 {{ block.super }}
-<h1>editar</h1>
-{{mostrar}}
-{{rutas}}
+
+<h1>Borrar</h1>
+
+<hr>
+<form action= "{{ request.path }}" method = "POST">
+    {% csrf_token %}
+    {{ ver }}
+    <input type="submit" value="Borrar">
+</form>
 
 {% endblock  %}
