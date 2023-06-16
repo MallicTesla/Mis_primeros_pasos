@@ -242,6 +242,23 @@ def borrar (request, resource, id) :
 
     return render (request, "acciones/borrar.html", {"ver":objeto_1, "ruta":ruta})
 
+def relaciones (request, resource, id):
+    empleado = Empleado.objects.get(id=id)
+    trabajo = empleado.trabajo
+    salario = trabajo.salario
+    local = empleado.local
+    departamento = local.departamento
+    pais = departamento.pais
+
+    return render (request, "acciones/ver_relaciones/relacion_empleado.html", { 
+    "empleado" : empleado,
+    "trabajo" : trabajo,
+    "salario" : salario,
+    "local" : local,
+    "departamento" : departamento,
+    "pais" :  pais,})
+
+
 
 
 

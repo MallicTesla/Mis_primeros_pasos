@@ -16,5 +16,6 @@ urlpatterns = [
 
     re_path (r'^(?P<resource>.+)/editar/(?P<id>\d+)/$', views.editar, name = "editar"),
     re_path (r'^(?P<resource>.+)/borrar/(?P<id>\d+)/$', views.borrar, name = "borrar"),
+    re_path (r'^(?P<resource>.+)/relaciones/(?P<id>\d+)/$', views.relaciones, name = "relaciones"),
 ]
 
