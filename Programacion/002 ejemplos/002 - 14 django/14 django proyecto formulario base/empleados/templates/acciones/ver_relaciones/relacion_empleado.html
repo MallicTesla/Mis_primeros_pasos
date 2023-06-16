@@ -1,0 +1,42 @@
+{% extends 'menus/menu_ver.html' %}
+{% load static %}
+
+{% block contenido_1 %}
+{{ block.super }}
+    <h3>Ver y editar empleado</h3>
+    <hr>
+
+        <div class="color_1">
+            <h2>Empleado</h2>
+                <li> <h3>Nombre : </h3> <h4>{{ empleado.nombre }}</h4> </li>
+                <li> <h3>Apellido : </h3> <h4> {{ empleado.apellido }}</h4> </li>
+                <li> <h3>CI : </h3> <h4>{{ empleado.ci }}</h4> </li>
+                <li> <h3>Direccion : </h3> {{ empleado.direccion }}</h4> </li>
+                <li> <h3>Email : </h3> <h4>{{ empleado.email }}</h4> </li>
+        </div>
+    <hr>
+
+        <div class="color_2">
+            <h2>Trabajo</h2>
+                <li><h3>Trabajo : </h3><h4>{{ trabajo.titulo }}</h4></li>
+                <li><h3>Descripsion : </h3><h4>{{ trabajo.descripcion }}</h4></li>
+
+            <h2>Salario</h2>
+                <li><h3>Salario anual : </h3><h4>{{ salario.monto_anual }}</h4></li>
+                <li><h3>Extra junio : </h3><h4>{{ salario.extra_junio }}</h4></li>
+                <li><h3>Extra nobiembre : </h3><h4>{{ salario.extra_noviembre }}</h4></li>
+        </div>
+    <hr>
+
+        <div class="color_2">
+            <h2>Local</h2>
+                <li><h3>Nombre del local : </h3><h4>{{ local.local_nombre }}</h4></li>
+                <li><h3>Direccion : </h3><h4>{{ local.direccion }}</h4></li>
+
+            <h2>Departamento</h2>
+                <li><h3>Departamento : </h3><h4>{{ departamento.departamento }}</h4></li>
+            <h2>Pais</h2>
+                <li><h3>Pais : </h3><h4>{{ pais.nombre }}</h4></li>
+        </div>
+
+{% endblock  %}
