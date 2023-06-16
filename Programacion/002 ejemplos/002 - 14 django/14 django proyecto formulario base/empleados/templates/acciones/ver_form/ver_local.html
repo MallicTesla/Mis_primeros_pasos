@@ -9,7 +9,8 @@
         <div class="color_1" >
             <li><h3>Nombre del local : </h3><h4>{{ objeto.local_nombre }}</h4></li>
             <li><h3>Direccion : </h3><h4>{{ objeto.direccion }}</h4></li>
-            <li><h3>Empleados : </h3><h4>{{ objeto.empleado }}</h4></li>
+            <li><h3>Departamento : </h3><h4>{{ objeto.departamento }}</h4></li>
+
             <li><a href="{% url 'editar' resource=ruta id=objeto.id %}" class="button-link">Editar local</a></li>
             <li><a href="{% url 'borrar' resource=ruta id=objeto.id %}" class="button-link">Borrar local</a></li>
         </div>

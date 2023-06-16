@@ -8,7 +8,7 @@
     <hr>
         <div class="color_1" >
             <li><h3>Departamento : </h3><h4>{{ objeto.departamento }}</h4></li>
-            <li><h3>Local : </h3><h4>{{ objeto.local }}</h4></li>
+            <li><h3>Pais : </h3><h4>{{ objeto.pais }}</h4></li>
             <li><a href="{% url 'editar' resource=ruta id=objeto.id %}" class="button-link">Editar departamento</a></li>
             <li><a href="{% url 'borrar' resource=ruta id=objeto.id %}" class="button-link">Borrar departamento</a></li>
         </div>

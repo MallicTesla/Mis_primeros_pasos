@@ -16,6 +16,7 @@
 
         <li><a href="{% url 'editar' resource=ruta id=objeto.id %}" class="button-link">Editar empleado</a></li>
         <li><a href="{% url 'borrar' resource=ruta id=objeto.id %}" class="button-link">Borrar empleado</a></li>
+        <li><a href="{% url 'relaciones' resource=ruta id=objeto.id %}" class="button-link">Relaciones</a></li>
     </div>
     {% endfor %}
 {% endblock  %}

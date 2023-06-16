@@ -19,12 +19,13 @@ resource=lo que se pasa por aca sustitulle str:resource que se encuentra en el a
 {{ block.super }}
 <nav class="prinsipal">
     <ul>
-        <li><a href="{% url 'empleado' resource='menu_ver' %}">Empleado </a></li>
-        <li><a href="{% url 'local' resource='menu_ver' %}" >Local </a></li>
-        <li><a href="{% url 'departamento' resource='menu_ver' %}" >Departamento </a></li>
-        <li><a href="{% url 'pais' resource='menu_ver' %}" >Pais </a></li>
-        <li><a href="{% url 'trabajo' resource='menu_ver' %}" >Trabajo </a></li>
+
         <li><a href="{% url 'salario' resource='menu_ver' %}" >Salario </a></li>
+        <li><a href="{% url 'trabajo' resource='menu_ver' %}" >Trabajo </a></li>
+        <li><a href="{% url 'pais' resource='menu_ver' %}" >Pais </a></li>
+        <li><a href="{% url 'departamento' resource='menu_ver' %}" >Departamento </a></li>
+        <li><a href="{% url 'local' resource='menu_ver' %}" >Local </a></li>
+        <li><a href="{% url 'empleado' resource='menu_ver' %}">Empleado </a></li>
     </ul>
 </nav>
 {% endblock  %}
