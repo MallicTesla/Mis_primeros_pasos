@@ -18,3 +18,35 @@
 .inicio a:hover {
     text-decoration: underline;
 }
+
+.al_costado {
+    width: 200px; /* Ajusta el ancho del contenedor del menú según tus preferencias */
+    height: 300px; /* Ajusta la altura del contenedor del menú según tus preferencias */
+    border: 1px solid #4c3cf8; /* Ajusta el estilo y color del borde del contenedor del menú según tus preferencias */
+    padding: 20px; /* Ajusta el espacio interno del contenedor del menú según tus preferencias */
+    box-sizing: border-box;
+}
+
+.menu_list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu_list li {
+    margin-bottom: 10px; /* Ajusta el margen inferior entre elementos del menú según tus preferencias */
+}
+
+.menu_list a {
+    text-decoration: none;
+    color: #000;
+    font-size: 25px;
+}
+
+.menu_list a:hover {
+    background-color: #2847f6; /* Ajusta el color de fondo al pasar el ratón por encima según tus preferencias */
+}
+
+.menu_list a.active {
+    background-color: #82f24e; /* Ajusta el color de fondo después de hacer clic según tus preferencias */
+}
