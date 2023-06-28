@@ -4,11 +4,12 @@
 {% block titulo %}Menu Inicial{% endblock  %}
 
 {% block contenido_1 %}
+    {{ block.super }}
 
-    <ul class="inicio">
-        {# al prinsipio de la url tenes que poner el namespace del url de la app #}
-        <li><a href="{% url 'contactos:inicio' %}">Contactos</a></li>
-        <li><a href="{% url 'tareas:inicio' %}">Tareas</a></li>
-    </ul>
-    <hr>
+        <ul class="inicio">
+            {# al prinsipio de la url tenes que poner el namespace del url de la app #}
+            <li><a href="{% url 'contactos:inicio' %}">Contactos</a></li>
+            <li><a href="{% url 'tareas:inicio' %}">Tareas</a></li>
+        </ul>
+        <hr>
 {% endblock  %}
