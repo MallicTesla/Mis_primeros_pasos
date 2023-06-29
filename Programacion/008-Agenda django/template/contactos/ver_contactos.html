@@ -1,0 +1,26 @@
+{% extends 'menu/contactos/menu.html' %}
+{% load static %}
+
+{% block titulo %}Ver contactos{% endblock  %}
+
+{% block contenido_1 %}
+    {{ block.super }}
+
+    <h1>ver_contactos</h1>
+
+    {% for contacto in ver %}
+    <hr>
+        <div class = "listado">
+            <li><h3>Nombre : </h3><h4>{{ contacto.nombre }}</h4></li>
+            <li><h3>Apellido : </h3><h4>{{ contacto.apellido }}</h4></li>
+            <li><h3>Cel : </h3><h4>{{ contacto.cel }}</h4></li>
+            <li><h3>Tel : </h3><h4>{{ contacto.tel }}</h4></li>
+            <li><h3>Email : </h3><h4>{{ contacto.email }}</h4></li>
+            <li><h3>Trabajo : </h3><h4>{{ contacto.trabajo }}</h4></li>
+            <li><h3>Nota : </h3><h4>{{ contacto.nota }}</h4></li>
+            <li><h3>Fecha registro : </h3><h4>{{ contacto.fecha_registro }}</h4></li>
+        </div>
+    {% endfor %}
+
+
+{% endblock  %}

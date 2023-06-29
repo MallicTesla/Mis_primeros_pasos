@@ -44,9 +44,34 @@
 }
 
 .menu_list a:hover {
-    background-color: #2847f6; /* Ajusta el color de fondo al pasar el ratón por encima según tus preferencias */
+    background-color: #f67728; /* Ajusta el color de fondo al pasar el ratón por encima según tus preferencias */
 }
 
 .menu_list a.active {
-    background-color: #82f24e; /* Ajusta el color de fondo después de hacer clic según tus preferencias */
+    background-color: #dcf24e; /* Ajusta el color de fondo después de hacer clic según tus preferencias */
+}
+
+.listado {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listado li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0px;
+    line-height: 0;
+}
+
+.listado h3 {
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.listado h4 {
+    margin: 0;
+    font-size: 16px;
+    line-height: 0;
 }
