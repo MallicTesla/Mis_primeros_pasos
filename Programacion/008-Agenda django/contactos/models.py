@@ -12,7 +12,7 @@ class Contacto (models.Model):
     fecha_registro = models.DateField (default = date.today)
 
     def __str__(self):
-        return self.nombre, self.apellido
+        return f"{self.nombre} {self.apellido}"
 
 class Grupo (models.Model):
     nombre = models.CharField (max_length= 20, null = False, blank = False)
