@@ -11,8 +11,11 @@
     {% for campo in ver %}
     <hr>
         <div class = "listado">
-            <li><h3>Nombre : </h3><h4>{{ campo.nombre }}</h4></li>
-            <li><h3>Contacto : </h3><h4>{{ campo.contactos }}</h4></li>
+            <li><h3>Nombre del grupo : </h3><h4>{{ campo.nombre }}</h4></li>
+            <li><h3>Contactos en el grupo : </h3><h4>
+                {% for contacto in campo.contactos.all %}
+                {{ contacto }},
+                {% endfor %}</h4></li>
         </div>
     {% endfor %}
 
