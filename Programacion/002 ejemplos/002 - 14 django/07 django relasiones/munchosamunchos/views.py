@@ -50,7 +50,7 @@ def crear(request):
     # art1.publicasiones.remove (pub1)
 
     #   asi se hace la busqueda de un campo y sus relasiones
-    resultado = art1.publicasiones.all ()
+    # resultado = art1.publicasiones.all ()
 
     #   asi se realisa la consulta alreves
     pub1 = Publicasion.objects.get (id = 1)

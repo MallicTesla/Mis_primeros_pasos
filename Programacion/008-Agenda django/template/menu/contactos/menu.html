@@ -22,6 +22,10 @@ relacionar_contacto_grupo
                 <li><a href="{% url 'contactos:ver_contacto' %}" class="menu_link
                 {% if request.resolver_match.view_name == 'contactos:ver_contacto' %} active{% endif %}"
                 >Ver contactos</a></li>
+
+                <li><a href="{% url 'contactos:ver_grupos' %}" class="menu_link
+                    {% if request.resolver_match.view_name == 'contactos:ver_grupos' %} active{% endif %}"
+                    >Ver grupos</a></li>
         </ul>
     </div>
 {% endblock  %}

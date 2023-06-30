@@ -19,6 +19,8 @@
     text-decoration: underline;
 }
 
+/* _________________________________________________________________ */
+
 .al_costado {
     width: 200px; /* Ajusta el ancho del contenedor del menú según tus preferencias */
     height: 300px; /* Ajusta la altura del contenedor del menú según tus preferencias */
@@ -26,6 +28,8 @@
     padding: 20px; /* Ajusta el espacio interno del contenedor del menú según tus preferencias */
     box-sizing: border-box;
 }
+
+/* _________________________________________________________________ */
 
 .menu_list {
     list-style-type: none;
@@ -50,6 +54,8 @@
 .menu_list a.active {
     background-color: #dcf24e; /* Ajusta el color de fondo después de hacer clic según tus preferencias */
 }
+
+/* _________________________________________________________________ */
 
 .listado {
     list-style-type: none;

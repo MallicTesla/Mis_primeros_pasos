@@ -41,3 +41,8 @@ def ver_contacto (request:HttpRequest):
     objecto_1 = Contacto.objects.all()
 
     return render (request, "contactos/ver_contactos.html", {"ver": objecto_1})
+
+def ver_grupos (request:HttpRequest):
+    objecto_1 = Grupo.objects.all ()
+
+    return render (request, "contactos/ver_grupos.html", {"ver": objecto_1})

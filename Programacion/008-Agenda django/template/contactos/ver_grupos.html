@@ -1,0 +1,19 @@
+{% extends 'menu/contactos/menu.html' %}
+{% load static %}
+
+{% block titulo %}Ver grupo{% endblock  %}
+
+{% block contenido_1 %}
+    {{ block.super }}
+
+    <h1>ver_contactos</h1>
+
+    {% for campo in ver %}
+    <hr>
+        <div class = "listado">
+            <li><h3>Nombre : </h3><h4>{{ campo.nombre }}</h4></li>
+            <li><h3>Contacto : </h3><h4>{{ campo.contactos }}</h4></li>
+        </div>
+    {% endfor %}
+
+{% endblock  %}
