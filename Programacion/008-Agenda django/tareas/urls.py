@@ -7,4 +7,6 @@ app_name = 'tareas'
 urlpatterns = [
     path ("inicio/", views.inicio, name = "inicio"),
     path ("crear_tarea/", views.crear_tarea, name = "crear_tarea"),
+
+    path ("ver_tareas/", views.ver_tareas, name = "ver_tareas")
 ]

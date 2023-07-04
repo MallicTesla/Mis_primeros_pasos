@@ -14,3 +14,11 @@ def crear_tarea (request:HttpRequest):
         objeto_1.save()
 
     return render (request, "tarea/form_tarea.html", {"ver": objeto_2})
+
+def ver_tareas (request:HttpRequest):
+    tareas = Tarea.objects.all ()
+
+    return render (request, "tarea/ver_tareas.html", {"tareas":tareas})
+
+            # <li><h4><a href="{% url 'contactos:borrar_contacto' id_contacto=contacto.id%}" class="boton">Borrar contacto</a></h4></li>
+            # <li><h4><a href="{% url 'contactos:borrar_contacto' id_contacto=contacto.id%}" class="boton">Borrar contacto</a></h4></li>

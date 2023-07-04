@@ -11,6 +11,10 @@ relacionar_contacto_grupo
                 {% if request.resolver_match.view_name == 'tareas:crear_tarea' %} active{% endif %}"
                 >Nueva tarea</a></li>
 
+            <li><a href="{% url 'tareas:ver_tareas' %}" class="menu_link
+                {% if request.resolver_match.view_name == 'tareas:ver_tareas' %} active{% endif %}"
+                >Ver tareas</a></li>
+
         </ul>
     </div>
 {% endblock  %} 

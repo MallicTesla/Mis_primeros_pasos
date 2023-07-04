@@ -79,7 +79,7 @@
 .listado h4 {
     margin: 0;
     font-size: 16px;
-    /* line-height: 10; */
+    line-height: 1;
 }
 
 .listado ul {
