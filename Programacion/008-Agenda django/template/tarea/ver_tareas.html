@@ -16,6 +16,9 @@
             <li><h3>Descripcion : </h3><h4>{{ tarea.descripcion }}</h4></li>
             <li><h3>Fecha registro : </h3><h4>{{ tarea.fecha_registro }}</h4></li>
 
+            <li><h4><a href="{% url 'tareas:editar_tarea' id_tarea=tarea.id%}" class="boton">Editar contacto</a></h4></li>
+            <li><h4><a href="{% url 'tareas:borrar_tarea' id_tarea=tarea.id%}" class="boton">Borrar contacto</a></h4></li>
+
         </div>
     {% endfor %}
 

@@ -20,5 +20,25 @@ def ver_tareas (request:HttpRequest):
 
     return render (request, "tarea/ver_tareas.html", {"tareas":tareas})
 
-            # <li><h4><a href="{% url 'contactos:borrar_contacto' id_contacto=contacto.id%}" class="boton">Borrar contacto</a></h4></li>
-            # <li><h4><a href="{% url 'contactos:borrar_contacto' id_contacto=contacto.id%}" class="boton">Borrar contacto</a></h4></li>
+def borrar_tarea (request:HttpRequest, id_tarea):
+    tarea = Tarea.objects.get (id = id_tarea)
+
+    tarea.delete()
+
+    return (ver_tareas(request))
+
+def editar_tarea (request:HttpRequest, id_tarea):
+    relleno = Tarea.objects.get (id=id_tarea)
+
+    if request.method == "POST":
+        objeto_1 = TareaForm (request.POST, instance=relleno)
+
+        if objeto_1.is_valid():
+            objeto_1.save()
+
+            return (ver_tareas(request))
+
+    else:
+        objeto_1 = TareaForm (instance=relleno)
+
+    return render (request, "tarea/form_tarea.html", {"ver": objeto_1})
