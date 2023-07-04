@@ -21,16 +21,15 @@
             <li><h3>Fecha registro : </h3><h4>{{ contacto.fecha_registro }}</h4></li>
 
             <li><h3>Grupos:</h3>
-                <ul>
-                    <h4>
-                    {% for grupo in contacto.grupo_set.all %}
-                        <li>{{ grupo.nombre }} 
-                            <a href="{% url 'contactos:remober_grupo' id_contacto=contacto.id id_grupo=grupo.id%}" class="boton">Remober grupo</a> 
-                        </li>
-                    {% endfor %}
-                    </h4>
-                </ul>
+                <h4>
+                {% for grupo in contacto.grupo_set.all %}
+                    <li>{{ grupo.nombre }} 
+                        <a href="{% url 'contactos:remober_grupo' id_contacto=contacto.id id_grupo=grupo.id%}" class="boton">Remober grupo</a> 
+                    </li>
+                {% endfor %}
+                </h4>
             </li>
+            <li><h4><a href="{% url 'contactos:borrar_contacto' id_contacto=contacto.id%}" class="boton">Borrar contacto</a></h4></li>
         </div>
     {% endfor %}
 

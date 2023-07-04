@@ -62,3 +62,17 @@ def remober_contacto (request:HttpRequest, id_contacto, id_grupo):
     grupo.contactos.remove (contacto)
 
     return ver_grupos (request)
+
+def borrar_contacto (request:HttpRequest, id_contacto):
+    contacto = Contacto.objects.get (id = id_contacto)
+
+    contacto.delete()
+
+    return ver_contacto (request)
+
+def borrar_grupo (request:HttpRequest, id_grupo):
+    grupo = Grupo.objects.get (id = id_grupo)
+
+    grupo.delete()
+
+    return ver_grupos (request)

@@ -21,3 +21,16 @@ class Relacionar_Contacto_GrupoForm(forms.Form):
     #   queryset rellena el menu desplegable con los rts del modelo
     contacto = forms.ModelChoiceField(queryset = Contacto.objects.all())
     grupo = forms.ModelChoiceField(queryset = Grupo.objects.all())
+
+class EliminarRelacionForm(forms.Form):
+    # grupo = forms.ModelChoiceField(queryset=Grupo.objects.all())
+    # contacto = forms.ModelChoiceField(queryset=Contacto.objects.none())
+
+    # def __init__(self, *args, **kwargs):
+    #     super().__init__(*args, **kwargs)
+    #     if 'grupo' in self.data:
+    #         grupo_id = self.data.get('grupo')
+    #         self.fields['contacto'].queryset = Contacto.objects.filter(grupo__id=grupo_id)
+    #     else:
+    #         self.fields['contacto'].queryset = Contacto.objects.none()
+    ...

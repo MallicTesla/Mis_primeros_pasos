@@ -93,33 +93,28 @@
     line-height: 1;
 }
 
-.listado ul li:last-child {
-    margin-right: 0;
-}
-
-.listado ul li a.boton {
-    display: inline-block;
-    padding: 7px 16px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-}
-
-
 /* ------------------------------------------------ */
 
 .boton {
     display: inline-block;
-    padding: 8px 12px;
+    padding: 10px 12px;
+    margin: 1px;
     background-color: #4CAF50;
     color: white;
-    text-align: center;
+    text-align: right;
     text-decoration: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
-.boton:hover {
-    background-color: #45a049;
+.listado li h4 li a.boton {
+    background-color: rgb(0, 21, 248);
+}
+
+.listado li h4 li a.boton:hover {
+    background-color: #a40000;
+}
+
+a.boton:hover {
+    background-color: #a40000;
 }
