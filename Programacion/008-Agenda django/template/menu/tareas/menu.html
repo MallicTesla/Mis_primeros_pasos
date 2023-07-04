@@ -1,0 +1,16 @@
+{% extends 'menu/inicio/menu_inicio.html' %}
+{% load static %}
+
+{% block titulo %}Menu Contactos{% endblock  %}
+relacionar_contacto_grupo
+{% block contenido_1 %}
+    {{ block.super }}
+    <div class="al_costado">
+        <ul class="menu_list">
+            <li><a href="{% url 'tareas:crear_tarea' %}" class="menu_link
+                {% if request.resolver_match.view_name == 'tareas:crear_tarea' %} active{% endif %}"
+                >Nueva tarea</a></li>
+
+        </ul>
+    </div>
+{% endblock  %} 
