@@ -20,11 +20,17 @@
             <li><h3>Nota : </h3><h4>{{ contacto.nota }}</h4></li>
             <li><h3>Fecha registro : </h3><h4>{{ contacto.fecha_registro }}</h4></li>
 
-            <li><h3>Grupos:</h3><h4>
-                {% for grupo in contacto.grupo_set.all %}
-                    {{ grupo.nombre }},
-                {% endfor %}
-            </h4></li>
+            <li><h3>Grupos:</h3>
+                <ul>
+                    <h4>
+                    {% for grupo in contacto.grupo_set.all %}
+                        <li>{{ grupo.nombre }} 
+                            <a href="{% url 'contactos:remober_grupo' id_contacto=contacto.id id_grupo=grupo.id%}" class="boton">Remober grupo</a> 
+                        </li>
+                    {% endfor %}
+                    </h4>
+                </ul>
+            </li>
         </div>
     {% endfor %}
 

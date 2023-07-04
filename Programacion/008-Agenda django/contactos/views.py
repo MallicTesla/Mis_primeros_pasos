@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpRequest
-from .forms import ContactoForm, GrupoForm, Relacionar_Contacto_GrupoForm
+from .forms import ContactoForm, GrupoForm, Relacionar_Contacto_GrupoForm, EliminarRelacionForm
 from .models import Contacto, Grupo
 
 def inicio (request:HttpRequest):
@@ -46,3 +46,19 @@ def ver_grupos (request:HttpRequest):
     objecto_1 = Grupo.objects.all ()
 
     return render (request, "contactos/ver_grupos.html", {"ver": objecto_1})
+
+def remober_grupo (request:HttpRequest, id_contacto, id_grupo):
+    contacto = Contacto.objects.get (id = id_contacto)
+    grupo = Grupo.objects.get (id = id_grupo)
+
+    grupo.contactos.remove (contacto)
+
+    return ver_contacto (request)
+
+def remober_contacto (request:HttpRequest, id_contacto, id_grupo):
+    contacto = Contacto.objects.get (id = id_contacto)
+    grupo = Grupo.objects.get (id = id_grupo)
+
+    grupo.contactos.remove (contacto)
+
+    return ver_grupos (request)
