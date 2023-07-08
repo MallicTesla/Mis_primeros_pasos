@@ -1,7 +1,7 @@
 {% extends 'menu/inicio/menu_inicio.html' %}
 {% load static %}
 
-{% block titulo %}Menu Contactos{% endblock  %}
+{% block titulo %}Menu grupos{% endblock  %}
 relacionar_contacto_grupo
 {% block contenido_1 %}
     {{ block.super }}
@@ -14,7 +14,9 @@ relacionar_contacto_grupo
             <li><a href="{% url 'tareas:ver_tareas' %}" class="menu_link
                 {% if request.resolver_match.view_name == 'tareas:ver_tareas' %} active{% endif %}"
                 >Ver tareas</a></li>
-
         </ul>
     </div>
+
+    {% block contenido_2 %}{% endblock %}
+
 {% endblock  %} 

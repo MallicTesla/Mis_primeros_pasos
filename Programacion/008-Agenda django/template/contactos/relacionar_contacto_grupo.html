@@ -3,15 +3,15 @@
 
 {% block titulo %}Relaciones{% endblock  %}
 
-{% block contenido_1 %}
+{% block contenido_2 %}
     {{ block.super }}
 
-    <h1>form_grupo</h1>
-
-    <form action= "{{ request.path }}" method = "POST">
-        {% csrf_token %}
-        {{ ver }}
-        <input type="submit" value="Relacionar">
-    </form>
+    <div class="contenido_principal">
+        <form action= "{{ request.path }}" method = "POST">
+            {% csrf_token %}
+            {{ ver }}
+            <input type="submit" value="Relacionar">
+        </form>
+    </div>
 
 {% endblock  %}

@@ -3,16 +3,15 @@
 
 {% block titulo %}Nuevo contacto{% endblock  %}
 
-{% block contenido_1 %}
+{% block contenido_2 %}
     {{ block.super }}
 
-    <h1>form_contactos</h1>
-
-    <form action= "{{ request.path }}" method = "POST">
-        {% csrf_token %}
-        {{ ver }}
-        <input type="submit" value="Añadir contacto">
-    </form>
+    <div class="contenido_principal">
+        <form action= "{{ request.path }}" method = "POST">
+            {% csrf_token %}
+            {{ ver }}
+            <input type="submit" value="Añadir contacto">
+        </form>
+    </div>
 
 {% endblock  %}
-

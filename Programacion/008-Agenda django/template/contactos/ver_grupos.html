@@ -3,25 +3,24 @@
 
 {% block titulo %}Ver grupo{% endblock  %}
 
-{% block contenido_1 %}
+{% block contenido_2 %}
     {{ block.super }}
 
-    <h1>ver_contactos</h1>
-
-    {% for campo in ver %}
-    <hr>
-        <div class = "listado">
-            <li><h3>Nombre del grupo : </h3><h4>{{ campo.nombre }}</h4></li>
-            <li><h3>Contactos en el grupo : </h3>
-                <h4>
-                {% for contacto in campo.contactos.all %}
-                    <li>{{ contacto }}
-                        <a href="{% url 'contactos:remober_contacto' id_contacto=contacto.id id_grupo=campo.id%}" class="boton">Remober contacto</a>
-                    </li>
-                {% endfor %}</h4>
-            </li>
-            <li><h4><a href="{% url 'contactos:borrar_grupo' id_grupo=campo.id%}" class="boton">Borrar grupo</a></h4></li>
-        </div>
-    {% endfor %}
-
+    <div class="contenido_principal">
+        {% for campo in ver %}
+        <hr>
+            <div class = "listado">
+                <li><h3>Nombre del grupo : </h3><h4>{{ campo.nombre }}</h4></li>
+                <li><h3>Contactos en el grupo : </h3>
+                    <h4>
+                    {% for contacto in campo.contactos.all %}
+                        <li>{{ contacto }}
+                            <a href="{% url 'contactos:remober_contacto' id_contacto=contacto.id id_grupo=campo.id%}" class="boton">Remober contacto</a>
+                        </li>
+                    {% endfor %}</h4>
+                </li>
+                <li><h4><a href="{% url 'contactos:borrar_grupo' id_grupo=campo.id%}" class="boton">Borrar grupo</a></h4></li>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock  %}

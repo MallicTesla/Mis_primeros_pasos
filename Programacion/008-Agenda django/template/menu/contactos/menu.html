@@ -5,6 +5,7 @@
 relacionar_contacto_grupo
 {% block contenido_1 %}
     {{ block.super }}
+
     <div class="al_costado">
         <ul class="menu_list">
             <li><a href="{% url 'contactos:crear_contacto' %}" class="menu_link
@@ -19,14 +20,16 @@ relacionar_contacto_grupo
                 {% if request.resolver_match.view_name == 'contactos:relacionar_contacto_grupo' %} active{% endif %}"
                 >Relacionar contacto con grupo</a></li>
 
-                <li><a href="{% url 'contactos:ver_contacto' %}" class="menu_link
+            <li><a href="{% url 'contactos:ver_contacto' %}" class="menu_link
                 {% if request.resolver_match.view_name == 'contactos:ver_contacto' %} active{% endif %}"
                 >Ver contactos</a></li>
 
-                <li><a href="{% url 'contactos:ver_grupos' %}" class="menu_link
-                    {% if request.resolver_match.view_name == 'contactos:ver_grupos' %} active{% endif %}"
-                    >Ver grupos</a></li>
-
+            <li><a href="{% url 'contactos:ver_grupos' %}" class="menu_link
+                {% if request.resolver_match.view_name == 'contactos:ver_grupos' %} active{% endif %}"
+                >Ver grupos</a></li>
         </ul>
     </div>
+
+        {% block contenido_2 %}{% endblock %}
+
 {% endblock  %} 

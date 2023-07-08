@@ -6,20 +6,19 @@
 {% block contenido_1 %}
     {{ block.super }}
 
-    <h1>ver_tareas</h1>
+    <div class="contenido_principal">
+        {% for tarea in tareas %}
+        <hr>
+            <div class = "listado">
+                <li><h3>Titulo : </h3><h4>{{ tarea.titulo }}</h4></li>
+                <li><h3>Breve descripcion : </h3><h4>{{ tarea.breve_descripcion }}</h4></li>
+                <li><h3>Descripcion : </h3><h4>{{ tarea.descripcion }}</h4></li>
+                <li><h3>Fecha registro : </h3><h4>{{ tarea.fecha_registro }}</h4></li>
 
-    {% for tarea in tareas %}
-    <hr>
-        <div class = "listado">
-            <li><h3>Titulo : </h3><h4>{{ tarea.titulo }}</h4></li>
-            <li><h3>Breve descripcion : </h3><h4>{{ tarea.breve_descripcion }}</h4></li>
-            <li><h3>Descripcion : </h3><h4>{{ tarea.descripcion }}</h4></li>
-            <li><h3>Fecha registro : </h3><h4>{{ tarea.fecha_registro }}</h4></li>
+                <li><h4><a href="{% url 'tareas:editar_tarea' id_tarea=tarea.id%}" class="boton">Editar contacto</a></h4></li>
+                <li><h4><a href="{% url 'tareas:borrar_tarea' id_tarea=tarea.id%}" class="boton">Borrar contacto</a></h4></li>
 
-            <li><h4><a href="{% url 'tareas:editar_tarea' id_tarea=tarea.id%}" class="boton">Editar contacto</a></h4></li>
-            <li><h4><a href="{% url 'tareas:borrar_tarea' id_tarea=tarea.id%}" class="boton">Borrar contacto</a></h4></li>
-
-        </div>
-    {% endfor %}
-
+            </div>
+        {% endfor %}
+    </div>
 {% endblock  %}

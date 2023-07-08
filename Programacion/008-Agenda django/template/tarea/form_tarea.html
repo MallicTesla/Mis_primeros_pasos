@@ -6,12 +6,12 @@
 {% block contenido_1 %}
     {{ block.super }}
 
-    <h1>form_tarea</h1>
-
-    <form action= "{{ request.path }}" method = "POST">
-        {% csrf_token %}
-        {{ ver }}
-        <input type="submit" value="Añadir contacto">
-    </form>
+    <div class="contenido_principal">
+        <form action= "{{ request.path }}" method = "POST">
+            {% csrf_token %}
+            {{ ver }}
+            <input type="submit" value="Añadir contacto">
+        </form>
+    </div>
 
 {% endblock  %}
