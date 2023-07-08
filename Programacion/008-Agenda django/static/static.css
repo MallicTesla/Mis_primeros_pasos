@@ -102,15 +102,16 @@
 
 .boton {
     display: inline-block;
-    padding: 12px 12px;
-    /* margin: 1px; */
+    padding: 9px 12px;
+    margin: 1px;
     background-color: #4CAF50;
     color: white;
-    text-align: right;
+    text-align: center;
     text-decoration: none;
     border-radius: 4px;
     cursor: pointer;
     margin-left: auto;
+    width: 130px;
 }
 
 a.boton:hover {
@@ -122,7 +123,7 @@ a.boton:hover {
 .contenido_principal {
     width: calc(100% - 250px);
     margin-left: 250px;
-    padding: 20px;
+    /* padding: 20px; */
     overflow: hidden; 
 }
 
@@ -162,9 +163,8 @@ a.boton:hover {
 
 /* ------------------------------------------------ */
 
+/* Estilos personalizados para los campos de formulario */
 .campo-form {
-    /* Estilos personalizados para los campos de formulario */
-    /* Por ejemplo: */
     display: block;
     width: 90%;
     padding: 10px;
