@@ -3,34 +3,42 @@
 
 {% block titulo %}Ver contactos{% endblock  %}
 
-{% block contenido_1 %}
+{% block contenido_2 %}
     {{ block.super }}
 
-    <h1>ver_contactos</h1>
+    <div class="contenido_principal">
+        {% for contacto in ver %}
+        <hr>
+            <div class = "listado">
+                <li><h3>Nombre : </h3><h4>{{ contacto.nombre }}</h4></li>
+                <li><h3>Apellido : </h3><h4>{{ contacto.apellido }}</h4></li>
+                <li><h3>Cel : </h3><h4>{{ contacto.cel }}</h4></li>
+                <li><h3>Tel : </h3><h4>{{ contacto.tel }}</h4></li>
+                <li><h3>Email : </h3><h4>{{ contacto.email }}</h4></li>
+                <li><h3>Trabajo : </h3><h4>{{ contacto.trabajo }}</h4></li>
+                <li><h3>Nota : </h3><h4>{{ contacto.nota }}</h4></li>
+                <li><h3>Fecha registro : </h3><h4>{{ contacto.fecha_registro }}</h4></li>
 
-    {% for contacto in ver %}
-    <hr>
-        <div class = "listado">
-            <li><h3>Nombre : </h3><h4>{{ contacto.nombre }}</h4></li>
-            <li><h3>Apellido : </h3><h4>{{ contacto.apellido }}</h4></li>
-            <li><h3>Cel : </h3><h4>{{ contacto.cel }}</h4></li>
-            <li><h3>Tel : </h3><h4>{{ contacto.tel }}</h4></li>
-            <li><h3>Email : </h3><h4>{{ contacto.email }}</h4></li>
-            <li><h3>Trabajo : </h3><h4>{{ contacto.trabajo }}</h4></li>
-            <li><h3>Nota : </h3><h4>{{ contacto.nota }}</h4></li>
-            <li><h3>Fecha registro : </h3><h4>{{ contacto.fecha_registro }}</h4></li>
+                <div class="grupo_prinsipal">
+                    <div class="izquierda">
+                        <li><h3>Grupos:</h3></li>
+                    </div>
 
-            <li><h3>Grupos:</h3>
-                <h4>
-                {% for grupo in contacto.grupo_set.all %}
-                    <li>{{ grupo.nombre }} 
-                        <a href="{% url 'contactos:remober_grupo' id_contacto=contacto.id id_grupo=grupo.id%}" class="boton">Remober grupo</a> 
-                    </li>
-                {% endfor %}
-                </h4>
-            </li>
-            <li><h4><a href="{% url 'contactos:borrar_contacto' id_contacto=contacto.id%}" class="boton">Borrar contacto</a></h4></li>
-        </div>
-    {% endfor %}
+                    <div class="derecha">
+
+                        <h4>
+                        {% for grupo in contacto.grupo_set.all %}
+                            <div class="grupo">{{ grupo.nombre }} 
+                                <a href="{% url 'contactos:remober_grupo' id_contacto=contacto.id id_grupo=grupo.id%}" class="boton">Remober grupo</a> 
+                            </div>
+                        {% endfor %}
+                        </h4>
+                    </div>
+                </div>
+            
+                <h4><a href="{% url 'contactos:borrar_contacto' id_contacto=contacto.id%}" class="boton">Borrar contacto</a></h4>
+            </div>
+        {% endfor %}
+    </div>
 
 {% endblock  %}
