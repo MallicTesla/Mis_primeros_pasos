@@ -28,8 +28,8 @@
 
                         <h4>
                         {% for grupo in contacto.grupo_set.all %}
-                            <div class="grupo">{{ grupo.nombre }} 
-                                <a href="{% url 'contactos:remober_grupo' id_contacto=contacto.id id_grupo=grupo.id%}" class="boton">Remober grupo</a> 
+                            <div class="grupo">{{ grupo.nombre }}
+                                <a href="{% url 'contactos:remober_grupo' id_contacto=contacto.id id_grupo=grupo.id%}" class="boton">Remover grupo</a> 
                             </div>
                         {% endfor %}
                         </h4>
