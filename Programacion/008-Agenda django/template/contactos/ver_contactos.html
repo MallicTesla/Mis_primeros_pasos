@@ -7,6 +7,11 @@
     {{ block.super }}
 
     <div class="contenido_principal">
+
+        {% include 'contactos/buscadores/buscador.html' %}
+
+        <a href="{{ request.path }}" class = "link"> Todos los contactos </a>
+
         {% for contacto in ver %}
         <hr>
             <div class = "listado">

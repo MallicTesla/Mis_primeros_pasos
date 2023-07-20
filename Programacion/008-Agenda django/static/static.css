@@ -173,3 +173,19 @@ a.boton:hover {
     box-sizing: border-box;
     margin-bottom: 10px;
 }
+
+/* ------------------------------------------------ */
+
+.barra {
+    width: 90%;
+    padding: 6px;
+}
+
+.boton_barra {
+    padding: 6px 20px;
+    margin-left: 20px;
+}
+/* ------------------------------------------------ */
+.link{
+    text-decoration: none;
+}

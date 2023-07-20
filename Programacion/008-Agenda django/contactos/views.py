@@ -38,7 +38,14 @@ def relacionar_contacto_grupo (request:HttpRequest):
     return render (request, "contactos/relacionar_contacto_grupo.html", {"ver": objeto_2})
 
 def ver_contacto (request:HttpRequest):
-    objecto_1 = Contacto.objects.all()
+
+#   asi se hace un buscador se usa filter (el nombre del campo para hacer la busqueda seguido de __icontains(realisa la consulta en ese campo ignorando las malluscula y minuscula))
+
+#   con request.GET.get("buscar", ""): Esto obtiene el valor del parámetro "buscar" enviado en la solicitud GET (por ejemplo, cuando el usuario 
+#   ingresa algo en la barra de búsqueda). Si no se proporciona el parámetro "buscar" en la URL, se establece un valor predeterminado de cadena vacía "". 
+#   El método get se utiliza para obtener un parámetro de la solicitud GET y proporcionar un valor predeterminado en caso de que no se encuentre el parámetro.
+
+    objecto_1 = Contacto.objects.filter (nombre__icontains = request.GET.get ("buscar", ""))
 
     return render (request, "contactos/ver_contactos.html", {"ver": objecto_1})
 
