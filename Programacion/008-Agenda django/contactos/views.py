@@ -50,7 +50,7 @@ def ver_contacto (request:HttpRequest):
     return render (request, "contactos/ver_contactos.html", {"ver": objecto_1})
 
 def ver_grupos (request:HttpRequest):
-    objecto_1 = Grupo.objects.all ()
+    objecto_1 = Grupo.objects.filter (nombre__icontains = request.GET.get ("buscar", ""))
 
     return render (request, "contactos/ver_grupos.html", {"ver": objecto_1})
 
