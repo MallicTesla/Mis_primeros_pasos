@@ -1,0 +1,5 @@
+<div>
+    {% for letter in 'abcdefghijklmnopqrstuvwxyz' %}
+        <a href="{% url 'tareas:ver_tareas' letter=letter %}" class = "link" >{{ letter.upper }}</a>
+    {% endfor %}
+</div>

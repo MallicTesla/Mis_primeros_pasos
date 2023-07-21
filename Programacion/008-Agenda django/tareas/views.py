@@ -15,8 +15,12 @@ def crear_tarea (request:HttpRequest):
 
     return render (request, "tarea/form_tarea.html", {"ver": objeto_2})
 
-def ver_tareas (request:HttpRequest):
-    tareas = Tarea.objects.filter (titulo__icontains = request.GET.get ("buscar", ""))
+def ver_tareas (request:HttpRequest, letter=None):
+    if letter != None:
+        tareas = Tarea.objects.filter (titulo__istartswith = letter)
+
+    else:
+        tareas = Tarea.objects.filter (titulo__icontains = request.GET.get ("buscar", ""))
 
     return render (request, "tarea/ver_tareas.html", {"tareas":tareas})
 
