@@ -11,7 +11,7 @@
         {% include 'tarea/buscadores/buscador.html' %}
         {% include 'tarea/buscadores/buscador_A_Z.html' %}
 
-        <a href="{{ request.path }}" class = "link"> Todas las tareas </a>
+        <a href="{% url 'tareas:ver_tareas' %}" class = "link"> Todas las tareas </a>
 
         {% for tarea in tareas %}
         <hr>

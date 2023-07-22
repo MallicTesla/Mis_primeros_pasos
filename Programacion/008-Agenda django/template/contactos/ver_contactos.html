@@ -9,9 +9,9 @@
     <div class="contenido_principal">
 
         {% include 'contactos/buscadores/buscador.html' %}
-        {% include 'contactos/buscadores/buscador_A_Z.html' %}
+        {% include 'contactos/buscadores/buscador_A_Z_contacto.html' %}
 
-        <a href="{{ request.path }}" class = "link"> Todos los contactos </a>
+        <a href="{% url 'contactos:ver_contacto' %}" class = "link"> Todos los contactos </a>
 
         {% for contacto in ver %}
         <hr>
