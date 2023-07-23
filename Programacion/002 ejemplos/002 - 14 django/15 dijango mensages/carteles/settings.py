@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "mensajes"
+    "mensajes",
+    "url_parametro_opsional"
 ]
 
 MIDDLEWARE = [
