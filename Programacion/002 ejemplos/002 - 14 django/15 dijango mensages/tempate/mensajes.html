@@ -6,6 +6,14 @@
     <title>Mensajes</title>
 </head>
 <body>
-    <h1>Mensaje</h1>
+    <h1>Mensaje.html</h1>
+    {# esto es para comprovar si existe un mensage y si lo ay muestra todos los mensajes #}
+    {% if messages %}
+        <ul class="messages" style="list-style-type: none ;">
+            {% for message in messages %}
+                <li {% if message.tags %} style="padding: 10px; margin:10px; border-radius:5px; background-color:lightgreen;" {% endif %}> {{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 </body>
 </html>
