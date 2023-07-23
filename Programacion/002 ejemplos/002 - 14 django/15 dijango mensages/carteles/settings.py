@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "mensajes",
-    "url_parametro_opsional"
+    "url_parametro_opsional",
 ]
 
 MIDDLEWARE = [
