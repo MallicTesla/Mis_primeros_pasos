@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "mensajes",
     "url_parametro_opsional",
+    "filtros",
 ]
 
 MIDDLEWARE = [
