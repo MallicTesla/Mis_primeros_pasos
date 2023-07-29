@@ -26,7 +26,8 @@ class Reproduccion :
         print ("reproduciendo video")
 
 class Smartphon (Telefono, Camara, Reproduccion):
-    #   Este método es un método destructor en Python, también conocido como "destructor de objetos", osea despues de que se usa el objeto creado con esta clase se bora de la memoria
+    #   Este método es un método destructor en Python, también conocido como "destructor de objetos", 
+    #   osea despues de que se usa el objeto creado con esta clase se bora de la memoria
     #   El intérprete de Python se encarga de liberar la memoria de los objetos que ya no son utilizados automáticamente. 
     def __del__(self):
         print ("Telefono apagado")
