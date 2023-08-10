@@ -10,6 +10,7 @@
     <h1>Formulario Django</h1>
     <hr>
     <table>
+        {# si no se le coloca "action" redirige el formulario a la misma ruta que se encuentra #}
         <form action = "{% url 'contenido' %}" method = "POST">
             {% csrf_token %}
             {# .as_p le da forma al formulario coloca cada campo en un renglon si estas en la etiqueta table tambien se puede usar .as_table #}
