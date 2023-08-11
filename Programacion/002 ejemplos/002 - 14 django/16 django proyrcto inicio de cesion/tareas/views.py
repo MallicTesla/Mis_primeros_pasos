@@ -1,9 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpRequest, HttpResponse
-#   esto debuelve un formulario ya echo
+#   para manejar errores en la base de datos
+from django.db import IntegrityError
+
+#   esto debuelve un formulario ya echo para crear un usuario
 from django.contrib.auth.forms import UserCreationForm
 #   para guardar un usuario
 from django.contrib.auth.models import User
+#   crea una cooki con el usuario
+from django.contrib.auth import login
 
 def menu (request:HttpRequest):
     return render (request, "menu.html", {})
@@ -23,9 +28,12 @@ def registro (request:HttpRequest):
                 user = User.objects.create_user(username = request.POST["username"], password = request.POST["password1"])
                 #   guarda el usuaario en la base de datos 
                 user.save()
-                mensaje = "Usuario creado"
+                # mensaje = "Usuario creado"
+                login (request, user)
+                return redirect ("tareas")
 
-            except:
+            except IntegrityError:
+                #   este except es por si existe otro usuario con el mismo nombre
                 mensaje = "El usuario ya existe"
 
         else:
@@ -36,6 +44,8 @@ def registro (request:HttpRequest):
 
     return render (request, "registro_form.html", {'form':UserCreationForm, "mensaje":mensaje})
 
-
+def tareas (request:HttpRequest):
+    
+    return render (request, "tareas.html", {})
 
 

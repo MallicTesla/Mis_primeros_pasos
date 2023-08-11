@@ -4,6 +4,10 @@ from tareas import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     path ("", views.menu, name = "menu"),
-    path ("registro/", views.registro, name = "registro" ),
+
+    path ("registro/", views.registro, name = "registro"),
+
+    path ("tareas/", views.tareas, name = "tareas"),
 ]
