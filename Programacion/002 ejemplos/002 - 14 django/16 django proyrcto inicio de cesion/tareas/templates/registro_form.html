@@ -1,0 +1,12 @@
+<h1>Funsionara</h1>
+
+{# si no se le coloca "action" redirige el formulario a la misma ruta que se encuentra #}
+<form action="{% url 'registro' %}" method="POST">
+    {% csrf_token %}
+
+    {#    .as_p ordena el formulario de forma auomatica #}
+    {{form.as_p}}
+
+    <button>Crear</button>
+</form>
+
