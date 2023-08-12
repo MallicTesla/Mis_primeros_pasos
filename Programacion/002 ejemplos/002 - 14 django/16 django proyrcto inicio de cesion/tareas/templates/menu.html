@@ -1,1 +1,14 @@
-<h1>Menu</h1>
+{% extends 'base/base.html' %}
+
+{% block titulo %}Menu{% endblock  %}
+
+{% block contenido %}
+    <h1>menu</h1>
+    <nav>
+        <ul>
+            <li><a href="{% url 'menu' %}">menu</a></li>
+            <li><a href="{% url 'registro' %}">registro</a></li>
+            <li><a href="{% url 'tareas' %}">tareas</a></li>
+        </ul>
+    </nav>
+{% endblock  %}
