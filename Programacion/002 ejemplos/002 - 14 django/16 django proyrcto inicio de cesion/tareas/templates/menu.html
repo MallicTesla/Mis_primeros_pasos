@@ -7,8 +7,19 @@
     <nav>
         <ul>
             <li><a href="{% url 'menu' %}">menu</a></li>
-            <li><a href="{% url 'registro' %}">registro</a></li>
+
             <li><a href="{% url 'tareas' %}">tareas</a></li>
+
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'salir' %}">salir</a></li>
+
+            {% else %}
+                <li><a href="{% url 'registro' %}">registro</a></li>
+
+                <li><a href=" {% url 'iniciar_sesion' %} ">iniciar sesion</a></li>
+
+            {% endif %}
+
         </ul>
     </nav>
 {% endblock  %}

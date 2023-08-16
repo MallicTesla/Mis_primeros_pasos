@@ -3,12 +3,12 @@ from django.http import HttpRequest, HttpResponse
 #   para manejar errores en la base de datos
 from django.db import IntegrityError
 
-#   esto debuelve un formulario ya echo para crear un usuario
-from django.contrib.auth.forms import UserCreationForm
+#   esto debuelve un formulario ya echo para crear un usuario, crea un formulario para inisiar sesion
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 #   para guardar un usuario
 from django.contrib.auth.models import User
-#   crea una cooki con el usuario
-from django.contrib.auth import login
+#   crea una cooki con el usuario, lo ciera y lo autentifica
+from django.contrib.auth import login, logout, authenticate
 
 def menu (request:HttpRequest):
     return render (request, "menu.html", {})
@@ -47,5 +47,26 @@ def registro (request:HttpRequest):
 def tareas (request:HttpRequest):
     
     return render (request, "tareas.html", {})
+
+def salir (request:HttpRequest):
+    logout (request)
+    return redirect ("menu")
+
+def iniciar_sesion (request:HttpRequest):
+    mensaje = ""
+    if request.method == "POST":
+        #   para autntificar el usuario
+        user = authenticate (request, username=request.POST["username"], password=request.POST["password"])
+        if user is None :
+            mensaje = "usuario o contraseña incorecta"
+
+        else:
+            #   inisia la sesion con las credensiales y te redirige a otra pagina
+            login (request, user)
+            return redirect ("tareas")
+
+
+    return render (request, "iniciar_sesion.html", {"form":AuthenticationForm, "mensaje":mensaje})
+
 
 
