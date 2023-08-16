@@ -65,7 +65,6 @@ def iniciar_sesion (request:HttpRequest):
             login (request, user)
             return redirect ("tareas")
 
-
     return render (request, "iniciar_sesion.html", {"form":AuthenticationForm, "mensaje":mensaje})
 
 
