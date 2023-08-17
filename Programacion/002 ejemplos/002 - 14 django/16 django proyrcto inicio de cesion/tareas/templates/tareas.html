@@ -3,5 +3,48 @@
 {% block titulo %} Tareas {% endblock  %}
 
 {% block contenido %}
+    {{ block.super }}
     <h1>Tareas</h1>
+
+    {% for tarea in tareas %}
+
+        {% if tarea.importansia %}
+
+            <ul>
+                <li>
+                    <h2>Titulo : {{tarea.titulo}}</h2>
+                    <p>Descripsion : {{tarea.descripsion}}</p>
+                    <p>Creado : {{tarea.creado}}</p>
+                    <p>Fecha_finalisaddo : {{tarea.fecha_finalisaddo}}</p>
+                    <p>Importansia : {{tarea.importansia}}</p>
+                    <p>Creado : {{tarea.usuario}}</p>
+                </li>
+            </ul>
+
+            <hr>
+
+        {% endif %}
+    {% endfor %}
+
+    {# asi es para que aparescan los mas importantes ariba #}
+    {% for tarea in tareas %}
+
+        {% if not tarea.importansia %}
+
+            <ul>
+                <li>
+                    <h2>Titulo : {{tarea.titulo}}</h2>
+                    <p>Descripsion : {{tarea.descripsion}}</p>
+                    <p>Creado : {{tarea.creado}}</p>
+                    <p>Fecha_finalisaddo : {{tarea.fecha_finalisaddo}}</p>
+                    <p>Importansia : {{tarea.importansia}}</p>
+                    <p>Creado : {{tarea.usuario}}</p>
+                </li>
+            </ul>
+
+            <hr>
+
+        {% endif %}
+    {% endfor %}
+
 {% endblock  %}

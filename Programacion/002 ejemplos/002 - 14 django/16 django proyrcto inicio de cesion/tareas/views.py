@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 
 from .forms import TareaForm
-
+from .models import Tarea
 
 def menu (request:HttpRequest):
     return render (request, "menu.html", {})
@@ -48,8 +48,10 @@ def registro (request:HttpRequest):
     return render (request, "registro_form.html", {'form':UserCreationForm, "mensaje":mensaje})
 
 def tareas (request:HttpRequest):
-    
-    return render (request, "tareas.html", {})
+    #   asi busco las tareas de un usuario solamente
+    objecto_1 = Tarea.objects.filter(usuario = request.user)
+
+    return render (request, "tareas.html", {"tareas":objecto_1})
 
 def salir (request:HttpRequest):
     logout (request)

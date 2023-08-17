@@ -10,7 +10,7 @@
 
             <li><a href="{% url 'tareas' %}">Tareas</a></li>
 
-            <li><a href="crear_tarea">Crear tarea</a></li>
+            <li><a href=" {% url 'crear_tarea' %} ">Crear tarea</a></li>
 
             {% if user.is_authenticated %}
                 <li><a href="{% url 'salir' %}">Salir</a></li>
