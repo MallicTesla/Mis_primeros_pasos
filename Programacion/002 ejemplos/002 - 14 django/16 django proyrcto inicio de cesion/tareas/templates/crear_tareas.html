@@ -1,0 +1,17 @@
+{% extends 'menu.html' %}
+
+{% block titulo %} Crear tarea {% endblock  %}
+
+{% block contenido %}
+    <h1>Crear_tarea</h1>
+    
+    <form action="{% url 'crear_tarea' %}" method="POST">
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+        <button>Crear tarea</button>
+
+    </form>
+
+{% endblock  %}

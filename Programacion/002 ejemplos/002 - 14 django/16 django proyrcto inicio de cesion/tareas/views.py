@@ -10,6 +10,9 @@ from django.contrib.auth.models import User
 #   crea una cooki con el usuario, lo ciera y lo autentifica
 from django.contrib.auth import login, logout, authenticate
 
+from .forms import TareaForm
+
+
 def menu (request:HttpRequest):
     return render (request, "menu.html", {})
 
@@ -66,6 +69,20 @@ def iniciar_sesion (request:HttpRequest):
             return redirect ("tareas")
 
     return render (request, "iniciar_sesion.html", {"form":AuthenticationForm, "mensaje":mensaje})
+
+def crear_tarea (request:HttpRequest) :
+    objeto_1 = TareaForm (request.POST)
+    objeto_2 = TareaForm ()
+
+    if request.method == "POST" and objeto_1.is_valid():
+        #   para rellenar el campo usuario de forma automatica se hace asi
+        #   ases un falso guardado y al resultado lo guardas en una variavle
+        guardar = objeto_1.save(commit = False)
+        #   despues completas ese campo faltante con el nombre del campo y la riquest corespondiente y despues se guarda
+        guardar.usuario = request.user
+        guardar.save()
+
+    return render (request, "crear_tareas.html", {"form":objeto_2})
 
 
 

@@ -11,5 +11,6 @@ urlpatterns = [
     path ("iniciar_sesion/", views.iniciar_sesion, name = "iniciar_sesion"),
     path ("salir/", views.salir, name = "salir"),
 
+    path ("crear_tarea/", views.crear_tarea, name = "crear_tarea"),
     path ("tareas/", views.tareas, name = "tareas"),
 ]
