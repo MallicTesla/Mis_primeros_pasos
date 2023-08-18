@@ -1,0 +1,24 @@
+{% extends 'menu.html' %}
+
+{% block titulo %} Tareas {% endblock  %}
+
+{% block contenido %}
+    {{ block.super }}
+    <h1>Tarea</h1>
+
+        <ul>
+            <li>
+                <h2>Titulo : {{tarea.titulo}}</h2>
+                <p>Descripsion : {{tarea.descripsion}}</p>
+                <p>Creado : {{tarea.creado}}</p>
+                <p>Fecha_finalisaddo : {{tarea.fecha_finalisaddo}}</p>
+                <p>Importansia : {{tarea.importansia}}</p>
+                <p>Creado : {{tarea.usuario}}</p>
+            </li>
+        </ul>
+
+        <form action="{% url 'tarea' tarea.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">Editar</button>
+        </form>
+{% endblock  %}

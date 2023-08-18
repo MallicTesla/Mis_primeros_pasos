@@ -6,12 +6,12 @@
     {{ block.super }}
     <h1>Crear_tarea</h1>
     
-    <form action="{% url 'crear_tarea' %}" method="POST">
+    <form action="" method="POST">
         {% csrf_token %}
 
         {{form.as_p}}
 
-        <button>Crear tarea</button>
+        <button>Guardar tarea</button>
 
     </form>
 

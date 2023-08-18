@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpRequest, HttpResponse
 #   para manejar errores en la base de datos
 from django.db import IntegrityError
@@ -49,9 +49,9 @@ def registro (request:HttpRequest):
 
 def tareas (request:HttpRequest):
     #   asi busco las tareas de un usuario solamente
-    objecto_1 = Tarea.objects.filter(usuario = request.user)
+    objeto_1 = Tarea.objects.filter(usuario = request.user)
 
-    return render (request, "tareas.html", {"tareas":objecto_1})
+    return render (request, "tareas.html", {"tareas":objeto_1})
 
 def salir (request:HttpRequest):
     logout (request)
@@ -85,6 +85,26 @@ def crear_tarea (request:HttpRequest) :
         guardar.save()
 
     return render (request, "crear_tareas.html", {"form":objeto_2})
+
+def tarea (request:HttpRequest, tarea_id):
+    tarea_1 = Tarea.objects.get (id = tarea_id)
+
+    if request.method == "POST":
+        #   crea el formulario relleno para editarlo
+        objeto_1 = TareaForm (instance=tarea_1)
+        #   unaves editado este otro objeto lo guarda
+        objeto_2 = TareaForm (request.POST, instance=tarea_1)
+
+        if objeto_2.is_valid():
+            guardar = objeto_2.save(commit = False)
+            guardar.usuario = request.user
+            guardar.save()
+
+        else:
+            print ("paso5")
+            return render (request, "crear_tareas.html", {"form":objeto_1})
+
+    return render (request, "tarea.html", {"tarea":tarea_1})
 
 
 
