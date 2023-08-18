@@ -13,5 +13,6 @@ urlpatterns = [
 
     path ("crear_tarea/", views.crear_tarea, name = "crear_tarea"),
     path ("tareas/", views.tareas, name = "tareas"),
-    path ("tarea/<int:tarea_id>", views.tarea, name = "tarea")
+    path ("tarea/<int:tarea_id>", views.tarea, name = "tarea"),
+    path ("tarea/<int:tarea_id>/completa", views.tarea_completa, name = "tarea_completa")
 ]

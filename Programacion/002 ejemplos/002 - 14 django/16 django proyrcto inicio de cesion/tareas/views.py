@@ -9,6 +9,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 #   crea una cooki con el usuario, lo ciera y lo autentifica
 from django.contrib.auth import login, logout, authenticate
+#   da la fecha y la hora
+from django.utils import timezone
 
 from .forms import TareaForm
 from .models import Tarea
@@ -105,6 +107,16 @@ def tarea (request:HttpRequest, tarea_id):
             return render (request, "crear_tareas.html", {"form":objeto_1})
 
     return render (request, "tarea.html", {"tarea":tarea_1})
+
+def tarea_completa (request:HttpRequest, tarea_id):
+    tarea = get_object_or_404 (Tarea, pk = tarea_id, usuario=request.user)
+
+    if request.method == "POST":
+        tarea.fecha_finalisaddo = timezone.now()
+        tarea.save()
+
+    return redirect ("tareas")
+
 
 
 
