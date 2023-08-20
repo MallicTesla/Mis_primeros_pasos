@@ -27,4 +27,9 @@
         <button type="submit">Editar</button>
     </form>
 
+    <form action="{% url 'borar_tarea' tarea.id %}" method="POST">
+        {% csrf_token %}
+        <button type="submit">Borrar</button>
+    </form>
+
 {% endblock  %}
