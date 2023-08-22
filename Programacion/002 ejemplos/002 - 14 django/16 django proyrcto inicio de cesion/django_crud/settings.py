@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "tareas",
 ]
+#   cuando proteges una funsion te redirige a estea url
+LOGIN_URL = "iniciar_sesion"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

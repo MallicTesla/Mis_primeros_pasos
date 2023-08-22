@@ -11,6 +11,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 #   da la fecha y la hora
 from django.utils import timezone
+#   inporta un decorador para proteger las funsiones para que no ingresen
+#   ahi que agregarle algo en setings
+from django.contrib.auth.decorators import login_required
 
 from .forms import TareaForm
 from .models import Tarea
@@ -49,6 +52,7 @@ def registro (request:HttpRequest):
 
     return render (request, "registro_form.html", {'form':UserCreationForm, "mensaje":mensaje})
 
+@login_required
 def tareas (request:HttpRequest):
     #   asi busco las tareas de un usuario solamente
     objeto_1 = Tarea.objects.filter(usuario = request.user)
@@ -74,6 +78,7 @@ def iniciar_sesion (request:HttpRequest):
 
     return render (request, "iniciar_sesion.html", {"form":AuthenticationForm, "mensaje":mensaje})
 
+@login_required
 def crear_tarea (request:HttpRequest) :
     objeto_1 = TareaForm (request.POST)
     objeto_2 = TareaForm ()
@@ -88,6 +93,7 @@ def crear_tarea (request:HttpRequest) :
 
     return render (request, "crear_tareas.html", {"form":objeto_2})
 
+@login_required
 def tarea (request:HttpRequest, tarea_id):
     tarea_1 = Tarea.objects.get (id = tarea_id)
 
@@ -116,6 +122,7 @@ def tarea_completa (request:HttpRequest, tarea_id):
 
     return redirect ("tareas")
 
+@login_required
 def borar_tarea (request:HttpRequest, tarea_id):
     tarea = get_object_or_404 (Tarea, pk = tarea_id, usuario=request.user)
 

@@ -1,7 +1,12 @@
 {% extends 'menu.html' %}
 
+{% block titulo %} Inisio de sesion {% endblock  %}
+
 {% block contenido %}
+    {{ block.super }}
+
     <h1>inisio de sesion</h1>
+
     <form action="{% url 'iniciar_sesion' %}" method="POST" >
         {% csrf_token %}
 
