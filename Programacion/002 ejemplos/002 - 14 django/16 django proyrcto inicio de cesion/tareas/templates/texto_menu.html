@@ -1,0 +1,28 @@
+{% extends 'menu.html' %}
+
+{% block titulo %}Menu{% endblock  %}
+
+{% block contenido %}
+{{ block.super }}
+    <main class="container py-5">
+        <section class="card card-body">
+            <h1 class="display-1 text-center">Inisio de sesion</h1>
+            <p>
+                esto es un texto de prueva para pobar distintas etiquetas de Boostrap pero lo prinsipal es que esto es una aplicion 
+                para le gestion de usuario que tiene un inicio de cesion, crear usuarios y crear una lista de tareas que esta esta 
+                ordenada por prioridades si esta terminada o no y solo es visivle para el usuario que la creo
+            </p>
+
+            <div class="text-center">
+                <a href=" {% url 'iniciar_sesion' %} " class="btn btn-primary">
+                    Iniciar sesion
+                </a>
+
+                <a href=" {% url 'registro' %} " class="btn btn-primary">
+                    Registrarse
+                </a>
+
+            </div>
+        </section>
+    </main>
+{% endblock  %}

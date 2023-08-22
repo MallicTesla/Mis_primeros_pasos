@@ -19,7 +19,7 @@ from .forms import TareaForm
 from .models import Tarea
 
 def menu (request:HttpRequest):
-    return render (request, "menu.html", {})
+    return render (request, "texto_menu.html", {})
 
 def registro (request:HttpRequest):
     mensaje = ""

@@ -4,23 +4,49 @@
 
 {% block contenido %}
     <h1>menu</h1>
-    <nav>
-        <ul>
-            <li><a href="{% url 'menu' %}">Menu</a></li>
 
-            {% if user.is_authenticated %}
-                <li><a href="{% url 'salir' %}">Salir</a></li>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container">
 
-                <li><a href="{% url 'tareas' %}">Tareas</a></li>
-                <li><a href=" {% url 'crear_tarea' %} ">Crear tarea</a></li>
+        <a class="navbar-brand" href="#">Navbar</a>
 
-            {% else %}
-                <li><a href="{% url 'registro' %}">Registro</a></li>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <li><a href=" {% url 'iniciar_sesion' %} ">Iniciar sesion</a></li>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
 
-            {% endif %}
-
-        </ul>
+                <li class="nav-item">
+                    <a href="{% url 'menu' %}" class="nav-link" href="#">Menu</a>
+                </li>
+    
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a href="{% url 'salir' %}" class="nav-link" href="#">Salir</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a href="{% url 'tareas' %}" class="nav-link" href="#">Tareas</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a href=" {% url 'crear_tarea' %} " class="nav-link" href="#">Crear tarea</a>
+                    </li>
+    
+                {% else %}
+                    <li class="nav-item">
+                        <a href="{% url 'registro' %}" class="nav-link" href="#">Registro</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a href=" {% url 'iniciar_sesion' %} " class="nav-link" href="#">Iniciar sesion</a>
+                    </li>
+    
+                {% endif %}
+            </ul>
+        </div>
+        </div>
     </nav>
+
 {% endblock  %}
