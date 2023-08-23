@@ -14,6 +14,8 @@
             </p>
 
             <div class="text-center">
+                {% if not user.is_authenticated %}
+
                 <a href=" {% url 'iniciar_sesion' %} " class="btn btn-primary">
                     Iniciar sesion
                 </a>
@@ -22,6 +24,7 @@
                     Registrarse
                 </a>
 
+                {% endif %}
             </div>
         </section>
     </main>

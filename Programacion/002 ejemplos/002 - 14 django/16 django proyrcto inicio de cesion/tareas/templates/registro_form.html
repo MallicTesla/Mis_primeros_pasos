@@ -1,19 +1,44 @@
 {% extends 'menu.html' %}
 
+{% block titulo %} Registrarse {% endblock  %}
+
 {% block contenido %}
     {{ block.super }}
 
-    <h1>{{mensaje}}</h1>
+    <main class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4 mt-5">
 
-    {# si no se le coloca "action" redirige el formulario a la misma ruta que se encuentra #}
-    <form action="{% url 'registro' %}" method="POST">
-        {% csrf_token %}
+                    {# si no se le coloca "action" redirige el formulario a la misma ruta que se encuentra #}
+                <form action="{% url 'registro' %}" method="POST" class="card card-body text-center">
+                    {% csrf_token %}
 
-        {#    .as_p ordena el formulario de forma auomatica #}
-        {{form.as_p}}
+                    <h1 class="text-center">Registrarse</h1>
 
-        <button>Crear</button>
-    </form>
+                    {{mensaje}}
+
+                    <div class="mb-3">
+                        <label for="username">Usuario : </label>
+                        <input type="text" name="username" id="username" class="form-control" placeholder="Nombre de usuario">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password1">Contraseña : </label>
+                        <input type="password" name="password1" id="password1" class="form-control" placeholder="Escribi tu contraseña">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password2">Confirmar contraseña : </label>
+                        <input type="password" name="password2" id="password2" class="form-control" placeholder="Confirmar contraseña">
+                    </div>
+
+                    <button class="btn btn-primary">
+                        Crear
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </main>
 
 {% endblock  %}
-
