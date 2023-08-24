@@ -4,15 +4,25 @@
 
 {% block contenido %}
     {{ block.super }}
-    <h1>Crear_tarea</h1>
-    
-    <form action="" method="POST">
-        {% csrf_token %}
 
-        {{form.as_p}}
+    <main class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4 mt-5">
 
-        <button>Guardar tarea</button>
+                <form action="" method="POST" class="card card-body">
+                    {% csrf_token %}
 
-    </form>
+                    <h1>Crear tarea</h1>
+
+                    {{form.as_p}}
+
+                    <button class="btn btn-primary">
+                        Guardar tarea
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </main>
 
 {% endblock  %}
