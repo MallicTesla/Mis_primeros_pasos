@@ -4,32 +4,49 @@
 
 {% block contenido %}
     {{ block.super }}
-    <h1>Tarea</h1>
 
-    <ul>
-        <li>
-            <h2>Titulo : {{tarea.titulo}}</h2>
-            <p>Descripsion : {{tarea.descripsion}}</p>
-            <p>Creado : {{tarea.creado}}</p>
-            <p>Fecha_finalisaddo : {{tarea.fecha_finalisaddo}}</p>
-            <p>Importansia : {{tarea.importansia}}</p>
-            <p>Creado : {{tarea.usuario}}</p>
-        </li>
-    </ul>
+    <main class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4 mt-5">
 
-    <form action="{% url 'tarea_completa' tarea.id %}" method="POST">
-        {% csrf_token %}
-        <button type="submit">Tarea completa</button>
-    </form>
+                <h1>Tarea</h1>
 
-    <form action="{% url 'tarea' tarea.id %}" method="POST">
-        {% csrf_token %}
-        <button type="submit">Editar</button>
-    </form>
+                <ul>
+                    <li>
+                        <h2>Titulo : {{tarea.titulo}}</h2>
+                        <p>Descripsion : {{tarea.descripsion}}</p>
+                        <p>Creado : {{tarea.creado}}</p>
+                        <p>Fecha_finalisaddo : {{tarea.fecha_finalisaddo}}</p>
+                        <p>Importansia : {{tarea.importansia}}</p>
+                        <p>Creado : {{tarea.usuario}}</p>
+                    </li>
+                </ul>
 
-    <form action="{% url 'borar_tarea' tarea.id %}" method="POST">
-        {% csrf_token %}
-        <button type="submit">Borrar</button>
-    </form>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <form action="{% url 'tarea_completa' tarea.id %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-primary mt-5">Tarea completa</button>
+                        </form>
+                    </div>
+
+                    <div class="text-center">
+                        <form action="{% url 'tarea' tarea.id %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-secondary mt-5">Editar</button>
+                        </form>
+                    </div>
+
+                    <div class="text-right">
+                        <form action="{% url 'borar_tarea' tarea.id %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger mt-5">Borrar</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
 
 {% endblock  %}
