@@ -4,59 +4,61 @@
 
 {% block contenido %}
     {{ block.super }}
-    <h1>Tareas</h1>
 
-    <h1>Tareas mas importantes</h1>
-    {% for tarea in tareas %}
+    <main class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 ">
+                <h1 class="text-center dieplay-3 py-5">Tareas</h1>
 
-        {% if tarea.importansia and tarea.fecha_finalisaddo is None %}
+                {# asi es para que aparescan los mas importantes ariba #}
+                <h2>Tareas mas importantes</h2>
 
-            <ul>
-                <li>
-                    <h2><a href=" {% url 'tarea' tarea.id %} ">{{tarea.titulo}}</a></h2>
-                </li>
-            </ul>
+                <ul class="list-group">
+                    {% for tarea in tareas %}
 
-            <hr>
+                        {% if tarea.importansia and tarea.fecha_finalisaddo is None %}
+                            <a href=" {% url 'tarea' tarea.id %} " class="list-group-item">
 
-        {% endif %}
-    {% endfor %}
+                                <h3>{{tarea.titulo}}</h3>
 
-    {# asi es para que aparescan los mas importantes ariba #}
-    <h2>Tareas menos importantes</h2>
-    <hr>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
 
-    {% for tarea in tareas %}
+                <h2>Tareas menos importantes</h2>
 
-        {% if not tarea.importansia and tarea.fecha_finalisaddo is None %}
+                <ul class="list-group">
+                    {% for tarea in tareas %}
 
-            <ul>
-                <li>
-                    <h2><a href=" {% url 'tarea' tarea.id %} ">{{tarea.titulo}}</a></h2>
-                </li>
-            </ul>
+                    {% if not tarea.importansia and tarea.fecha_finalisaddo is None %}
+                            <a href=" {% url 'tarea' tarea.id %} " class="list-group-item">
 
-            <hr>
+                                <h3>{{tarea.titulo}}</h3>
 
-        {% endif %}
-    {% endfor %}
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
 
-    <h2>Tareas terminadas</h2>
-    <hr>
 
-    {% for tarea in tareas %}
+                <h2>Tareas terminadas</h2>
 
-    {% if not tarea.fecha_finalisaddo is None %}
+                <ul class="list-group">
+                    {% for tarea in tareas %}
 
-        <ul>
-            <li>
-                <h2><a href=" {% url 'tarea' tarea.id %} ">{{tarea.titulo}}</a></h2>
-            </li>
-        </ul>
+                    {% if not tarea.fecha_finalisaddo is None %}
+                            <a href=" {% url 'tarea' tarea.id %} " class="list-group-item">
 
-        <hr>
+                                <h3>{{tarea.titulo}}</h3>
 
-    {% endif %}
-{% endfor %}
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+            </div>
+        </div>
+    </main>
 
 {% endblock  %}

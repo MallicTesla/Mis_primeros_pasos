@@ -1,0 +1,62 @@
+{% extends 'menu.html' %}
+
+{% block titulo %} Tareas {% endblock  %}
+
+{% block contenido %}
+    {{ block.super }}
+    <h1>Tareas</h1>
+
+    <h1>Tareas mas importantes</h1>
+    {% for tarea in tareas %}
+
+        {% if tarea.importansia and tarea.fecha_finalisaddo is None %}
+
+            <ul>
+                <li>
+                    <h2><a href=" {% url 'tarea' tarea.id %} ">{{tarea.titulo}}</a></h2>
+                </li>
+            </ul>
+
+            <hr>
+
+        {% endif %}
+    {% endfor %}
+
+    {# asi es para que aparescan los mas importantes ariba #}
+    <h2>Tareas menos importantes</h2>
+    <hr>
+
+    {% for tarea in tareas %}
+
+        {% if not tarea.importansia and tarea.fecha_finalisaddo is None %}
+
+            <ul>
+                <li>
+                    <h2><a href=" {% url 'tarea' tarea.id %} ">{{tarea.titulo}}</a></h2>
+                </li>
+            </ul>
+
+            <hr>
+
+        {% endif %}
+    {% endfor %}
+
+    <h2>Tareas terminadas</h2>
+    <hr>
+
+    {% for tarea in tareas %}
+
+    {% if not tarea.fecha_finalisaddo is None %}
+
+        <ul>
+            <li>
+                <h2><a href=" {% url 'tarea' tarea.id %} ">{{tarea.titulo}}</a></h2>
+            </li>
+        </ul>
+
+        <hr>
+
+    {% endif %}
+{% endfor %}
+
+{% endblock  %}
