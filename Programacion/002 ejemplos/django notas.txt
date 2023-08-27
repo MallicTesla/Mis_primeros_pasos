@@ -11,6 +11,7 @@ http://127.0.0.1:8000/                          url
 (direcsion) python manage.py makemigrations     es para ver si uvo modificaciones en los modelos de las apps
 
 (direcsion) python manage.py createsuperuser    para crear un usuario admin
+(direcsion) python manage.py collectstatic      es para crear una carpeta en el servidor de render
 
 despues de crear una app ahi que agregarla al a lista de apps en settings.py en el archivo principal se agrega en INSTALLED_APPS 
 
@@ -102,4 +103,89 @@ relasionamientos https://docs.djangoproject.com/en/4.0/topics/db/examples/
 para trabajar con postgres primero tenes que crear la base en el programa (pgAdmin) 
 1)  la base de datos se crea dentro de Databases
 2)  la nombras - elegis el usuari y guardas 
+
+------------------------------------------Subirlo a la nuve--------------------------------------------
+para suvir el prollecto a la nuve de render https://render.com/docs/deploy-django
+
+todo esto se ase en el archivo settings
+ 1)  realisas este import para crear una variavle de producsion
+import os
+
+ 2)  despues tenes que modificar SECRET_KEY = True por
+SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
+
+ 3)  se agrega esto que es para modificar ALLOWED_HOSTS (se agrega por devajo de ALLOWED_HOSTS)
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
+render te pide que uses la base de datos PostgreSQL y te da unos paquetes para instalar y poder laeer las variavles de entorno
+ 4)  primero tenes que instalar en la consola de comandos
+pip install dj-database-url
+
+ 5)  y depues instala esto otro
+pip install psycopg2-binary
+
+ 6) realisas este import
+import dj_database_url
+
+ 7)  despues vas a DATABASES y lo remplasas por esta variavle de entorno
+    lel modulo dj_database_url.config() lee  el modulo dj_database_url y si no existe coloca la base de datos que esta entre los parantesis ()
+DATABASES = {
+    'default': dj_database_url.config(
+        default='postgresql://postgres:postgres@localhost:5432/mysite',
+        conn_max_age=600)
+}
+
+ 8) despues instale este modulo en la consola de comandos que es whitenoise que sirve para que django ejecute los archivos estaticos en el servidor
+pip install whitenoise[brotli]
+
+ 9) despues vas a MIDDLEWARE y agregas esto
+'whitenoise.middleware.WhiteNoiseMiddleware',
+
+10) despues se va a la parte de archivos estaticos y los tenes que configurar asi
+    esto hase que si no estas en modo debug ejecuta hotra cofigurasion 
+
+# This setting tells Django at which URL static files are going to be served to the user.
+# Here, they well be accessible at your-domain.onrender.com/static/...
+STATIC_URL = '/static/'
+
+# Following settings only make sense on production and may break development environments.
+if not DEBUG:
+    # Tell Django to copy statics to the `staticfiles` directory
+    # in your application directory on Render.
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+    # Turn on WhiteNoise storage backend that takes care of compressing static files
+    # and creating unique names for each version so they can safely be cached forever.
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+11) despues generas un nuevo archivo en la carpeta prinsipal llamado build.sh para ejecutar un comando de django 
+    tenes que colococar esto dentro
+
+#!/usr/bin/env bash
+# exit on error
+set -o errexit
+
+# poetry install
+
+python manage.py collectstatic --no-input
+python manage.py migrate
+
+12) tenes que instalar este modulo (pip install gunicorn) con Git Bash dentro de la carpeta prinsipal del proyecto
+    para entrar a una carpeta en Git Bash primero pone (ls) te muestra la carpetas y entras a esa carpeta poniendo (cd nombre de la carpeta)
+pip install gunicorn
+
+13) despues podes volver a la consola de comandos normal e instalar esto en la carpeta general del proyecto esto muestra todos los modulos que nesesita para funsionar
+pip freeze > requirements.txt
+
+14) luego se va al archivo build.sh y se agrega esto (pip install -r requirements.txt) en la linia 6
+    es para que instale todos los paquetes que nenesita
+
+15) todo esto lo guardas en un repositorio nuevo
+
+
+
+
 
