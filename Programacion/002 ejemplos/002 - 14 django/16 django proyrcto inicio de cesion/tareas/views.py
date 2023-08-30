@@ -97,6 +97,10 @@ def crear_tarea (request:HttpRequest) :
 def tarea (request:HttpRequest, tarea_id):
     tarea_1 = Tarea.objects.get (id = tarea_id)
 
+    #   esto es para evitar que un usuario entre a las tareas de otro usuario
+    if tarea_1.usuario != request.user:
+        return redirect ("tareas")
+
     if request.method == "POST":
         #   crea el formulario relleno para editarlo
         objeto_1 = TareaForm (instance=tarea_1)

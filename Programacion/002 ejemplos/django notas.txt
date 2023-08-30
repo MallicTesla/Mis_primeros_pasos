@@ -105,6 +105,7 @@ para trabajar con postgres primero tenes que crear la base en el programa (pgAdm
 2)  la nombras - elegis el usuari y guardas 
 
 ------------------------------------------Subirlo a la nuve--------------------------------------------
+lo vi aca apartir de 2:48:00 https://www.youtube.com/watch?v=e6PkGDH4wWA&ab_channel=Fazt
 para suvir el prollecto a la nuve de render https://render.com/docs/deploy-django
 
 todo esto se ase en el archivo settings
@@ -183,9 +184,20 @@ pip freeze > requirements.txt
 14) luego se va al archivo build.sh y se agrega esto (pip install -r requirements.txt) en la linia 6
     es para que instale todos los paquetes que nenesita
 
-15) todo esto lo guardas en un repositorio nuevo
+15) todo esto lo guardas en un repositorio nuevo los archivos tienen que estar en la carpeta prinsipal del repositorio
 
+16) vas a la pagina de render vas ariva a la derecha en nuevo y creas un nuevo PostgreSQL
 
+17) vas a render y le das a web sever suvis ese repositorio capas que modificas algunas cosas como al final 
+    donde dice comando de inicio tenes que agregar esto (gunicorn (carpeta prinsipal del prollecto(django_crud)).wsgi)
+    y tamvien donde dice Comando de construcción colocas (./build.sh)
+
+18) vas a la base de datos PostgreSQL que crerastes copias (URL de la base de datos interna)
+    vas a la pestaña ambiente creas ua nueva variavle de entorno pones como llave (DATABASE_URL) y como valor lo que copiastes de la base de datos 
+    si da provlemas al suvir vas a la paestaña ambiente luego variavle de entorno y en llave colocas (PYTHON_VERSION) y en valor la version de pithon que usastes (3.11.1)
+
+19) si da otro eror con el modulo (app) vas a settings vas a la parte de (comando de inicio) y 
+    colocas esto (gunicorn (carpeta prinsipal del prollecto(django_crud)).wsgi)
 
 
 
