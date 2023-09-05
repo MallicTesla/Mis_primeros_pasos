@@ -18,5 +18,8 @@ global 			(global variavle) cuando ahy 2 variables con el mismo numero pero dist
 pip install virtualenv
 python -m virtualenv venv
 
-2)	para activar el entorno virtual dentro de la carpeta escrivis 
+2)	para activar el entorno virtual dentro de la carpeta escrivis
 .\venv\Scripts\activate
+
+3)	para instalar django rest
+pip install djangorestframework
