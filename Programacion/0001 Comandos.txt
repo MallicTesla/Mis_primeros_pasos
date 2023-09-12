@@ -23,3 +23,9 @@ python -m virtualenv venv
 
 3)	para instalar django rest
 pip install djangorestframework
+
+4) para instalar la libreria simple-history 
+pip install django-simple-history
+
+5) para que django reconosca las imagenes en un modelo se nesesita esto
+pip install pillow

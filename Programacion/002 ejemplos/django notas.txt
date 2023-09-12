@@ -1,17 +1,20 @@
 http://127.0.0.1:8000/                          url 
 
-(direcsion) django-admin startproject (nombre) .crea un prollecto jango nuevo
+(direcsion) django-admin startproject (nombre) .crea un prollecto django nuevo
 (direcsion) python manage.py migrate            se ejecutan los cambios echos
 
 (direcsion) python manage.py startapp (nombre)  crea una app nueva 
 (direcsion) python manage.py check nombre       revisa si la app esta vien instalada despues de agregarla en settings
 
 (direcsion) dir                                 se ve lo que ahi dentro de la carpeta
-(direcsion) python manage.py runserver          enpiesa a corer el servidor 
+(direcsion) python manage.py runserver          aranca el serbidor
 (direcsion) python manage.py makemigrations     es para ver si uvo modificaciones en los modelos de las apps
 
 (direcsion) python manage.py createsuperuser    para crear un usuario admin
 (direcsion) python manage.py collectstatic      es para crear una carpeta en el servidor de render
+
+para que django reconosca las imagenes en un modelo se nesesita esto
+pip install pillow
 
 despues de crear una app ahi que agregarla al a lista de apps en settings.py en el archivo principal se agrega en INSTALLED_APPS 
 
