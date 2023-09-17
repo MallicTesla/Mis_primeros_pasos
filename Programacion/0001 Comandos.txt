@@ -9,9 +9,12 @@ sorted()		Para ordenar una lista y con reverse= la ordenas al reves
 match --:		match seguida de la variavle para buscar el valor de la variavle en una lista se usa (case) como si fuese un if
 global 			(global variavle) cuando ahy 2 variables con el mismo numero pero distintos valores y uno esta dentro de una funcion (local) y una afuera (global) cuando usas global 
 
+------------------------------------documentacion--------------------------------------
+rest_framework
+https://www.django-rest-framework.org/
 
-
-
+estados del servidor
+https://www.django-rest-framework.org/api-guide/status-codes/
 
 -----------------------------entorno virtual--------------------------------
 1)	dentro de la carpeta en la que queres crear el entorno virtial escrivis estos
