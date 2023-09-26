@@ -16,6 +16,8 @@ http://127.0.0.1:8000/                          url
 para que django reconosca las imagenes en un modelo se nesesita esto
 pip install pillow
 
+cocumentasion de REST       https://www.cdrf.co/
+
 despues de crear una app ahi que agregarla al a lista de apps en settings.py en el archivo principal se agrega en INSTALLED_APPS 
 
 despues de crear o modificar cada modelo (clases) se ejecuta el comando python manage.py makemigrations para ver los cambios u despues se migran para guardarlos
