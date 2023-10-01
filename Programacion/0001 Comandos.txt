@@ -18,17 +18,20 @@ https://www.django-rest-framework.org/api-guide/status-codes/
 
 -----------------------------entorno virtual--------------------------------
 1)	dentro de la carpeta en la que queres crear el entorno virtial escrivis estos
-pip install virtualenv
-python -m virtualenv venv
+	pip install virtualenv
+	python -m virtualenv venv
 
 2)	para activar el entorno virtual dentro de la carpeta escrivis
-.\venv\Scripts\activate
+	.\venv\Scripts\activate
 
 3)	para instalar django rest
-pip install djangorestframework
+	pip install djangorestframework
 
 4) para instalar la libreria simple-history 
-pip install django-simple-history
+	pip install django-simple-history
 
 5) para que django reconosca las imagenes en un modelo se nesesita esto
-pip install pillow
+	pip install pillow
+
+6) Para instalar libreria para ver las apis es (documentacion https://drf-yasg.readthedocs.io/en/stable/readme.html)
+	pip install drf-yasg
