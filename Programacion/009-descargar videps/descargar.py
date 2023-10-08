@@ -7,7 +7,7 @@ def descarga (link, quiero, ruta_video, ruta_audio, final, lo_mejor, descarga_ra
     video_completo = lista.streams.get_highest_resolution()
 
     videos = lista.streams.order_by("resolution").desc().filter (type = "video")
-    audios = lista.streams.order_by("abr").desc().filter(type = "audio")
+    audios = lista.streams.order_by("abr").desc().filter (type = "audio")
 
     videos_quiero = videos.filter (resolution = quiero)
 
@@ -50,19 +50,22 @@ def descarga (link, quiero, ruta_video, ruta_audio, final, lo_mejor, descarga_ra
 
             print ("descarga completa")
 
-            try:
-                video = VideoFileClip (f"{ruta_video}/{video.default_filename}")
-                audio = AudioFileClip (f"{ruta_audio}/{audio.default_filename}")
-
-                fusion = video.set_audio (audio)
-
-                fusion.write_videofile (f"{final}\\final.mp4", codec="libx264", audio_codec="aac")
-
-            except Exception as e:
-                print ("Fallo la fusion", str(e))
         except:
             print ("fallo descarga")
+
+        try:
+            video = VideoFileClip (f"{ruta_video}/{video.default_filename}")
+            audio = AudioFileClip (f"{ruta_audio}/{audio.default_filename}")
+
+            fusion = video.set_audio (audio)
+
+            fusion.write_videofile (f"{final}\\final.mp4", codec="libx264", audio_codec="aac")
+
+        except Exception as e:
+            print ("Fallo la fusion", str(e))
+
         print (f"Proseso terminado")
+
     print ("Descarga completa")
 
 def descargar_audio (link_audio, ruta_audio):
@@ -112,6 +115,9 @@ descarga_rapida = lo_mejor is False and quiero == ""
 
 
 # --------------------------------------------------------------------------------------------------------
+# DESCARGAR VIDEOS DE LISTA DE REPRODUCCION
+
+link_lista = "sda"
 # --------------------------------------------------------------------------------------------------------
 
 
