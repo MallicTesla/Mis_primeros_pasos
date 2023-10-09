@@ -63,8 +63,8 @@ def descarga (link_lista, quiero=""):
 # link = "https://www.youtube.com/watch?v=jEugr6x2_qc&ab_channel=Bizarro"
 
 # link = "https://www.youtube.com/watch?v=azgZ1frntYE&ab_channel=Bizarro"
-link = "https://www.youtube.com/watch?v=GVkiFP71n_c&ab_channel=LaMomiadelHugo"
 # link_lista = "https://www.youtube.com/playlist?list=PL4vlU3dGym0bgQtk-MKvLFoouWHC9g7R6"
+link = "https://www.youtube.com/watch?v=GVkiFP71n_c&ab_channel=LaMomiadelHugo"
 
 quiero = ""
 
