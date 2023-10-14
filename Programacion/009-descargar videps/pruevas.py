@@ -1,6 +1,19 @@
 from pytube import YouTube, Playlist
 
 def descarga (link_lista, quiero=""):
+    print (link_lista.lower().count("playlist"))
+    if link_lista.lower().count("playlist") == 1:
+        print ("si")
+    elif link_lista.lower().count("playlist") != 1:
+        print ("no")
+    else:
+        print ("ninguna")
+
+
+
+
+
+
     playlist = Playlist (link_lista)
     # lista = YouTube (link)
 
@@ -19,6 +32,13 @@ def descarga (link_lista, quiero=""):
         print ("3")
         print (videos)
         print ("4")
+
+
+
+
+
+
+
     # video_quiero = videos.filter (resolution = quiero)
 
         # # for video in videos :
@@ -63,8 +83,8 @@ def descarga (link_lista, quiero=""):
 # link = "https://www.youtube.com/watch?v=jEugr6x2_qc&ab_channel=Bizarro"
 
 # link = "https://www.youtube.com/watch?v=azgZ1frntYE&ab_channel=Bizarro"
-# link_lista = "https://www.youtube.com/playlist?list=PL4vlU3dGym0bgQtk-MKvLFoouWHC9g7R6"
-link = "https://www.youtube.com/watch?v=GVkiFP71n_c&ab_channel=LaMomiadelHugo"
+# link = "https://www.youtube.com/watch?v=GVkiFP71n_c&ab_channel=LaMomiadelHugo"
+link = "https://www.youtube.com/playlist?list=PL4vlU3dGym0bgQtk-MKvLFoouWHC9g7R6"
 
 quiero = ""
 

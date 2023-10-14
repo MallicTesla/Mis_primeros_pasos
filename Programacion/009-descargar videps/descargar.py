@@ -1,9 +1,28 @@
-from pytube import YouTube
-from moviepy.editor import VideoFileClip, AudioFileClip, clips_array
+from pytube import YouTube, Playlist
+from moviepy.editor import VideoFileClip, AudioFileClip
 
 def lista (link, quiero, ruta_video, ruta_audio, final, lo_mejor, descarga_rapida):
-    lista = YouTube (link)
+    if link.lower().count("playlist") == 1:
+        print ("playlist")
+        links = Playlist (link)
 
+        for listas in links.video_urls:
+            print ("1")
+            lista = YouTube (listas)
+
+            separador (lista, quiero, ruta_video, ruta_audio, final, lo_mejor, descarga_rapida)
+
+    elif link.lower().count("playlist") == 0:
+        print ("video")
+        lista = YouTube (link)
+
+        separador (lista, quiero, ruta_video, ruta_audio, final, lo_mejor, descarga_rapida)
+
+    else:
+        print ("ninguna")
+
+
+def separador (lista, quiero, ruta_video, ruta_audio, final, lo_mejor, descarga_rapida):
     titulo = lista.title
 
     video_completo = lista.streams.get_highest_resolution()
@@ -36,7 +55,6 @@ def descarga (video_completo, videos_quiero, video, audio, ruta_video, ruta_audi
     if descarga_rapida or video_completo.resolution is video.resolution or video_completo.resolution is videos_quiero[0].resolution:
         print ("descarga rapida", {video_completo})
         try:
-        #     # video_completo.download(final, filename = 'prueva')
             video_completo.download(final)
 
             print ("descarga completa")
@@ -78,12 +96,31 @@ def fusionar (video, audio, ruta_video, ruta_audio, final, titulo):
 
 
 
-def descargar_audio (link_audio, ruta_audio):
-    lista = YouTube (link_audio)
+def descargar_audio (link, ruta_audio):
+    if link.lower().count("playlist") == 1:
+        print ("playlist")
+        links = Playlist (link)
+
+        for listas in links.video_urls:
+            print ("1")
+            lista = YouTube (listas)
+
+            descarga (lista, ruta_audio)
+
+    elif link.lower().count("playlist") == 0:
+        print ("audio")
+        lista = YouTube (link)
+
+        descarga_audio (lista, ruta_audio)
+
+    else:
+        print ("ninguna")
+
+def descarga_audio (lista, ruta_audio):
     audios = lista.streams.order_by("abr").desc().filter(type = "audio")
 
-    for audio in audios :
-        print (f"audio {audio}")
+    # for audio in audios :
+    #     print (f"audio {audio}")
 
     audio = audios[0]
 
@@ -101,19 +138,20 @@ final = "C:\\Users\\Mallic\\Downloads\\YouTube\\pronto"
 # --------------------------------------------------------------------------------------------------------
 # DESCARGAR AUDIO
 
-# link_audio = "https://www.youtube.com/watch?v=jEugr6x2_qc&ab_channel=Bizarro"
-link_audio = "https://www.youtube.com/watch?v=GVkiFP71n_c&ab_channel=LaMomiadelHugo"
+# link = "https://www.youtube.com/watch?v=jEugr6x2_qc&ab_channel=Bizarro"
+# link = "https://www.youtube.com/watch?v=GVkiFP71n_c&ab_channel=LaMomiadelHugo"
 
 # descomenta esto para descargar audio y comenta el de DESCARGAR VIDEOS
-# descargar_audio (link_audio, ruta_audio)
+# descargar_audio (link, ruta_audio)
 
 # --------------------------------------------------------------------------------------------------------
 # DESCARGAR VIDEOS
 
 # link = "https://www.youtube.com/watch?v=8-bSHuiTSoM&ab_channel=DateunVlog" #1080
-link = "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" #1080
+# link = "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" #1080
 # link = "https://www.youtube.com/watch?v=GVkiFP71n_c&ab_channel=LaMomiadelHugo" #720
 # link = "https://www.youtube.com/watch?v=jEugr6x2_qc&ab_channel=Bizarro" # 2160
+link = "https://www.youtube.com/playlist?list=PL4vlU3dGym0bgQtk-MKvLFoouWHC9g7R6"
 
 lo_mejor = False
 quiero = "1080p"
@@ -127,7 +165,7 @@ lista (link, quiero, ruta_video, ruta_audio, final, lo_mejor, descarga_rapida)
 # --------------------------------------------------------------------------------------------------------
 # DESCARGAR VIDEOS DE LISTA DE REPRODUCCION
 
-link_lista = "sda"
+
 # --------------------------------------------------------------------------------------------------------
 
 
