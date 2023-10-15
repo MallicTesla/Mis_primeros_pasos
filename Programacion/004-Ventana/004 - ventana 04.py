@@ -28,7 +28,7 @@ cabezera2 = tk.Label(ventana,       text="Provando otras letras",
                                     font= "roman 15 bold",                                    
                                     ).place(x=10, y=55) 
 
-texto04 = "vamos a ver si logro hacer que este texto aparesca en multiples rengloses de forma automatica sin que lo aga manualmente en la variavle"
+texto04 = "vamos a ver si logro hacer que este texto aparesca en multiples rengloses de forma automatica sin que lo haga manualmente en la variavle"
 
 Mensaje04= tk.Message(ventana,      text= texto04,
                                     width= 300,                    #    para ajustar el ancho de las columnas no se puede ajustar el alto

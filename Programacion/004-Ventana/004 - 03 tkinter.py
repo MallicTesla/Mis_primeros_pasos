@@ -1,7 +1,6 @@
 import tkinter
 from tkinter import ttk
 import random
-
 ventana = tkinter.Tk()
 
 ventana.title("Primera Ventana")    
@@ -15,15 +14,15 @@ ventana.config(bg="#500090")
 #                                 bg = "red",
 #                                 fg = "blue",
 #                                 font="arial 15 ",)
-# # saludo.pack(ipadx = 50, ipady = 50 , fill = "x")    #   con fille = x se ajusta el wiget al ancho de la ventana cuando lo modificas y con fille = both lo ase en ambas direcsiones
-# # saludo.pack(ipadx = 50, ipady = 50 , expand = True) #   mantiena el wigt centrado con sus medidas cuando modifica el tamaño 
-# saludo.pack(ipadx = 50, ipady = 50 , side = "left") #   se posiciona el wiget centrado  a la Izquierda
+# # saludo.pack(ipadx = 50, ipady = 50 , fill = "x")      #   con fille = x se ajusta el wiget al ancho de la ventana cuando lo modificas y con fille = both lo hace en ambas direcsiones
+# # saludo.pack(ipadx = 50, ipady = 50 , expand = True)   #   mantiena el wigt centrado con sus medidas cuando modifica el tamaño 
+# saludo.pack(ipadx = 50, ipady = 50 , side = "left")     #   se posiciona el wiget centrado  a la Izquierda
 
 # adios = tkinter.Label(ventana, text = "Adios",
 #                                 bg = "green",
 #                                 fg = "blue",
 #                                 font="arial 15 ",)
-# adios.pack(fill = "both", expand = True)               #    con fille = y se ajusta el wiget al alto de la ventana cuando lo modificas fille = both lo ase en ambas direcsiones
+# adios.pack(fill = "both", expand = True)               #    con fille = y se ajusta el wiget al alto de la ventana cuando lo modificas fille = both lo hace en ambas direcsiones
 
 # -------------------------------------------------columnas y filas---------------------------------------------------------------------------------
 
@@ -104,7 +103,7 @@ ventana.config(bg="#500090")
 # #   a la lista ahi que transformarla a un formato que soporte tkinter
 # lista_items = tkinter.StringVar(value = nombres)
 
-# lista = tkinter.Listbox (ventana,   height = 5,                     #   renglones y tiene Scrol
+# lista = tkinter.Listbox (ventana,   height = 4,                     #   renglones y tiene Scrol
 #                                     bg = "red",
 #                                     fg = "blue",
 #                                     font="arial 15",
@@ -169,7 +168,7 @@ ventana.config(bg="#500090")
 #                                     variable = selecsion2 ,)
 # r3.grid (column = 1, row = 3, pady = 5, padx = 5)
 
-#----------------------------------------------check boton--------------------------------------------------------------------------------
+# ----------------------------------------------check boton--------------------------------------------------------------------------------
 
 # ventana.columnconfigure (0, weight = 1)
 # ventana.columnconfigure (1, weight = 3)
