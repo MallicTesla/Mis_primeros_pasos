@@ -113,60 +113,60 @@ ventana.config(bg="#500090")
 #------------------------------------------------radio boton-------------------------------------------------------------------------------
 #   si tienen la misma variavle (variable = selecsion) solo se puede tener activado un boton a la ves
 
-ventana.columnconfigure (0, weight = 1)
-ventana.columnconfigure (1, weight = 3)
+# ventana.columnconfigure (0, weight = 1)
+# ventana.columnconfigure (1, weight = 3)
 
-selecsion = tkinter.StringVar()
+# selecsion = tkinter.StringVar()
 
-r1 = tkinter.Radiobutton(ventana,   text = "R1",
-                                    bg = "red",
-                                    fg = "blue",
-                                    font = "arial 15",
-                                    value = "1",                #   el valor que entrega cuando es selecsionado 
-                                    variable = selecsion)      #   variable = el nombre de la variavle del valor selecsionado
-r1.grid (column = 0, row = 1, pady = 5, padx = 5)
+# r1 = tkinter.Radiobutton(ventana,   text = "R1",
+#                                     bg = "red",
+#                                     fg = "blue",
+#                                     font = "arial 15",
+#                                     value = "1",                #   el valor que entrega cuando es selecsionado 
+#                                     variable = selecsion)      #   variable = el nombre de la variavle del valor selecsionado
+# r1.grid (column = 0, row = 1, pady = 5, padx = 5)
 
-r2 = tkinter.Radiobutton(ventana,   text = "R2",
-                                    bg = "red",
-                                    fg = "blue",
-                                    font = "arial 15",
-                                    value = "2",
-                                    variable = selecsion)
-r2.grid (column = 0, row = 2, pady = 5, padx = 5)
+# r2 = tkinter.Radiobutton(ventana,   text = "R2",
+#                                     bg = "red",
+#                                     fg = "blue",
+#                                     font = "arial 15",
+#                                     value = "2",
+#                                     variable = selecsion)
+# r2.grid (column = 0, row = 2, pady = 5, padx = 5)
 
-r3 = tkinter.Radiobutton(ventana,   text = "R3",
-                                    bg = "red",
-                                    fg = "blue",
-                                    font = "arial 15",
-                                    value = "3",
-                                    variable = selecsion)
-r3.grid (column = 0, row = 3, pady = 5, padx = 5)
+# r3 = tkinter.Radiobutton(ventana,   text = "R3",
+#                                     bg = "red",
+#                                     fg = "blue",
+#                                     font = "arial 15",
+#                                     value = "3",
+#                                     variable = selecsion)
+# r3.grid (column = 0, row = 3, pady = 5, padx = 5)
 
-selecsion2 = tkinter.StringVar()
+# selecsion2 = tkinter.StringVar()
 
-r1 = tkinter.Radiobutton(ventana,   text = "Ro1",
-                                    bg = "red",
-                                    fg = "blue",
-                                    font = "arial 15",
-                                    value = "1",
-                                    variable = selecsion2 ,)      #   si hace referensia a otra variavle se puede selecsionar otro boton
-r1.grid (column = 1, row = 1, pady = 5, padx = 5)
+# r1 = tkinter.Radiobutton(ventana,   text = "Ro1",
+#                                     bg = "red",
+#                                     fg = "blue",
+#                                     font = "arial 15",
+#                                     value = "1",
+#                                     variable = selecsion2 ,)      #   si hace referensia a otra variavle se puede selecsionar otro boton
+# r1.grid (column = 1, row = 1, pady = 5, padx = 5)
 
-r2 = tkinter.Radiobutton(ventana,   text = "Ro2",
-                                    bg = "red",
-                                    fg = "blue",
-                                    font = "arial 15",
-                                    value = "2",
-                                    variable = selecsion2 ,)
-r2.grid (column = 1, row = 2, pady = 5, padx = 5)
+# r2 = tkinter.Radiobutton(ventana,   text = "Ro2",
+#                                     bg = "red",
+#                                     fg = "blue",
+#                                     font = "arial 15",
+#                                     value = "2",
+#                                     variable = selecsion2 ,)
+# r2.grid (column = 1, row = 2, pady = 5, padx = 5)
 
-r3 = tkinter.Radiobutton(ventana,   text = "Ro3",
-                                    bg = "red",
-                                    fg = "blue",
-                                    font = "arial 15",
-                                    value = "3",
-                                    variable = selecsion2 ,)
-r3.grid (column = 1, row = 3, pady = 5, padx = 5)
+# r3 = tkinter.Radiobutton(ventana,   text = "Ro3",
+#                                     bg = "red",
+#                                     fg = "blue",
+#                                     font = "arial 15",
+#                                     value = "3",
+#                                     variable = selecsion2 ,)
+# r3.grid (column = 1, row = 3, pady = 5, padx = 5)
 
 # ----------------------------------------------check boton--------------------------------------------------------------------------------
 

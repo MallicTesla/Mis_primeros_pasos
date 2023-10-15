@@ -55,16 +55,16 @@ class test ():
         # le damos un valor inicial
         self.texto06.set ("Es mi primera ves")
         # creamos la etiqueta
-        # con textcariavle indicamos cual es la variavle que tendra el texto 
+        # con textvariavle indicamos cual es la variavle que tendra el texto 
         self.Etiqueta01 = tk.Label(ventana,     textvariable = self.texto06,
                                                 font= "arial 15").place(x=10, y=400)        
         # creamos el boton 
         self.boton01 = tk.Button(ventana,       text="Vos tranqui",
                                                 font="arial 15 ",
-                                                command=self.texto07
-                                                ).place(x=10, y=440)    #   lo que ace el boton
-        
-        ventana.mainloop()
+                                                command=self.texto07    #   lo que ace el boton
+                                                ).place(x=10, y=440)
+
+        # ventana.mainloop()
 
     # este metodo es el handLer
     def texto07(self):
