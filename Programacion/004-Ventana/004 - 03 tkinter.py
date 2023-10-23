@@ -282,8 +282,8 @@ ventana.mainloop()
 
 # from tkinter import filedialog
 
-# explorador_archivos = filedialog.askopenfilename()
-# explorador_carpetas = filedialog.askdirectory()
+# explorador_archivos = filedialog.askopenfilename()                #explorador de archivos
+# explorador_carpetas = filedialog.askdirectory()                   #explorador de carpetas
 
 #------------------------------------------------------paleta de colores---------------------------------------------------------------
 
