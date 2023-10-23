@@ -8,6 +8,35 @@ ventana.geometry("500x500")
 ventana.resizable(1,1)
 ventana.config(bg="#500090") 
 
+
+#--------------------------------------------------------------agregar mas texto--------------------------------------------------------------
+
+def agregar_texto():
+    texto = entrada_texto.get()                             #optenes el texto de la entrada
+    texto_anterior = texto_widget.get("1.0", "end-1c")      #optenes todo el texto que tenias antes pero no toma la ultima parte que seria un salto de linia
+    texto_completo = f"{texto_anterior}\n{texto}"           #se juntan los textos anteriores y se le agrega un salto de linia
+    texto_widget.config(state=tkinter.NORMAL)                    #Habilitar edición temporalmente
+    texto_widget.delete("1.0", "end")                       #borra el texto antiguo
+    texto_widget.insert("1.0", texto_completo)              #inserta el nuevo texto completo
+    texto_widget.config(state=tkinter.DISABLED)                  #Volver al modo de solo lectura
+
+# Widget Text para mostrar el texto
+texto_widget = tkinter.Text(ventana,    wrap=tkinter.WORD,
+                                        state=tkinter.DISABLED,
+                                        height=10,
+                                        width=40)
+texto_widget.pack()
+
+# Entrada de texto para ingresar nuevo contenido
+entrada_texto = tkinter.Entry(ventana, width=40)
+entrada_texto.pack()
+
+# Botón para agregar texto
+boton_agregar = tkinter.Button(ventana, text="Agregar Texto", command=agregar_texto)
+boton_agregar.pack()
+
+ventana.mainloop()
+
 #--------------------------------------------------------------pack--------------------------------------------------------------
 
 # saludo = tkinter.Label(ventana, text = "Hola",
@@ -254,6 +283,7 @@ ventana.config(bg="#500090")
 # from tkinter import filedialog
 
 # explorador_archivos = filedialog.askopenfilename()
+# explorador_carpetas = filedialog.askdirectory()
 
 #------------------------------------------------------paleta de colores---------------------------------------------------------------
 
