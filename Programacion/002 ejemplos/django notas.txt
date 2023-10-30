@@ -13,6 +13,8 @@ http://127.0.0.1:8000/                          url
 (direcsion) python manage.py createsuperuser    para crear un usuario admin
 (direcsion) python manage.py collectstatic      es para crear una carpeta en el servidor de render
 
+(direcsion) python manage.py test               para realisar test unitarios mas info en el txt test unitario.txt
+
 para que django reconosca las imagenes en un modelo se nesesita esto
 pip install pillow
 
