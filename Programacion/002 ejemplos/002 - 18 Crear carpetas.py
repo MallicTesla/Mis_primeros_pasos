@@ -1,11 +1,11 @@
 import os
 
-ruta = "C:/Users/Mallic/Downloads/"
-nombre_principal = "YouTube"
+ruta = "C:/Users/Mallic/Downloads"
+nombre_principal = "/YouTube"
 ruta_principal = ruta + nombre_principal
 
 subcarpeta_1 = "Video"
-subcarpeta_2 = "audio"
+subcarpeta_2 = "Audio"
 
 
 
