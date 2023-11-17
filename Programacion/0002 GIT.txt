@@ -1,3 +1,5 @@
+try.github.io                           la documentasion de git
+
 estos comandos son para git y se escriben en la terminal de GIT BASH
 
 git config --global -h                  muestra todos los comandos de git
