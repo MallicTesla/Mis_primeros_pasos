@@ -20,5 +20,7 @@ git branch              obtener una lista de ramas y la rama activa
 
 git merge               fusionar los cambios de su rama activa en otra rama
 
+git clone (url)         clona un repositorio
+
 
 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
