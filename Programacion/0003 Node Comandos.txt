@@ -1,0 +1,2 @@
+(ruta)node(el nombre del archivo "index.js")         activa el servidor de ese archivo (si se actualiza el archivo se tiene que activar el servidor nuevamente)
+curl localhost:8080                                   ejecuta el codigo del servidor activado
