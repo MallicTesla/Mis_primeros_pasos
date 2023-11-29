@@ -51,15 +51,30 @@ print ( 9, cadena.upper())
 
 print (10, cadena.replace("Michael", "Pablo"))      # remplasa la primera primera palabra por la segunda que se encuentra en los parentesis
 print (11, cadena.find("Jackson"))                  # indica en que puto de la cadena comiemiensa lo que esta entre ()
-# print (12, cadena.len)
-
-print (type(int(12.3)))
-type(int(12.3))
 
 
+lista = ["Michael Jackson", 10.2]
+lista.extend(['pop', 10])                           # el método extend agregar todos los elementos de la lista a la otra lista
+print (12, lista)
 
 
+L = [ "Michael Jackson", 10.2]
+L.append(['pop', 10])                               # el metodo append agrega una lista dentro de la otra
+print (13, L)
 
+A = ["hard rock", 10, 1.2]
+print('A:', A)
+B = A                                               # asi clonas una lista lo que le pasa a A le pasa a la B
+print('B:', B)
+
+print('B[0]:', B)
+A[0] = "banana"                                     # asi cambias el valor de un elemento de la lista
+print('B[0]:', B)
+
+my_list = [10, 20, 30, 40, 50] 
+removed_element = my_list.pop(2)                    # con pop se remueve un elemento de una lista y lo puede devolver
+print(14, removed_element) 
+print(15, my_list) 
 
 
 
