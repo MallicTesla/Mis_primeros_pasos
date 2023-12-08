@@ -77,4 +77,11 @@ print(14, removed_element)
 print(15, my_list) 
 
 
+numeros_d = [1,5,6,7,3,7,9,2,5,6,10,15,11,23]
+numeros_o = sorted (numeros_d)                      # crea una nueva lista y conserva la original
+print (16, numeros_d)
+print (17, numeros_o)
+
+numeros_d.sort()                                    # modifica la lista original, no crea una nueva lista
+print (18, numeros_d)
 
