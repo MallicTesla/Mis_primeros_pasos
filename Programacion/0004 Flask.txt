@@ -1,0 +1,34 @@
+crear entorno virtual
+1)	dentro de la carpeta en la que queres crear el entorno virtial escrivis estos
+	pip install virtualenv				esto instala la creasion de entornos virtuales no es nesesario
+
+	python -m virtualenv venv			si este no sirve usa el otro
+	python -m venv (nombre (venv))
+
+2)	para activar el entorno virtual dentro de la carpeta escrivis
+	.\venv\Scripts\activate
+
+----------------------------------------------------------------------------------------------------
+1) Para instalar flask se usa
+    pip install flask
+
+2) Vercion de Flask
+	pip show flask
+
+3) Esto es lo mas básicas que podes hacer va en un solo archivo llamado app.py
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return '<b> Funciono mi primer "projecto" de Flask </b>'
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+4) Para inisiar el servidor es 
+	python (nombre del archivo principal (app.py))
+
+
+

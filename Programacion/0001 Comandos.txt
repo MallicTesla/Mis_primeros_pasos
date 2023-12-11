@@ -18,8 +18,9 @@ https://www.django-rest-framework.org/api-guide/status-codes/
 
 -----------------------------entorno virtual--------------------------------
 1)	dentro de la carpeta en la que queres crear el entorno virtial escrivis estos
-	pip install virtualenv
-	python -m virtualenv venv
+	pip install virtualenv				esto instala la creasion de entornos virtuales no es nesesario
+	python -m virtualenv venv			si este no sirve usa el otro
+	python -m venv (nombre (venv))
 
 2)	para activar el entorno virtual dentro de la carpeta escrivis
 	.\venv\Scripts\activate
