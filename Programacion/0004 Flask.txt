@@ -1,3 +1,5 @@
+siempre que se usa flask es recomendavle trabajar dentro de su propio entorno virtual
+
 crear entorno virtual
 1)	dentro de la carpeta en la que queres crear el entorno virtial escrivis estos
 	pip install virtualenv				esto instala la creasion de entornos virtuales no es nesesario

@@ -25,6 +25,9 @@ https://www.django-rest-framework.org/api-guide/status-codes/
 2)	para activar el entorno virtual dentro de la carpeta escrivis
 	.\venv\Scripts\activate
 
+2.1) desactivar entorno
+	.\venv\Scripts\deactivate
+
 3)	para instalar django rest
 	pip install djangorestframework
 
