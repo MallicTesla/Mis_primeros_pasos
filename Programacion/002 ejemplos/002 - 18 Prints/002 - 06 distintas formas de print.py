@@ -85,3 +85,5 @@ print (17, numeros_o)
 numeros_d.sort()                                    # modifica la lista original, no crea una nueva lista
 print (18, numeros_d)
 
+mi_variable = 42
+print(type(mi_variable))                            # muestra el tipo de valor de la variavle
