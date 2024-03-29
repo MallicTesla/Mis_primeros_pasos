@@ -78,11 +78,11 @@ print(15, my_list)
 
 
 numeros_d = [1,5,6,7,3,7,9,2,5,6,10,15,11,23]
-numeros_o = sorted (numeros_d)                      # crea una nueva lista y conserva la original
+numeros_o = sorted (numeros_d)                      # oredena los la lista de menor a mallor y crea una nueva lista y conserva la original
 print (16, numeros_d)
 print (17, numeros_o)
 
-numeros_d.sort()                                    # modifica la lista original, no crea una nueva lista
+numeros_d.sort()                                    # oredena los la lista de menor a mallor y modifica la lista original, no crea una nueva lista
 print (18, numeros_d)
 
 mi_variable = 42
