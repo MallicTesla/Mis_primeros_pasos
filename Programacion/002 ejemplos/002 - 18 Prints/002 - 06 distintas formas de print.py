@@ -59,7 +59,7 @@ print (12, lista)
 
 
 L = [ "Michael Jackson", 10.2]
-L.append(['pop', 10])                               # el metodo append agrega una lista dentro de la otra
+L.append (['pop', 10])                              # el metodo append agrega una lista dentro de la otra
 print (13, L)
 
 A = ["hard rock", 10, 1.2]
