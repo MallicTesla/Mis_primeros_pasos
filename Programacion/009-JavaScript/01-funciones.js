@@ -1,8 +1,8 @@
 const esto = (valor) => {
-    console.log("Funcion: esto");
+    console.log ("Funcion: esto");
 
     const esIgual = (otro) => {
-        console.log("Funcion: esIgual");
+        console.log ("Funcion: esIgual");
 
         if (otro == valor){
             return console.log ("exitoso :", otro == valor)
@@ -13,7 +13,7 @@ const esto = (valor) => {
     };
 
     const noEsIgual = (otro) => {
-        console.log("Funcion: noEsIgual");
+        console.log ("Funcion: noEsIgual");
 
         if (otro != valor){
             return console.log ("exitoso :", otro != valor)
@@ -36,8 +36,8 @@ Posibles valores:
     - { exitoso: false, causa: "No es igual" }
     - { exitoso: false, causa: "Es igual" }
 */
-esto(5).esIgual(5); //  { exitoso: true }
-esto(5).esIgual(10); // { exitoso: false, causa: "No es igual" }
+esto (5).esIgual (5); //  { exitoso: true }
+esto (5).esIgual (10); // { exitoso: false, causa: "No es igual" }
 
-esto("Hola").noEsIgual("Chau"); // { exitoso: true }
-esto("Hola").noEsIgual("Hola"); // { exitoso: false, causa: "Es igual" }
+esto ("Hola").noEsIgual ("Chau"); // { exitoso: true }
+esto ("Hola").noEsIgual ("Hola"); // { exitoso: false, causa: "Es igual" }
