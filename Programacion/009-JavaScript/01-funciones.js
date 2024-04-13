@@ -37,7 +37,7 @@ Posibles valores:
     - { exitoso: false, causa: "Es igual" }
 */
 esto (5).esIgual (5);  // { exitoso: true }
-esto (5).esIgual (10); // { exitoso: false, causa: "No es igual" }
+esto (5).esIgual (10); // { exitoso: false, causa: " No es igual " }
 
 esto ("Hola").noEsIgual ("Chau"); // { exitoso: true }
 esto ("Hola").noEsIgual ("Hola"); // { exitoso: false, causa: "Es igual" }
