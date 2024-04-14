@@ -54,7 +54,7 @@ for row in table_contents:
 
 
 # Imprimir los nombres de las columnas y sus contenidos
-print(column_names)
+print (column_names)
 # print(table_contents)
 
 
