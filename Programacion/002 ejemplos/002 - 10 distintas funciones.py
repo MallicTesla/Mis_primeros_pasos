@@ -8,7 +8,7 @@ def mifuncion (x) :
 
 #   filter revisa la funcion pasando el parametro (mifuncion, numero) y ve si devuelve True o False y elimina el elemento que da false
 #   devuelve una lista
-resultado1 = filter(mifuncion, numero) 
+resultado1 = filter (mifuncion, numero) 
 #   tambien se puede hacer con una lambda
 resultado2 = filter(lambda x : x % 2 == 0, numero) 
 
