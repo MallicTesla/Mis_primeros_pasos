@@ -24,7 +24,7 @@ def menu () :
             agregar (nuevo_contenido)
 
         case 3 :
-            print(f"Contactos \nID,Nomvre, Apellido, Telefono, Emeil\n{ver_contenido_Contactos ()}")
+            print (f"Contactos \nID,Nomvre, Apellido, Telefono, Emeil\n{ver_contenido_Contactos ()}")
             borrar_ID = int (input ("Escrive el ID del contacto a borrar\n"))
 
             borrar (borrar_ID)
