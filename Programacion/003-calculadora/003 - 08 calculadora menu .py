@@ -15,7 +15,7 @@ def calculo () :
     operasion = input ()
     if operasion == "+":
         N1 = pedir_numero ( "poneme el numero que quieras ")
-        N2 = pedir_numero("pone el otro numero ")
+        N2 = pedir_numero ("pone el otro numero ")
         print ("elegistes + ")
         print (N1+N2)
     elif operasion == "-":
