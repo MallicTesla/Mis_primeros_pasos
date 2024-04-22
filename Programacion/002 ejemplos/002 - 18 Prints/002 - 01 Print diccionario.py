@@ -17,7 +17,7 @@ album_set2 = set([ "AC/DC", "Back in Black", "The Dark Side of the Moon"])
 intersection = album_set1 & album_set2              # asi comparas dos set para ver los valores en comun
 
 print ( 4,intersection)
-print ( 5, album_set1.difference(album_set2))       # muestra las diferensias de la lista album_set1 con respecto de la lista album_set2
+print ( 5, album_set1.difference (album_set2))       # muestra las diferensias de la lista album_set1 con respecto de la lista album_set2
 print ( 6, album_set1.union(album_set2))            # une las dos listas sin que se repitan los valores
 
 print ( 7, set({"Back in Black", "AC/DC"}).issubset(album_set1))    #comprueva si un conjunto/set esta dentro de otro
