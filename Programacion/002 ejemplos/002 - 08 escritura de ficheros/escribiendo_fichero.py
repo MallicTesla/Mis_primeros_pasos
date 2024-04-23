@@ -1,6 +1,6 @@
 # f = open ("C:\Pruevas\hola-copia.txt", "w")     #   asi re escrivis el mismo fichero
 
-# f.write("datos1\n")
+# f.write ("datos1\n")
 # f.write("datos2\n")
 
 # f = open ("C:\Pruevas\hola-copia.txt", "a")     #   asi agregas al mismo fichero
