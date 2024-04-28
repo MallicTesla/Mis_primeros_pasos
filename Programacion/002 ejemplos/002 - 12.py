@@ -43,7 +43,7 @@ column_info = cursor.fetchall()
 column_names = [col[1] for col in column_info]
 
 # Ejecutar consulta para obtener los contenidos de la tabla
-cursor.execute("SELECT * FROM Estudiantes")
+cursor.execute ("SELECT * FROM Estudiantes")
 table_contents = cursor.fetchall()
 
 print(column_names)
