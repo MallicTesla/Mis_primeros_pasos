@@ -1,10 +1,10 @@
-try.github.io                           la documentasion de git
+try.github.io                           la documentación de git
 
 estos comandos son para git y se escriben en la terminal de GIT BASH
 
 git config --global -h                  muestra todos los comandos de git
-git config --global user.name           cambiar el nombre se usuario si el nombre lleva separasion va adentro de ""
-git config --global user.email          combia el email
+git config --global user.name           cambiar el nombre se usuario si el nombre lleva separación va adentro de ""
+git config --global user.email          cambia el email
 git config --global core.editor         estavlese a visual studio como el editor pre determinado y si al finals se agrega "code --wait" la terminal se queda esperando asta que se siere el editor pre determinado
 git config --global -e                  muesta la configuracion de git
 git config --global core.autocrlf true  cambia de forma automatica el salto de linia para que lo vean mac y linux
@@ -21,7 +21,7 @@ cat (nombre del archivo)                muestra lo que tiene el archivo
 
 comandos de GIT
 
-git init                                se inisia un repositorio en git vacio en la ruta que te encontras
+git init                                se inicia un repositorio en git vacio en la ruta que te encontras
 code .                                  el code abre visual estudios y el . lo abre en la carpeta en la que se encuentra
 git status                              muestra el estado actual del repositorio si esta en rojo esta modificado y no esta selecsionado y en verde si
 git status -s                           muestra solo el nombre de los archivos y la inisial del tipo de cambio a sufrido 
@@ -37,6 +37,7 @@ git diff --staget                       muestra de forma visual los cambios echo
 git log                                 muestra muy detallado el historial del repositorio
 git log --oneline                       muestra el historial de los commit con un id para localisar ese registro dentro de git
 git branch                              muestra en que rama estas trabajando
+(ruta a el repo) git branch -D mi_rama  Borra la rama seleccionada del repositorio 
 git checkout -b (nombre de la rama)     crea una rama nueva y entras
 git checkout (nombre de la rama)        vas a la rama que mencionas
 git merge (nombre de la rama)           estando en la rama principal junta una ram con la rama prinsipal
