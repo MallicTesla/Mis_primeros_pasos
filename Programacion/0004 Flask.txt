@@ -1,4 +1,4 @@
-siempre que se usa flask es recomendavle trabajar dentro de su propio entorno virtual
+siempre que se usa flask es recomendable trabajar dentro de su propio entorno virtual
 
 crear entorno virtual
 1)	dentro de la carpeta en la que queres crear el entorno virtial escrivis estos
@@ -20,7 +20,7 @@ crear entorno virtual
 3) Esto es lo mas básicas que podes hacer va en un solo archivo llamado app.py
 from flask import Flask
 
-app = Flask(__name__)
+app = Flask (__name__)
 
 @app.route('/')
 def index():
