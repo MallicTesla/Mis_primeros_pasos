@@ -1,4 +1,4 @@
-print("")	    inprime el texto dentro de ("")
+print("")	    imprime el texto dentro de ("")
 input()		    Python lee e imprime o ejecuta el texto que se le otorge en la función de input().
 try: _ except	try se usa cuando esperas una condición exterma en el bloque y ejecuta except
 break		    permite parar un bucle por completo en cuanto se da o deja de darse una condición externa 
