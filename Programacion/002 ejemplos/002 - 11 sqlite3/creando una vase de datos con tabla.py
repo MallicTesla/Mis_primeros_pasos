@@ -66,7 +66,7 @@ def ver_una_tabla_y_editarla () :
 def crear (nombre_tabla, columnas) :
     cursor = conn.cursor()
 
-    cursor.execute(f"CREATE TABLE IF NOT EXISTS {nombre_tabla}({columnas})")
+    cursor.execute (f"CREATE TABLE IF NOT EXISTS {nombre_tabla}({columnas})")
 
     cursor.close
 
