@@ -11,7 +11,7 @@ def menu () :
         nombre_columna = input ("Coloca el titulo de cada columna seperada por ,\n")
         nombre_columna = nombre_columna.split (",")
         print (f"La tabla se llama : {nombre_tabla} \nLos titulos de las columnas son : {nombre_columna}")
-        columnas = crear_columnas(nombre_columna)
+        columnas = crear_columnas (nombre_columna)
         crear(nombre_tabla, columnas)
 
         menu()
