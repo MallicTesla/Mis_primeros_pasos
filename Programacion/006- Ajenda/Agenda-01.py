@@ -10,12 +10,12 @@ def menu () :
         crear_tabla_relasionamiento ()
 
     opsion = int (input ("""Que opsion queres realisar \n 1) Ver contactos \n 2) Agregar un contacto \n 3) Borrar contacto \n 4) Editar un Contacto 
- 5) Ver los nombres de los grupos existentes\n 6) Crear grupo \n 7) Editar el nombre de un grupo\n 8) Agregar un contacto a un grupo\n 9) Ver que contactos estan en un grupo
+5) Ver los nombres de los grupos existentes\n 6) Crear grupo \n 7) Editar el nombre de un grupo\n 8) Agregar un contacto a un grupo\n 9) Ver que contactos estan en un grupo
 10) Ver a que grupos pertenese un contacto \nCualquier otra tecla para salir\n"""))
 
     match opsion :
         case 1 :
-            print(f"Contactos \nID,Nomvre, Apellido, Telefono, Emeil\n{ver_contenido_Contactos()}")
+            print (f"Contactos \nID,Nomvre, Apellido, Telefono, Emeil\n{ver_contenido_Contactos()}")
 
         case 2 :
             print ("Agrega un nuevo contacto separado por , y si una columna va vacia se agrega un espasio y , menos si es la ultima\nNomvre, Apellido, Telefono, Emeil")
