@@ -2,7 +2,7 @@ import tkinter as tk
 
 ventana = tk.Tk()
 
-ventana.config(bg="black")
+ventana.config (bg="black")
 ventana.geometry("500x500")
 
 seleccion = tk.IntVar()
