@@ -27,7 +27,7 @@ def menu () :
                                     print ("\nEse contacto ya esta registrado\n")
 
                                 else :
-                                    if TC.agregar(nuevo_contenido) :
+                                    if TC.agregar (nuevo_contenido) :
                                         print (f"\n{nuevo_contenido} no cumple con las condisiones espesificadas")
                                         print ("""Hubo un error al rellenar las columnas asegurate de que esten todas las columnas con contenido y separadas por una , 
 y si una columna va vacia se agrega un espasio y , menos si es la ultima recuerda que tenes que tener 3 , en total \n """)
