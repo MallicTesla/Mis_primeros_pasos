@@ -32,7 +32,7 @@ import sqlite3
 
 
 # Conexión a la base de datos SQLite
-conn = sqlite3.connect("C:\\Users\\Mallic\\Desktop\\Programas\\Mis_primeros_pasos\\Programacion\\002 ejemplos\\002 - 11 sqlite3\\primera_bace.db")
+conn = sqlite3.connect ("C:\\Users\\Mallic\\Desktop\\Programas\\Mis_primeros_pasos\\Programacion\\002 ejemplos\\002 - 11 sqlite3\\primera_bace.db")
 
 # Crear cursor
 cursor = conn.cursor()
