@@ -38,7 +38,7 @@ conn = sqlite3.connect ("C:\\Users\\Mallic\\Desktop\\Programas\\Mis_primeros_pas
 cursor = conn.cursor()
 
 # Ejecutar consulta para obtener los nombres de las columnas
-cursor.execute("PRAGMA table_info('Estudiantes')")
+cursor.execute ("PRAGMA table_info('Estudiantes')")
 column_info = cursor.fetchall()
 column_names = [col[1] for col in column_info]
 

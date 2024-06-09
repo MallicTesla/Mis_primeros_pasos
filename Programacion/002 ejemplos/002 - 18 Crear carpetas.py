@@ -12,7 +12,7 @@ subcarpeta_2 = "Audio"
 
 # Verifica si la carpeta principal ya existe
 if not os.path.exists(ruta_principal):
-    print(f"La carpeta principal '{nombre_principal}' no existe.")
+    print (f"La carpeta principal '{nombre_principal}' no existe.")
     # Crea la carpeta principal
     os.makedirs(ruta_principal)
     print(f"Carpeta principal '{nombre_principal}' creada.")
