@@ -15,7 +15,7 @@ def calcular ():
             contador = contador + 1
 
             ingreso1 = int (input (f"ingreso ({contador}) " ))
-            ingreso_input.append(ingreso1)
+            ingreso_input.append (ingreso1)
             print (ingreso_input)
             otro1 = input("otro ingreso S / N ")
 
