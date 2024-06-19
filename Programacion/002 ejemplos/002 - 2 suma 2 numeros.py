@@ -9,7 +9,7 @@ def pedir_numero(texto):
         try:
             return int(input (texto ))
         except ValueError:
-            print("te dije que me pongas un numero ")
+            print ("te dije que me pongas un numero ")
 
 N1 = pedir_numero( "poneme el numero que quieras ")
 N2 = pedir_numero("pone el otro numero ")        
