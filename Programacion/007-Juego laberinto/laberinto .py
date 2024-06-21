@@ -7,7 +7,7 @@ pygame.init ()
 
 # con esta clase se crean las paredes
 class Pared (pygame.sprite.Sprite) :
-    def __init__(self) :
+    def __init__ (self) :
         super().__init__()
         self.image = pygame.image.load (f"{ruta_carpeta}\\pared01.jpg").convert ()
         # combierte la imajeb rectangulo
