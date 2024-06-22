@@ -88,7 +88,7 @@ def ver_tablas ():
 
 def ver_columnas (este) :
     cursor = conn.cursor()
-    cursor.execute(f"PRAGMA table_info({este})")
+    cursor.execute (f"PRAGMA table_info({este})")
     columna_info = cursor.fetchall()
     titulo_columnas = [col[1] for col in columna_info]
     
