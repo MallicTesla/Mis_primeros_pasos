@@ -19,7 +19,7 @@ def menu () :
 
                         case "1" :
                             while True :
-                                print(f"Contactos ya existentes \nID,Nomvre, Apellido, Telefono, Emeil\n{TC.ver_contenido_Contactos()}")
+                                print (f"Contactos ya existentes \nID,Nomvre, Apellido, Telefono, Emeil\n{TC.ver_contenido_Contactos()}")
                                 print ("Agrega un nuevo contacto separado por , y si una columna va vacia se agrega un espasio y , menos si es la ultima\nNomvre, Apellido, Telefono, Emeil")
                                 nuevo_contenido = input ()
 
