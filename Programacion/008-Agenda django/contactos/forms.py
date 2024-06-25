@@ -31,7 +31,7 @@ class GrupoForm(ModelForm):
 
 # esta clase es para trabajar con la tercer trabla de relacionamientos de los modelos
 # esta clase es para crear un formulario con menus deplegables para relacinar
-class Relacionar_Contacto_GrupoForm(forms.Form):
+class Relacionar_Contacto_GrupoForm (forms.Form):
     #   ModelChoiceField es para crear un menu desplegable
     #   queryset rellena el menu desplegable con los rts del modelo
     contacto = forms.ModelChoiceField(  queryset = Contacto.objects.all(),
