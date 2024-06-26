@@ -26,7 +26,7 @@ class GrupoForm(ModelForm):
         exclude = ("contactos",)
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super().__init__ (*args, **kwargs)
         self.fields['nombre'].widget.attrs.update({'class': 'campo-form'})
 
 # esta clase es para trabajar con la tercer trabla de relacionamientos de los modelos
