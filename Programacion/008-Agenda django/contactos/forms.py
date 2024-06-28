@@ -2,7 +2,7 @@ from django import forms
 from django.forms import ModelForm
 from .models import Contacto, Grupo
 
-class ContactoForm(ModelForm):
+class ContactoForm (ModelForm):
     class Meta:
         model = Contacto
         fields = "__all__"
