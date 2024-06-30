@@ -1,6 +1,6 @@
 from django.db import models
 
-class Salario(models.Model):
+class Salario (models.Model):
     monto_anual = models.IntegerField(default=10000)
     extra_junio = models.BooleanField(default=True)
     extra_noviembre = models.BooleanField(default=True)

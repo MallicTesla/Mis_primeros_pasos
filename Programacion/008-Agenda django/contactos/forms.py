@@ -9,7 +9,7 @@ class ContactoForm (ModelForm):
         exclude = ("fecha_registro",)
 
     # asi le agrego un estilo css al formulario si ya tengo el modelo echo
-    def __init__(self, *args, **kwargs):
+    def __init__ (self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields ['nombre'].widget.attrs.update ({'class': 'campo-form'})
         self.fields ['apellido'].widget.attrs.update ({'class': 'campo-form'})
