@@ -5,7 +5,7 @@ class Salario (models.Model):
     extra_junio = models.BooleanField(default=True)
     extra_noviembre = models.BooleanField(default=True)
 
-    def __str__(self):
+    def __str__ (self):
         return str(self.monto_anual)
 
 class Trabajo(models.Model):
